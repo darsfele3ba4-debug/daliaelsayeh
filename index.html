@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دروس الدراسات الاجتماعية - الأستاذة داليا السايح</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root { --primary:#134e4a; --primary-light:#0d9488; --secondary:#0e7490; --warning:#f59e0b; --dark:#1e293b; }
+* { box-sizing:border-box; margin:0; padding:0; font-family:'Cairo',Tahoma,sans-serif; -webkit-tap-highlight-color:transparent; }
+body { background:#ecfeff; background-image:radial-gradient(#a5d4ce 1.5px,transparent 1.5px); background-size:25px 25px; color:var(--dark); min-height:100vh; display:flex; flex-direction:column; }
+header { background:linear-gradient(135deg,#042f2e,var(--primary),var(--secondary)); color:#fff; text-align:center; padding:30px 16px 90px; position:relative; }
+.head-in { position:relative; z-index:2; display:flex; align-items:center; justify-content:center; gap:36px; flex-wrap:wrap; }
+.logo { width:200px; height:200px; border-radius:28px; border:4px solid var(--warning); object-fit:cover; background:#fff; box-shadow:0 8px 16px rgba(0,0,0,.4); }
+.t1 { font-size:clamp(1.1rem,4vw,1.5rem); color:#ccfbf1; font-weight:700; }
+.t2 { font-size:clamp(1.6rem,6vw,2.7rem); font-weight:900; background:linear-gradient(to right,#5eead4,#2dd4bf); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; line-height:1.4; }
+.pill { display:inline-block; margin-top:10px; background:rgba(0,0,0,.3); border:1px solid rgba(255,255,255,.15); padding:6px 20px; border-radius:30px; font-weight:600; }
+.wave { position:absolute; bottom:-1px; left:0; width:100%; z-index:1; }
+main { flex:1; width:100%; max-width:1100px; margin:0 auto; padding:10px 16px 60px; }
+.toolbar { display:flex; justify-content:center; margin-bottom:10px; }
+.grade { margin-top:28px; }
+.grade-title { display:flex; align-items:center; justify-content:space-between; gap:12px; background:#fff; border-right:8px solid var(--secondary); border-radius:16px; padding:12px 20px; box-shadow:0 8px 15px -5px rgba(0,0,0,.08); color:var(--primary); font-size:clamp(1.15rem,4vw,1.5rem); font-weight:900; }
+.grade-title span { display:flex; flex-direction:column; }
+.unit-sub { font-style:normal; font-size:.95rem; font-weight:700; color:#64748b; }
+.grade-title small { background:#ccfbf1; color:var(--primary); font-size:.95rem; padding:4px 14px; border-radius:20px; font-weight:800; white-space:nowrap; }
+.cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:20px; margin-top:16px; }
+.lesson-card { background:#fff; border-radius:20px; padding:22px 18px 18px; display:flex; gap:14px; box-shadow:0 10px 15px -3px rgba(0,0,0,.06); border:2px solid transparent; transition:transform .25s, box-shadow .25s, border-color .25s; position:relative; overflow:hidden; }
+.lesson-card::before { content:""; position:absolute; top:0; left:0; right:0; height:6px; background:linear-gradient(90deg,var(--primary),var(--secondary)); }
+.lesson-card:hover { transform:translateY(-5px); box-shadow:0 20px 25px -5px rgba(0,0,0,.1); border-color:rgba(13,148,136,.3); }
+.lesson-num { flex-shrink:0; width:52px; height:52px; border-radius:50%; background:linear-gradient(135deg,#ccfbf1,#99f6e4); color:var(--primary); font-weight:900; font-size:1.4rem; display:flex; align-items:center; justify-content:center; }
+.lesson-body { flex:1; min-width:0; }
+.lesson-tag { display:inline-block; font-size:.85rem; font-weight:800; color:var(--secondary); background:#ecfeff; padding:2px 12px; border-radius:20px; }
+.lesson-body h3 { font-size:1.25rem; font-weight:900; margin:6px 0 4px; line-height:1.5; }
+.lesson-body p { color:#64748b; font-weight:600; font-size:.92rem; }
+.link-row { margin-top:12px; }
+.link-box { width:100%; direction:ltr; text-align:left; font-family:monospace,Tahoma; font-size:.8rem; color:#0f766e; background:#f0fdfa; border:1.5px dashed #5eead4; border-radius:10px; padding:8px 10px; }
+.actions { display:flex; gap:10px; margin-top:12px; }
+.btn { flex:1; text-align:center; text-decoration:none; border:none; cursor:pointer; color:#fff; font-weight:800; font-size:1rem; padding:11px 12px; border-radius:12px; border-bottom:3px solid rgba(0,0,0,.25); transition:transform .15s, filter .15s; }
+.btn:hover { transform:translateY(-2px); filter:brightness(1.08); }
+.btn:active { transform:translateY(1px); }
+.btn-open { background:linear-gradient(to bottom,var(--primary-light),var(--primary)); }
+.btn-copy { background:linear-gradient(to bottom,#f59e0b,#d97706); }
+.btn-copy.done { background:linear-gradient(to bottom,#10b981,#047857); }
+.btn-all { flex:0 1 auto; padding:12px 26px; background:linear-gradient(to bottom,#0e7490,#134e4a); }
+footer { background:var(--dark); color:#cbd5e1; text-align:center; padding:22px 16px; border-top:4px solid var(--primary); font-weight:600; }
+footer .d { color:#94a3b8; font-weight:400; margin-top:4px; }
+.wa { position:fixed; bottom:22px; left:22px; width:60px; height:60px; border-radius:50%; background:#25d366; color:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 15px rgba(37,211,102,.4); z-index:50; }
+.wa svg { width:32px; height:32px; fill:currentColor; }
+.toast { position:fixed; bottom:30px; left:50%; transform:translate(-50%,120px); opacity:0; background:#134e4a; color:#fff; padding:12px 26px; border-radius:30px; font-weight:800; box-shadow:0 10px 20px rgba(0,0,0,.25); transition:transform .3s; z-index:100; }
+.toast.show { transform:translate(-50%,0); opacity:1; }
+@media (max-width:600px) { .logo { width:150px; height:150px; } .cards { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<header>
+    <div class="head-in">
+        <img class="logo" src="logo.jpg" alt="الأستاذة داليا السايح">
+        <div>
+            <div class="t1">دروس وألعاب تفاعلية</div>
+            <div class="t2">مع الأستاذة دَالْيَا السَّايِح</div>
+            <div class="pill">الدِّرَاسَاتُ الاجْتِمَاعِيَّةُ • الصَّفُّ الأَوَّلُ الإِعْدَادِيُّ • الفصل الدراسي الأول</div>
+        </div>
+    </div>
+    <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ecfeff" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,170.7C960,160,1056,192,1152,208C1248,224,1344,224,1392,224L1440,224L1440,320L0,320Z"></path></svg>
+</header>
+<main>
+    <div class="toolbar"><button class="btn btn-all" id="copy-all">نسخ روابط كل الدروس</button></div>
+
+        <section class="grade">
+            <h2 class="grade-title"><span>الْوَحْدَةُ الأُولَى<em class="unit-sub">قارة إفريقيا</em></span><small>٣ دروس</small></h2>
+            <div class="cards">
+            <div class="lesson-card">
+                <div class="lesson-num">1</div>
+                <div class="lesson-body">
+                    <span class="lesson-tag">الدَّرْسُ الأَوَّلُ</span>
+                    <h3>قارة إفريقيا (الموقع والكشوف الجغرافية)</h3>
+                    <p>٦ ألعاب تفاعلية • 120 سؤالًا • خرائط وصور من الكتاب</p>
+                    <div class="link-row"><input class="link-box" readonly data-file="prep1-unit1-lesson1-africa-location.html" value="prep1-unit1-lesson1-africa-location.html"></div>
+                    <div class="actions">
+                        <a class="btn btn-open" href="prep1-unit1-lesson1-africa-location.html" target="_blank" rel="noopener">فتح الدرس</a>
+                        <button class="btn btn-copy" data-file="prep1-unit1-lesson1-africa-location.html">نسخ الرابط</button>
+                    </div>
+                </div>
+            </div>
+            <div class="lesson-card">
+                <div class="lesson-num">2</div>
+                <div class="lesson-body">
+                    <span class="lesson-tag">الدَّرْسُ الثَّانِي</span>
+                    <h3>مظاهر سطح قارة إفريقيا</h3>
+                    <p>٦ ألعاب تفاعلية • 118 سؤالًا • خرائط وصور من الكتاب</p>
+                    <div class="link-row"><input class="link-box" readonly data-file="prep1-unit1-lesson2-africa-surface.html" value="prep1-unit1-lesson2-africa-surface.html"></div>
+                    <div class="actions">
+                        <a class="btn btn-open" href="prep1-unit1-lesson2-africa-surface.html" target="_blank" rel="noopener">فتح الدرس</a>
+                        <button class="btn btn-copy" data-file="prep1-unit1-lesson2-africa-surface.html">نسخ الرابط</button>
+                    </div>
+                </div>
+            </div>
+            <div class="lesson-card">
+                <div class="lesson-num">3</div>
+                <div class="lesson-body">
+                    <span class="lesson-tag">الدَّرْسُ الثَّالِثُ</span>
+                    <h3>نهر النيل والحضارات القديمة في إفريقيا</h3>
+                    <p>٦ ألعاب تفاعلية • 120 سؤالًا • خرائط وصور من الكتاب</p>
+                    <div class="link-row"><input class="link-box" readonly data-file="prep1-unit1-lesson3-nile-civilizations.html" value="prep1-unit1-lesson3-nile-civilizations.html"></div>
+                    <div class="actions">
+                        <a class="btn btn-open" href="prep1-unit1-lesson3-nile-civilizations.html" target="_blank" rel="noopener">فتح الدرس</a>
+                        <button class="btn btn-copy" data-file="prep1-unit1-lesson3-nile-civilizations.html">نسخ الرابط</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section class="grade">
+            <h2 class="grade-title"><span>الْوَحْدَةُ الثَّانِيَةُ<em class="unit-sub">الحضارة المصرية القديمة وعلاقتها بحضارات إفريقيا</em></span><small>٣ دروس</small></h2>
+            <div class="cards">
+            <div class="lesson-card">
+                <div class="lesson-num">4</div>
+                <div class="lesson-body">
+                    <span class="lesson-tag">الدَّرْسُ الأَوَّلُ</span>
+                    <h3>عصر الدولة القديمة (عصر بناة الأهرام)</h3>
+                    <p>٦ ألعاب تفاعلية • 110 سؤالًا • خرائط وصور من الكتاب</p>
+                    <div class="link-row"><input class="link-box" readonly data-file="prep1-unit2-lesson1-old-kingdom.html" value="prep1-unit2-lesson1-old-kingdom.html"></div>
+                    <div class="actions">
+                        <a class="btn btn-open" href="prep1-unit2-lesson1-old-kingdom.html" target="_blank" rel="noopener">فتح الدرس</a>
+                        <button class="btn btn-copy" data-file="prep1-unit2-lesson1-old-kingdom.html">نسخ الرابط</button>
+                    </div>
+                </div>
+            </div>
+            <div class="lesson-card">
+                <div class="lesson-num">5</div>
+                <div class="lesson-body">
+                    <span class="lesson-tag">الدَّرْسُ الثَّانِي</span>
+                    <h3>عصر الدولة الوسطى (عصر الرخاء الاقتصادي)</h3>
+                    <p>٦ ألعاب تفاعلية • 110 سؤالًا • خرائط وصور من الكتاب</p>
+                    <div class="link-row"><input class="link-box" readonly data-file="prep1-unit2-lesson2-middle-kingdom.html" value="prep1-unit2-lesson2-middle-kingdom.html"></div>
+                    <div class="actions">
+                        <a class="btn btn-open" href="prep1-unit2-lesson2-middle-kingdom.html" target="_blank" rel="noopener">فتح الدرس</a>
+                        <button class="btn btn-copy" data-file="prep1-unit2-lesson2-middle-kingdom.html">نسخ الرابط</button>
+                    </div>
+                </div>
+            </div>
+            <div class="lesson-card">
+                <div class="lesson-num">6</div>
+                <div class="lesson-body">
+                    <span class="lesson-tag">الدَّرْسُ الثَّالِثُ</span>
+                    <h3>عصر الدولة الحديثة (عصر المجد الحربي)</h3>
+                    <p>٦ ألعاب تفاعلية • 110 سؤالًا • خرائط وصور من الكتاب</p>
+                    <div class="link-row"><input class="link-box" readonly data-file="prep1-unit2-lesson3-new-kingdom.html" value="prep1-unit2-lesson3-new-kingdom.html"></div>
+                    <div class="actions">
+                        <a class="btn btn-open" href="prep1-unit2-lesson3-new-kingdom.html" target="_blank" rel="noopener">فتح الدرس</a>
+                        <button class="btn btn-copy" data-file="prep1-unit2-lesson3-new-kingdom.html">نسخ الرابط</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section class="grade">
+            <h2 class="grade-title"><span>الْوَحْدَةُ الثَّالِثَةُ<em class="unit-sub">النظم البيئية في قارة إفريقيا</em></span><small>٣ دروس</small></h2>
+            <div class="cards">
+            <div class="lesson-card">
+                <div class="lesson-num">7</div>
+                <div class="lesson-body">
+                    <span class="lesson-tag">الدَّرْسُ الأَوَّلُ</span>
+                    <h3>نظم الغابات في إفريقيا (المدارية المطيرة والبحر المتوسط)</h3>
+                    <p>٦ ألعاب تفاعلية • 116 سؤالًا • خرائط وصور من الكتاب</p>
+                    <div class="link-row"><input class="link-box" readonly data-file="prep1-unit3-lesson1-forests.html" value="prep1-unit3-lesson1-forests.html"></div>
+                    <div class="actions">
+                        <a class="btn btn-open" href="prep1-unit3-lesson1-forests.html" target="_blank" rel="noopener">فتح الدرس</a>
+                        <button class="btn btn-copy" data-file="prep1-unit3-lesson1-forests.html">نسخ الرابط</button>
+                    </div>
+                </div>
+            </div>
+            <div class="lesson-card">
+                <div class="lesson-num">8</div>
+                <div class="lesson-body">
+                    <span class="lesson-tag">الدَّرْسُ الثَّانِي</span>
+                    <h3>نظم الحشائش (الحارة والمعتدلة) والصحاري الحارة في إفريقيا</h3>
+                    <p>٦ ألعاب تفاعلية • 111 سؤالًا • خرائط وصور من الكتاب</p>
+                    <div class="link-row"><input class="link-box" readonly data-file="prep1-unit3-lesson2-grasslands-deserts.html" value="prep1-unit3-lesson2-grasslands-deserts.html"></div>
+                    <div class="actions">
+                        <a class="btn btn-open" href="prep1-unit3-lesson2-grasslands-deserts.html" target="_blank" rel="noopener">فتح الدرس</a>
+                        <button class="btn btn-copy" data-file="prep1-unit3-lesson2-grasslands-deserts.html">نسخ الرابط</button>
+                    </div>
+                </div>
+            </div>
+            <div class="lesson-card">
+                <div class="lesson-num">9</div>
+                <div class="lesson-body">
+                    <span class="lesson-tag">الدَّرْسُ الثَّالِثُ</span>
+                    <h3>النظم البيئية المائية في إفريقيا</h3>
+                    <p>٦ ألعاب تفاعلية • 110 سؤالًا • خرائط وصور من الكتاب</p>
+                    <div class="link-row"><input class="link-box" readonly data-file="prep1-unit3-lesson3-aquatic-ecosystems.html" value="prep1-unit3-lesson3-aquatic-ecosystems.html"></div>
+                    <div class="actions">
+                        <a class="btn btn-open" href="prep1-unit3-lesson3-aquatic-ecosystems.html" target="_blank" rel="noopener">فتح الدرس</a>
+                        <button class="btn btn-copy" data-file="prep1-unit3-lesson3-aquatic-ecosystems.html">نسخ الرابط</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section class="grade">
+            <h2 class="grade-title"><span>الْوَحْدَةُ الرَّابِعَةُ<em class="unit-sub">علاقة مصر بإفريقيا خلال العصور الوسطى</em></span><small>درسان</small></h2>
+            <div class="cards">
+            <div class="lesson-card">
+                <div class="lesson-num">10</div>
+                <div class="lesson-body">
+                    <span class="lesson-tag">الدَّرْسُ الأَوَّلُ</span>
+                    <h3>انتشار الإسلام في إفريقيا</h3>
+                    <p>٦ ألعاب تفاعلية • 112 سؤالًا • خرائط وصور من الكتاب</p>
+                    <div class="link-row"><input class="link-box" readonly data-file="prep1-unit4-lesson1-islam-in-africa.html" value="prep1-unit4-lesson1-islam-in-africa.html"></div>
+                    <div class="actions">
+                        <a class="btn btn-open" href="prep1-unit4-lesson1-islam-in-africa.html" target="_blank" rel="noopener">فتح الدرس</a>
+                        <button class="btn btn-copy" data-file="prep1-unit4-lesson1-islam-in-africa.html">نسخ الرابط</button>
+                    </div>
+                </div>
+            </div>
+            <div class="lesson-card">
+                <div class="lesson-num">11</div>
+                <div class="lesson-body">
+                    <span class="lesson-tag">الدَّرْسُ الثَّانِي</span>
+                    <h3>دور مصر الحضاري في قارة إفريقيا</h3>
+                    <p>٦ ألعاب تفاعلية • 110 سؤالًا • خرائط وصور من الكتاب</p>
+                    <div class="link-row"><input class="link-box" readonly data-file="prep1-unit4-lesson2-egypt-role-africa.html" value="prep1-unit4-lesson2-egypt-role-africa.html"></div>
+                    <div class="actions">
+                        <a class="btn btn-open" href="prep1-unit4-lesson2-egypt-role-africa.html" target="_blank" rel="noopener">فتح الدرس</a>
+                        <button class="btn btn-copy" data-file="prep1-unit4-lesson2-egypt-role-africa.html">نسخ الرابط</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+</main>
+<footer>
+    <div>جميع الحقوق محفوظة &copy; | دروس وألعاب تعليمية</div>
+    <div class="d">الأستاذة / دَالْيَا السَّايِح - 01030866428</div>
+</footer>
+<a class="wa" href="https://wa.me/201030866428" target="_blank" rel="noopener" title="تواصل معنا"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.656.843 5.12 2.26 7.15L.626 24l5.01-1.61c1.983 1.25 4.27 1.91 6.395 1.91 6.646 0 12.03-5.385 12.03-12.031S18.677 0 12.031 0zm6.544 17.202c-.273.766-1.58 1.464-2.185 1.503-.56.035-1.28.23-4.085-.86-3.39-1.32-5.59-4.78-5.736-4.97-.145-.19-1.37-1.82-1.37-3.475 0-1.655.857-2.47 1.164-2.8.307-.33.67-.413.89-.413.22 0 .44 0 .633.01.205.01.482-.08.736.53.264.634.904 2.203.984 2.366.08.163.133.353.033.553-.1.2-.153.326-.307.506-.154.18-.32.38-.453.506-.153.153-.314.316-.134.626.18.31.8 1.32 1.71 2.13.176.157.363.31.558.45 1.05.76 1.83 1.05 2.13 1.18.3.13.474.11.652-.09.18-.205.766-.893.97-1.2.204-.307.41-.256.69-.153.28.103 1.77.836 2.074.99.304.153.506.23.582.356.076.126.076.73-.197 1.496z"/></svg></a>
+<div class="toast" id="toast">تم نسخ الرابط ✅</div>
+<script>
+    function fullUrl(file) { return new URL(file, window.location.href).href; }
+    document.querySelectorAll('.link-box').forEach(i => { i.value = fullUrl(i.dataset.file); i.addEventListener('focus', () => i.select()); });
+    function showToast(t) { const el = document.getElementById('toast'); el.textContent = t; el.classList.add('show'); clearTimeout(window._tt); window._tt = setTimeout(() => el.classList.remove('show'), 1800); }
+    function copyText(text) {
+        if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+        return new Promise((res, rej) => {
+            const ta = document.createElement('textarea'); ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+            document.body.appendChild(ta); ta.select();
+            try { document.execCommand('copy') ? res() : rej(); } catch (e) { rej(e); }
+            ta.remove();
+        });
+    }
+    document.querySelectorAll('.btn-copy').forEach(b => b.addEventListener('click', () => {
+        copyText(fullUrl(b.dataset.file)).then(() => {
+            b.classList.add('done'); b.textContent = 'تم النسخ ✓'; showToast('تم نسخ رابط الدرس ✅');
+            setTimeout(() => { b.classList.remove('done'); b.textContent = 'نسخ الرابط'; }, 1800);
+        }).catch(() => showToast('انسخ الرابط من المربع يدويًا'));
+    }));
+    document.getElementById('copy-all').addEventListener('click', () => {
+        const lines = [];
+        document.querySelectorAll('.lesson-card').forEach(c => {
+            lines.push(c.querySelector('h3').textContent + ' (' + c.closest('.grade').querySelector('.grade-title span').childNodes[0].textContent.trim() + ')');
+            lines.push(fullUrl(c.querySelector('.btn-copy').dataset.file)); lines.push('');
+        });
+        copyText(lines.join('\n')).then(() => showToast('تم نسخ روابط كل الدروس ✅')).catch(() => showToast('تعذر النسخ'));
+    });
+</script>
+</body>
+</html>
