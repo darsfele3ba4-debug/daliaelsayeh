@@ -49,6 +49,15 @@ footer .d { color:#94a3b8; font-weight:400; margin-top:4px; }
 .toast { position:fixed; bottom:30px; left:50%; transform:translate(-50%,120px); opacity:0; background:#134e4a; color:#fff; padding:12px 26px; border-radius:30px; font-weight:800; box-shadow:0 10px 20px rgba(0,0,0,.25); transition:transform .3s; z-index:100; }
 .toast.show { transform:translate(-50%,0); opacity:1; }
 @media (max-width:600px) { .logo { width:150px; height:150px; } .cards { grid-template-columns:1fr; } }
+.tabs { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin:6px 0 4px; position:sticky; top:0; z-index:20; padding:8px 0; background:rgba(236,254,255,.92); backdrop-filter:blur(4px); }
+.tab { border:2px solid #99f6e4; background:#fff; color:var(--primary); font-weight:900; font-size:1.05rem; padding:10px 18px; border-radius:16px; cursor:pointer; display:flex; flex-direction:column; align-items:center; line-height:1.4; }
+.tab small { font-size:.8rem; color:#64748b; font-weight:700; }
+.tab.active { background:linear-gradient(135deg,var(--primary),var(--secondary)); color:#fff; border-color:transparent; }
+.tab.active small { color:#ccfbf1; }
+.gpanel { display:none; } .gpanel.active { display:block; }
+.feat { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:12px; }
+.feat span { background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.2); padding:4px 14px; border-radius:20px; font-size:.9rem; font-weight:700; }
+@media (max-width:600px) { .tab { flex:1 1 30%; padding:8px 6px; font-size:.9rem; } }
 </style>
 </head>
 <body>
@@ -58,15 +67,16 @@ footer .d { color:#94a3b8; font-weight:400; margin-top:4px; }
         <div>
             <div class="t1">دروس وألعاب تفاعلية</div>
             <div class="t2">مع الأستاذة دَالْيَا السَّايِح</div>
-            <div class="pill">الدِّرَاسَاتُ الاجْتِمَاعِيَّةُ • الصَّفُّ الأَوَّلُ الإِعْدَادِيُّ • الفصل الدراسي الأول</div>
-        </div>
+            <div class="pill">الدِّرَاسَاتُ الاجْتِمَاعِيَّةُ • المرحلة الإعدادية • الفصل الدراسي الأول</div>
+                    </div>
     </div>
     <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ecfeff" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,170.7C960,160,1056,192,1152,208C1248,224,1344,224,1392,224L1440,224L1440,320L0,320Z"></path></svg>
 </header>
 <main>
-    <div class="toolbar"><button class="btn btn-all" id="copy-all">نسخ روابط كل الدروس</button></div>
-
-        <section class="grade">
+    <div class="tabs"><button class="tab active" data-g="1">الصَّفُّ الأَوَّلُ الإِعْدَادِيُّ<small>١١ درسًا</small></button><button class="tab" data-g="2">الصَّفُّ الثَّانِي الإِعْدَادِيُّ<small>١١ درسًا</small></button></div>
+    <div class="toolbar"><button class="btn btn-all" id="copy-all">نسخ روابط دروس هذا الصف</button></div>
+    <div class="gpanel active" id="g1">
+        <section class="grade" data-grade="الصَّفُّ الأَوَّلُ الإِعْدَادِيُّ">
             <h2 class="grade-title"><span>الْوَحْدَةُ الأُولَى<em class="unit-sub">قارة إفريقيا</em></span><small>٣ دروس</small></h2>
             <div class="cards">
             <div class="lesson-card">
@@ -74,7 +84,7 @@ footer .d { color:#94a3b8; font-weight:400; margin-top:4px; }
                 <div class="lesson-body">
                     <span class="lesson-tag">الدَّرْسُ الأَوَّلُ</span>
                     <h3>قارة إفريقيا (الموقع والكشوف الجغرافية)</h3>
-                    <p>٦ ألعاب تفاعلية • 120 سؤالًا • خرائط وصور من الكتاب</p>
+                    <p>٦ ألعاب تفاعلية • 270 سؤالًا • خرائط وصور من الكتاب</p>
                     <div class="link-row"><input class="link-box" readonly data-file="prep1-unit1-lesson1-africa-location.html" value="prep1-unit1-lesson1-africa-location.html"></div>
                     <div class="actions">
                         <a class="btn btn-open" href="prep1-unit1-lesson1-africa-location.html" target="_blank" rel="noopener">فتح الدرس</a>
@@ -87,7 +97,7 @@ footer .d { color:#94a3b8; font-weight:400; margin-top:4px; }
                 <div class="lesson-body">
                     <span class="lesson-tag">الدَّرْسُ الثَّانِي</span>
                     <h3>مظاهر سطح قارة إفريقيا</h3>
-                    <p>٦ ألعاب تفاعلية • 118 سؤالًا • خرائط وصور من الكتاب</p>
+                    <p>٦ ألعاب تفاعلية • 268 سؤالًا • خرائط وصور من الكتاب</p>
                     <div class="link-row"><input class="link-box" readonly data-file="prep1-unit1-lesson2-africa-surface.html" value="prep1-unit1-lesson2-africa-surface.html"></div>
                     <div class="actions">
                         <a class="btn btn-open" href="prep1-unit1-lesson2-africa-surface.html" target="_blank" rel="noopener">فتح الدرس</a>
@@ -100,7 +110,7 @@ footer .d { color:#94a3b8; font-weight:400; margin-top:4px; }
                 <div class="lesson-body">
                     <span class="lesson-tag">الدَّرْسُ الثَّالِثُ</span>
                     <h3>نهر النيل والحضارات القديمة في إفريقيا</h3>
-                    <p>٦ ألعاب تفاعلية • 120 سؤالًا • خرائط وصور من الكتاب</p>
+                    <p>٦ ألعاب تفاعلية • 270 سؤالًا • خرائط وصور من الكتاب</p>
                     <div class="link-row"><input class="link-box" readonly data-file="prep1-unit1-lesson3-nile-civilizations.html" value="prep1-unit1-lesson3-nile-civilizations.html"></div>
                     <div class="actions">
                         <a class="btn btn-open" href="prep1-unit1-lesson3-nile-civilizations.html" target="_blank" rel="noopener">فتح الدرس</a>
@@ -110,7 +120,7 @@ footer .d { color:#94a3b8; font-weight:400; margin-top:4px; }
             </div>
             </div>
         </section>
-        <section class="grade">
+        <section class="grade" data-grade="الصَّفُّ الأَوَّلُ الإِعْدَادِيُّ">
             <h2 class="grade-title"><span>الْوَحْدَةُ الثَّانِيَةُ<em class="unit-sub">الحضارة المصرية القديمة وعلاقتها بحضارات إفريقيا</em></span><small>٣ دروس</small></h2>
             <div class="cards">
             <div class="lesson-card">
@@ -118,7 +128,7 @@ footer .d { color:#94a3b8; font-weight:400; margin-top:4px; }
                 <div class="lesson-body">
                     <span class="lesson-tag">الدَّرْسُ الأَوَّلُ</span>
                     <h3>عصر الدولة القديمة (عصر بناة الأهرام)</h3>
-                    <p>٦ ألعاب تفاعلية • 110 سؤالًا • خرائط وصور من الكتاب</p>
+                    <p>٦ ألعاب تفاعلية • 260 سؤالًا • خرائط وصور من الكتاب</p>
                     <div class="link-row"><input class="link-box" readonly data-file="prep1-unit2-lesson1-old-kingdom.html" value="prep1-unit2-lesson1-old-kingdom.html"></div>
                     <div class="actions">
                         <a class="btn btn-open" href="prep1-unit2-lesson1-old-kingdom.html" target="_blank" rel="noopener">فتح الدرس</a>
@@ -131,7 +141,7 @@ footer .d { color:#94a3b8; font-weight:400; margin-top:4px; }
                 <div class="lesson-body">
                     <span class="lesson-tag">الدَّرْسُ الثَّانِي</span>
                     <h3>عصر الدولة الوسطى (عصر الرخاء الاقتصادي)</h3>
-                    <p>٦ ألعاب تفاعلية • 110 سؤالًا • خرائط وصور من الكتاب</p>
+                    <p>٦ ألعاب تفاعلية • 260 سؤالًا • خرائط وصور من الكتاب</p>
                     <div class="link-row"><input class="link-box" readonly data-file="prep1-unit2-lesson2-middle-kingdom.html" value="prep1-unit2-lesson2-middle-kingdom.html"></div>
                     <div class="actions">
                         <a class="btn btn-open" href="prep1-unit2-lesson2-middle-kingdom.html" target="_blank" rel="noopener">فتح الدرس</a>
@@ -144,7 +154,7 @@ footer .d { color:#94a3b8; font-weight:400; margin-top:4px; }
                 <div class="lesson-body">
                     <span class="lesson-tag">الدَّرْسُ الثَّالِثُ</span>
                     <h3>عصر الدولة الحديثة (عصر المجد الحربي)</h3>
-                    <p>٦ ألعاب تفاعلية • 110 سؤالًا • خرائط وصور من الكتاب</p>
+                    <p>٦ ألعاب تفاعلية • 260 سؤالًا • خرائط وصور من الكتاب</p>
                     <div class="link-row"><input class="link-box" readonly data-file="prep1-unit2-lesson3-new-kingdom.html" value="prep1-unit2-lesson3-new-kingdom.html"></div>
                     <div class="actions">
                         <a class="btn btn-open" href="prep1-unit2-lesson3-new-kingdom.html" target="_blank" rel="noopener">فتح الدرس</a>
@@ -154,7 +164,7 @@ footer .d { color:#94a3b8; font-weight:400; margin-top:4px; }
             </div>
             </div>
         </section>
-        <section class="grade">
+        <section class="grade" data-grade="الصَّفُّ الأَوَّلُ الإِعْدَادِيُّ">
             <h2 class="grade-title"><span>الْوَحْدَةُ الثَّالِثَةُ<em class="unit-sub">النظم البيئية في قارة إفريقيا</em></span><small>٣ دروس</small></h2>
             <div class="cards">
             <div class="lesson-card">
@@ -162,7 +172,7 @@ footer .d { color:#94a3b8; font-weight:400; margin-top:4px; }
                 <div class="lesson-body">
                     <span class="lesson-tag">الدَّرْسُ الأَوَّلُ</span>
                     <h3>نظم الغابات في إفريقيا (المدارية المطيرة والبحر المتوسط)</h3>
-                    <p>٦ ألعاب تفاعلية • 116 سؤالًا • خرائط وصور من الكتاب</p>
+                    <p>٦ ألعاب تفاعلية • 266 سؤالًا • خرائط وصور من الكتاب</p>
                     <div class="link-row"><input class="link-box" readonly data-file="prep1-unit3-lesson1-forests.html" value="prep1-unit3-lesson1-forests.html"></div>
                     <div class="actions">
                         <a class="btn btn-open" href="prep1-unit3-lesson1-forests.html" target="_blank" rel="noopener">فتح الدرس</a>
@@ -175,7 +185,7 @@ footer .d { color:#94a3b8; font-weight:400; margin-top:4px; }
                 <div class="lesson-body">
                     <span class="lesson-tag">الدَّرْسُ الثَّانِي</span>
                     <h3>نظم الحشائش (الحارة والمعتدلة) والصحاري الحارة في إفريقيا</h3>
-                    <p>٦ ألعاب تفاعلية • 111 سؤالًا • خرائط وصور من الكتاب</p>
+                    <p>٦ ألعاب تفاعلية • 261 سؤالًا • خرائط وصور من الكتاب</p>
                     <div class="link-row"><input class="link-box" readonly data-file="prep1-unit3-lesson2-grasslands-deserts.html" value="prep1-unit3-lesson2-grasslands-deserts.html"></div>
                     <div class="actions">
                         <a class="btn btn-open" href="prep1-unit3-lesson2-grasslands-deserts.html" target="_blank" rel="noopener">فتح الدرس</a>
@@ -188,7 +198,7 @@ footer .d { color:#94a3b8; font-weight:400; margin-top:4px; }
                 <div class="lesson-body">
                     <span class="lesson-tag">الدَّرْسُ الثَّالِثُ</span>
                     <h3>النظم البيئية المائية في إفريقيا</h3>
-                    <p>٦ ألعاب تفاعلية • 110 سؤالًا • خرائط وصور من الكتاب</p>
+                    <p>٦ ألعاب تفاعلية • 260 سؤالًا • خرائط وصور من الكتاب</p>
                     <div class="link-row"><input class="link-box" readonly data-file="prep1-unit3-lesson3-aquatic-ecosystems.html" value="prep1-unit3-lesson3-aquatic-ecosystems.html"></div>
                     <div class="actions">
                         <a class="btn btn-open" href="prep1-unit3-lesson3-aquatic-ecosystems.html" target="_blank" rel="noopener">فتح الدرس</a>
@@ -198,15 +208,15 @@ footer .d { color:#94a3b8; font-weight:400; margin-top:4px; }
             </div>
             </div>
         </section>
-        <section class="grade">
-            <h2 class="grade-title"><span>الْوَحْدَةُ الرَّابِعَةُ<em class="unit-sub">علاقة مصر بإفريقيا خلال العصور الوسطى</em></span><small>درسان</small></h2>
+        <section class="grade" data-grade="الصَّفُّ الأَوَّلُ الإِعْدَادِيُّ">
+            <h2 class="grade-title"><span>الْوَحْدَةُ الرَّابِعَةُ<em class="unit-sub">مصر وإفريقيا في العصور الوسطى</em></span><small>درسان</small></h2>
             <div class="cards">
             <div class="lesson-card">
                 <div class="lesson-num">10</div>
                 <div class="lesson-body">
                     <span class="lesson-tag">الدَّرْسُ الأَوَّلُ</span>
                     <h3>انتشار الإسلام في إفريقيا</h3>
-                    <p>٦ ألعاب تفاعلية • 112 سؤالًا • خرائط وصور من الكتاب</p>
+                    <p>٦ ألعاب تفاعلية • 262 سؤالًا • خرائط وصور من الكتاب</p>
                     <div class="link-row"><input class="link-box" readonly data-file="prep1-unit4-lesson1-islam-in-africa.html" value="prep1-unit4-lesson1-islam-in-africa.html"></div>
                     <div class="actions">
                         <a class="btn btn-open" href="prep1-unit4-lesson1-islam-in-africa.html" target="_blank" rel="noopener">فتح الدرس</a>
@@ -219,7 +229,7 @@ footer .d { color:#94a3b8; font-weight:400; margin-top:4px; }
                 <div class="lesson-body">
                     <span class="lesson-tag">الدَّرْسُ الثَّانِي</span>
                     <h3>دور مصر الحضاري في قارة إفريقيا</h3>
-                    <p>٦ ألعاب تفاعلية • 110 سؤالًا • خرائط وصور من الكتاب</p>
+                    <p>٦ ألعاب تفاعلية • 260 سؤالًا • خرائط وصور من الكتاب</p>
                     <div class="link-row"><input class="link-box" readonly data-file="prep1-unit4-lesson2-egypt-role-africa.html" value="prep1-unit4-lesson2-egypt-role-africa.html"></div>
                     <div class="actions">
                         <a class="btn btn-open" href="prep1-unit4-lesson2-egypt-role-africa.html" target="_blank" rel="noopener">فتح الدرس</a>
@@ -229,12 +239,178 @@ footer .d { color:#94a3b8; font-weight:400; margin-top:4px; }
             </div>
             </div>
         </section>
+    </div>
+    <div class="gpanel" id="g2">
+        <section class="grade" data-grade="الصَّفُّ الثَّانِي الإِعْدَادِيُّ">
+            <h2 class="grade-title"><span>الْوَحْدَةُ الأُولَى<em class="unit-sub">قارتا آسيا وأوروبا: الموقع والسطح والموارد</em></span><small>درسان</small></h2>
+            <div class="cards">
+            <div class="lesson-card">
+                <div class="lesson-num">1</div>
+                <div class="lesson-body">
+                    <span class="lesson-tag">الدَّرْسُ الأَوَّلُ</span>
+                    <h3>موقع ومظاهر سطح قارتي آسيا وأوروبا</h3>
+                    <p>٦ ألعاب تفاعلية • 271 سؤالًا • خرائط وصور من الكتاب</p>
+                    <div class="link-row"><input class="link-box" readonly data-file="prep2-unit1-lesson1-asia-europe-surface.html" value="prep2-unit1-lesson1-asia-europe-surface.html"></div>
+                    <div class="actions">
+                        <a class="btn btn-open" href="prep2-unit1-lesson1-asia-europe-surface.html" target="_blank" rel="noopener">فتح الدرس</a>
+                        <button class="btn btn-copy" data-file="prep2-unit1-lesson1-asia-europe-surface.html">نسخ الرابط</button>
+                    </div>
+                </div>
+            </div>
+            <div class="lesson-card">
+                <div class="lesson-num">2</div>
+                <div class="lesson-body">
+                    <span class="lesson-tag">الدَّرْسُ الثَّانِي</span>
+                    <h3>المعادن ومصادر الطاقة في قارتي آسيا وأوروبا</h3>
+                    <p>٦ ألعاب تفاعلية • 273 سؤالًا • خرائط وصور من الكتاب</p>
+                    <div class="link-row"><input class="link-box" readonly data-file="prep2-unit1-lesson2-minerals-energy.html" value="prep2-unit1-lesson2-minerals-energy.html"></div>
+                    <div class="actions">
+                        <a class="btn btn-open" href="prep2-unit1-lesson2-minerals-energy.html" target="_blank" rel="noopener">فتح الدرس</a>
+                        <button class="btn btn-copy" data-file="prep2-unit1-lesson2-minerals-energy.html">نسخ الرابط</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section class="grade" data-grade="الصَّفُّ الثَّانِي الإِعْدَادِيُّ">
+            <h2 class="grade-title"><span>الْوَحْدَةُ الثَّانِيَةُ<em class="unit-sub">الحضارات القديمة في قارة آسيا وعلاقتها بمصر</em></span><small>٤ دروس</small></h2>
+            <div class="cards">
+            <div class="lesson-card">
+                <div class="lesson-num">3</div>
+                <div class="lesson-body">
+                    <span class="lesson-tag">الدَّرْسُ الأَوَّلُ</span>
+                    <h3>نماذج للحضارات القديمة بالشرق الأدنى</h3>
+                    <p>٦ ألعاب تفاعلية • 265 سؤالًا • خرائط وصور من الكتاب</p>
+                    <div class="link-row"><input class="link-box" readonly data-file="prep2-unit2-lesson1-near-east-civilizations.html" value="prep2-unit2-lesson1-near-east-civilizations.html"></div>
+                    <div class="actions">
+                        <a class="btn btn-open" href="prep2-unit2-lesson1-near-east-civilizations.html" target="_blank" rel="noopener">فتح الدرس</a>
+                        <button class="btn btn-copy" data-file="prep2-unit2-lesson1-near-east-civilizations.html">نسخ الرابط</button>
+                    </div>
+                </div>
+            </div>
+            <div class="lesson-card">
+                <div class="lesson-num">4</div>
+                <div class="lesson-body">
+                    <span class="lesson-tag">الدَّرْسُ الثَّانِي</span>
+                    <h3>نماذج لحضارات بلاد اليمن القديم</h3>
+                    <p>٦ ألعاب تفاعلية • 262 سؤالًا • خرائط وصور من الكتاب</p>
+                    <div class="link-row"><input class="link-box" readonly data-file="prep2-unit2-lesson2-yemen-civilizations.html" value="prep2-unit2-lesson2-yemen-civilizations.html"></div>
+                    <div class="actions">
+                        <a class="btn btn-open" href="prep2-unit2-lesson2-yemen-civilizations.html" target="_blank" rel="noopener">فتح الدرس</a>
+                        <button class="btn btn-copy" data-file="prep2-unit2-lesson2-yemen-civilizations.html">نسخ الرابط</button>
+                    </div>
+                </div>
+            </div>
+            <div class="lesson-card">
+                <div class="lesson-num">5</div>
+                <div class="lesson-body">
+                    <span class="lesson-tag">الدَّرْسُ الثَّالِثُ</span>
+                    <h3>نماذج للحضارات القديمة بالشرق الأقصى</h3>
+                    <p>٦ ألعاب تفاعلية • 261 سؤالًا • خرائط وصور من الكتاب</p>
+                    <div class="link-row"><input class="link-box" readonly data-file="prep2-unit2-lesson3-far-east-civilizations.html" value="prep2-unit2-lesson3-far-east-civilizations.html"></div>
+                    <div class="actions">
+                        <a class="btn btn-open" href="prep2-unit2-lesson3-far-east-civilizations.html" target="_blank" rel="noopener">فتح الدرس</a>
+                        <button class="btn btn-copy" data-file="prep2-unit2-lesson3-far-east-civilizations.html">نسخ الرابط</button>
+                    </div>
+                </div>
+            </div>
+            <div class="lesson-card">
+                <div class="lesson-num">6</div>
+                <div class="lesson-body">
+                    <span class="lesson-tag">الدَّرْسُ الرَّابِعُ</span>
+                    <h3>الحضارة الإسلامية</h3>
+                    <p>٦ ألعاب تفاعلية • 260 سؤالًا • خرائط وصور من الكتاب</p>
+                    <div class="link-row"><input class="link-box" readonly data-file="prep2-unit2-lesson4-islamic-civilization.html" value="prep2-unit2-lesson4-islamic-civilization.html"></div>
+                    <div class="actions">
+                        <a class="btn btn-open" href="prep2-unit2-lesson4-islamic-civilization.html" target="_blank" rel="noopener">فتح الدرس</a>
+                        <button class="btn btn-copy" data-file="prep2-unit2-lesson4-islamic-civilization.html">نسخ الرابط</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section class="grade" data-grade="الصَّفُّ الثَّانِي الإِعْدَادِيُّ">
+            <h2 class="grade-title"><span>الْوَحْدَةُ الثَّالِثَةُ<em class="unit-sub">النظم البيئية في قارتي آسيا وأوروبا</em></span><small>٣ دروس</small></h2>
+            <div class="cards">
+            <div class="lesson-card">
+                <div class="lesson-num">7</div>
+                <div class="lesson-body">
+                    <span class="lesson-tag">الدَّرْسُ الأَوَّلُ</span>
+                    <h3>نظم الغابات في قارتي آسيا وأوروبا</h3>
+                    <p>٦ ألعاب تفاعلية • 263 سؤالًا • خرائط وصور من الكتاب</p>
+                    <div class="link-row"><input class="link-box" readonly data-file="prep2-unit3-lesson1-forests.html" value="prep2-unit3-lesson1-forests.html"></div>
+                    <div class="actions">
+                        <a class="btn btn-open" href="prep2-unit3-lesson1-forests.html" target="_blank" rel="noopener">فتح الدرس</a>
+                        <button class="btn btn-copy" data-file="prep2-unit3-lesson1-forests.html">نسخ الرابط</button>
+                    </div>
+                </div>
+            </div>
+            <div class="lesson-card">
+                <div class="lesson-num">8</div>
+                <div class="lesson-body">
+                    <span class="lesson-tag">الدَّرْسُ الثَّانِي</span>
+                    <h3>نظم الحشائش ونظم الصحاري في قارتي آسيا وأوروبا</h3>
+                    <p>٦ ألعاب تفاعلية • 261 سؤالًا • خرائط وصور من الكتاب</p>
+                    <div class="link-row"><input class="link-box" readonly data-file="prep2-unit3-lesson2-grasslands-deserts.html" value="prep2-unit3-lesson2-grasslands-deserts.html"></div>
+                    <div class="actions">
+                        <a class="btn btn-open" href="prep2-unit3-lesson2-grasslands-deserts.html" target="_blank" rel="noopener">فتح الدرس</a>
+                        <button class="btn btn-copy" data-file="prep2-unit3-lesson2-grasslands-deserts.html">نسخ الرابط</button>
+                    </div>
+                </div>
+            </div>
+            <div class="lesson-card">
+                <div class="lesson-num">9</div>
+                <div class="lesson-body">
+                    <span class="lesson-tag">الدَّرْسُ الثَّالِثُ</span>
+                    <h3>النظم البيئية المائية في قارتي آسيا وأوروبا</h3>
+                    <p>٦ ألعاب تفاعلية • 260 سؤالًا • خرائط وصور من الكتاب</p>
+                    <div class="link-row"><input class="link-box" readonly data-file="prep2-unit3-lesson3-aquatic-ecosystems.html" value="prep2-unit3-lesson3-aquatic-ecosystems.html"></div>
+                    <div class="actions">
+                        <a class="btn btn-open" href="prep2-unit3-lesson3-aquatic-ecosystems.html" target="_blank" rel="noopener">فتح الدرس</a>
+                        <button class="btn btn-copy" data-file="prep2-unit3-lesson3-aquatic-ecosystems.html">نسخ الرابط</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section class="grade" data-grade="الصَّفُّ الثَّانِي الإِعْدَادِيُّ">
+            <h2 class="grade-title"><span>الْوَحْدَةُ الرَّابِعَةُ<em class="unit-sub">الحضارات القديمة في قارة أوروبا وعلاقتها بمصر</em></span><small>درسان</small></h2>
+            <div class="cards">
+            <div class="lesson-card">
+                <div class="lesson-num">10</div>
+                <div class="lesson-body">
+                    <span class="lesson-tag">الدَّرْسُ الأَوَّلُ</span>
+                    <h3>الحضارة اليونانية</h3>
+                    <p>٦ ألعاب تفاعلية • 261 سؤالًا • خرائط وصور من الكتاب</p>
+                    <div class="link-row"><input class="link-box" readonly data-file="prep2-unit4-lesson1-greek-civilization.html" value="prep2-unit4-lesson1-greek-civilization.html"></div>
+                    <div class="actions">
+                        <a class="btn btn-open" href="prep2-unit4-lesson1-greek-civilization.html" target="_blank" rel="noopener">فتح الدرس</a>
+                        <button class="btn btn-copy" data-file="prep2-unit4-lesson1-greek-civilization.html">نسخ الرابط</button>
+                    </div>
+                </div>
+            </div>
+            <div class="lesson-card">
+                <div class="lesson-num">11</div>
+                <div class="lesson-body">
+                    <span class="lesson-tag">الدَّرْسُ الثَّانِي</span>
+                    <h3>الحضارة الرومانية</h3>
+                    <p>٦ ألعاب تفاعلية • 261 سؤالًا • خرائط وصور من الكتاب</p>
+                    <div class="link-row"><input class="link-box" readonly data-file="prep2-unit4-lesson2-roman-civilization.html" value="prep2-unit4-lesson2-roman-civilization.html"></div>
+                    <div class="actions">
+                        <a class="btn btn-open" href="prep2-unit4-lesson2-roman-civilization.html" target="_blank" rel="noopener">فتح الدرس</a>
+                        <button class="btn btn-copy" data-file="prep2-unit4-lesson2-roman-civilization.html">نسخ الرابط</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+    </div>
 </main>
 <footer>
     <div>جميع الحقوق محفوظة &copy; | دروس وألعاب تعليمية</div>
     <div class="d">الأستاذة / دَالْيَا السَّايِح - 01030866428</div>
 </footer>
-<a class="wa" href="https://wa.me/201030866428" target="_blank" rel="noopener" title="تواصل معنا"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.656.843 5.12 2.26 7.15L.626 24l5.01-1.61c1.983 1.25 4.27 1.91 6.395 1.91 6.646 0 12.03-5.385 12.03-12.031S18.677 0 12.031 0zm6.544 17.202c-.273.766-1.58 1.464-2.185 1.503-.56.035-1.28.23-4.085-.86-3.39-1.32-5.59-4.78-5.736-4.97-.145-.19-1.37-1.82-1.37-3.475 0-1.655.857-2.47 1.164-2.8.307-.33.67-.413.89-.413.22 0 .44 0 .633.01.205.01.482-.08.736.53.264.634.904 2.203.984 2.366.08.163.133.353.033.553-.1.2-.153.326-.307.506-.154.18-.32.38-.453.506-.153.153-.314.316-.134.626.18.31.8 1.32 1.71 2.13.176.157.363.31.558.45 1.05.76 1.83 1.05 2.13 1.18.3.13.474.11.652-.09.18-.205.766-.893.97-1.2.204-.307.41-.256.69-.153.28.103 1.77.836 2.074.99.304.153.506.23.582.356.076.126.076.73-.197 1.496z"/></svg></a>
+<a class="wa" href="https://wa.me/201030866428" target="_blank" rel="noopener" title="تواصل معنا"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.656.843 5.12 2.26 7.15L.626 24l5.01-1.61c1.983 1.25 4.27 1.91 6.395 1.91 6.646 0 12.03-5.385 12.03-12.031S18.677 0 12.031 0zm6.544 17.202c-.273.766-1.58 1.464-2.185 1.503-.56.035-1.28.23-4.085-.86-3.39-1.32-5.59-4.78-5.736-4.970-.145-.19-1.37-1.82-1.37-3.475 0-1.655.857-2.47 1.164-2.8.307-.33.67-.413.89-.413.22 0 .44 0 .633.01.205.01.482-.08.736.53.264.634.904 2.203.984 2.366.08.163.133.353.033.553-.1.2-.153.326-.307.506-.154.18-.32.38-.453.506-.153.153-.314.316-.134.626.18.31.8 1.32 1.71 2.13.176.157.363.31.558.45 1.05.76 1.83 1.05 2.13 1.18.3.13.474.11.652-.09.18-.205.766-.893.97-1.2.204-.307.41-.256.69-.153.28.103 1.77.836 2.074.99.304.153.506.23.582.356.076.126.076.73-.197 1.496z"/></svg></a>
 <div class="toast" id="toast">تم نسخ الرابط ✅</div>
 <script>
     function fullUrl(file) { return new URL(file, window.location.href).href; }
@@ -257,12 +433,18 @@ footer .d { color:#94a3b8; font-weight:400; margin-top:4px; }
     }));
     document.getElementById('copy-all').addEventListener('click', () => {
         const lines = [];
-        document.querySelectorAll('.lesson-card').forEach(c => {
-            lines.push(c.querySelector('h3').textContent + ' (' + c.closest('.grade').querySelector('.grade-title span').childNodes[0].textContent.trim() + ')');
+        document.querySelectorAll('.gpanel.active .lesson-card').forEach(c => {
+            lines.push(c.querySelector('h3').textContent + ' (' + c.closest('.grade').dataset.grade + ' - ' + c.closest('.grade').querySelector('.grade-title span').childNodes[0].textContent.trim() + ')');
             lines.push(fullUrl(c.querySelector('.btn-copy').dataset.file)); lines.push('');
         });
-        copyText(lines.join('\n')).then(() => showToast('تم نسخ روابط كل الدروس ✅')).catch(() => showToast('تعذر النسخ'));
+        copyText(lines.join('\n')).then(() => showToast('تم نسخ روابط دروس الصف ✅')).catch(() => showToast('تعذر النسخ'));
     });
+    document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach(x => x.classList.toggle('active', x === t));
+        document.querySelectorAll('.gpanel').forEach(p => p.classList.toggle('active', p.id === 'g' + t.dataset.g));
+        try { localStorage.setItem('dalia_grade', t.dataset.g); } catch (e) {}
+    }));
+    try { const s = localStorage.getItem('dalia_grade'); if (s) { const t = document.querySelector('.tab[data-g="' + s + '"]'); if (t) t.click(); } } catch (e) {}
 </script>
 </body>
 </html>

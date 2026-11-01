@@ -1,0 +1,3720 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>درس النظم البيئية المائية في قارتي آسيا وأوروبا - الصف الثاني الإعدادي</title>
+    <!-- استدعاء خط احترافي -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #134e4a;      
+            --primary-light: #0d9488; 
+            --secondary: #0e7490;    
+            --success: #10b981;      
+            --danger: #ef4444;       
+            --warning: #f59e0b;      
+            --dark: #1e293b;         
+            --light: #f8fafc;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Cairo', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: #ecfeff;
+            background-image: radial-gradient(#a5d4ce 1.5px, transparent 1.5px);
+            background-size: 25px 25px;
+            color: var(--dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        .hidden { display: none !important; }
+        
+        /* --- الهيدر الرئيسي --- */
+        .header-main {
+            background: linear-gradient(135deg, #042f2e, var(--primary), var(--secondary));
+            color: white;
+            padding: 30px 20px 90px 20px; 
+            text-align: center;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .title-line1 {
+            font-size: clamp(1.1rem, 4vw, 1.5rem); 
+            font-weight: 700;
+            color: #ccfbf1;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-shadow: 1px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .title-line2 {
+            font-size: clamp(1.4rem, 5.5vw, 2.6rem); 
+            font-weight: 900;
+            background: linear-gradient(to right, #2dd4bf, #0f766e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.5));
+            line-height: 1.3;
+            text-align: center;
+        }
+
+        .header-main h2 { font-size: clamp(1rem, 3vw, 1.3rem); font-weight: 600; color: #f0fdfa; margin-bottom: 8px; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);}
+        .header-main p { font-size: clamp(0.9rem, 2.5vw, 1.1rem); font-weight: 600; background: rgba(0,0,0,0.3); display: inline-block; padding: 6px 20px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 4px 6px rgba(0,0,0,0.1);}
+
+        .header-wave {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: auto;
+            z-index: 1;
+        }
+
+        /* --- الأزرار --- */
+        .btn {
+            background: linear-gradient(to bottom, var(--primary-light), var(--primary));
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-bottom: 3px solid rgba(0,0,0,0.3);
+        }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.2); }
+        .btn:active { transform: translateY(2px); border-bottom: 0px; margin-top: 3px; }
+        .btn-correct { filter: brightness(1.2); pointer-events: none; border-bottom-width: 0; transform: translateY(2px);}
+        .btn-wrong { filter: brightness(0.8); pointer-events: none; border-bottom-width: 0; transform: translateY(2px);}
+
+        /* --- الشاشة الرئيسية --- */
+        #home-screen {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .grid-menu {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            width: 100%;
+            max-width: 1000px;
+            padding-bottom: 80px;
+        }
+
+        .menu-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05), 0 4px 6px -2px rgba(0,0,0,0.025);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        .menu-card::before {
+            content: ""; position: absolute; top: 0; left: 0; right: 0; height: 6px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            opacity: 0; transition: opacity 0.3s;
+        }
+        .menu-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); border-color: rgba(34, 197, 94, 0.25); }
+        .menu-card:hover::before { opacity: 1; }
+        
+        .menu-card .icon-container {
+            width: 80px; height: 80px;
+            margin: 0 auto 15px auto;
+            background: linear-gradient(135deg, #ccfbf1, #99f6e4);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: inset 0 3px 6px rgba(255,255,255,0.8), 0 4px 8px rgba(0,0,0,0.05);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .menu-card .icon-container svg {
+            width: 40px; height: 40px; stroke: #134e4a; fill: none;
+            stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+        }
+        .menu-card:hover .icon-container { transform: scale(1.1) rotate(10deg); }
+        .menu-card h3 { font-size: 1.4rem; color: var(--dark); font-weight: 800; margin-bottom: 8px;}
+        .menu-card p { font-size: 1rem; color: #64748b; font-weight: 600;}
+
+        /* --- شاشة اللعب --- */
+        #game-screen {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-nav {
+            background: white;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            font-size: clamp(0.9rem, 3vw, 1.2rem);
+        }
+        .back-btn { background: #e2e8f0; color: var(--dark); border-bottom: 3px solid #cbd5e1; padding: 8px 15px;}
+        #game-progress { background: #0d9488; color: white; padding: 6px 15px; border-radius: 20px;}
+        
+        .game-container {
+            flex: 1;
+            padding: 0 20px 40px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .question-box {
+            background: white;
+            padding: 20px 25px;
+            border-radius: 16px;
+            text-align: center;
+            font-size: clamp(1.2rem, 4vw, 1.6rem);
+            font-weight: 800;
+            color: #134e4a;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+            border-right: 8px solid #0e7490;
+            line-height: 1.6;
+        }
+
+        .shake { animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both; }
+        @keyframes shake {
+            10%, 90% { transform: translate3d(-2px, 0, 0); }
+            20%, 80% { transform: translate3d(4px, 0, 0); }
+            30%, 50%, 70% { transform: translate3d(-6px, 0, 0); }
+            40%, 60% { transform: translate3d(6px, 0, 0); }
+        }
+
+        /* MCQ Style */
+        .options-grid { display: flex; flex-direction: column; gap: 15px; }
+        .options-grid .btn { padding: 18px; font-size: clamp(1.1rem, 3.5vw, 1.4rem); text-align: right; justify-content: flex-start; border-radius: 12px;}
+
+        /* True/False Style */
+        .tf-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+
+        /* Bubbles Style */
+        .bubbles-area {
+            position: relative; height: 400px;
+            background: linear-gradient(to bottom, #042f2e, #134e4a);
+            border-radius: 16px; overflow: hidden;
+            border: 4px solid #0d9488; margin-top: 10px;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+        }
+        .bubble {
+            position: absolute;
+            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), rgba(224,231,255,0.9));
+            color: #134e4a;
+            border: 2px solid #ffffff;
+            padding: 10px 5px;
+            border-radius: 30px;
+            font-weight: 800; font-size: clamp(0.85rem, 2vw, 1.05rem);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.2), inset -4px -4px 10px rgba(0,0,0,0.1);
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center;
+            width: 22%;
+            transition: transform 0.2s, background 0.2s;
+            z-index: 5;
+        }
+        .bubble:hover { transform: scale(1.05); }
+        .bubble::after {
+            content: ''; position: absolute; top: 10%; left: 15%;
+            width: 20%; height: 20%; background: rgba(255,255,255,0.8);
+            border-radius: 50%; filter: blur(2px);
+        }
+
+        /* Shooting Style */
+        .shooting-area {
+            position: relative; height: 400px; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><rect fill="%23e0fbfc" width="100%" height="100%"/><circle fill="%23bae6fd" cx="20%" cy="30%" r="50"/><circle fill="%23bae6fd" cx="80%" cy="60%" r="70"/><circle fill="%23bae6fd" cx="50%" cy="80%" r="40"/></svg>') no-repeat center center;
+            background-size: cover; border-radius: 16px; overflow: hidden;
+            border: 4px solid #0d9488; margin-top: 10px; box-shadow: inset 0 0 20px rgba(0,0,0,0.1);
+        }
+        .target-bird {
+            position: absolute; background: white; color: var(--dark);
+            padding: 10px 20px; border-radius: 30px; font-weight: 800; font-size: clamp(0.95rem, 3vw, 1.15rem);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15); cursor: crosshair;
+            border: 3px solid var(--warning); white-space: nowrap; transition: background 0.2s;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .target-bird:hover { transform: scale(1.05); background: #f0fdfa; }
+
+        /* Genius Challenge Style */
+        .genius-wrap {
+            background: linear-gradient(135deg, #042f2e, #134e4a, #0f766e);
+            border-radius: 16px; padding: 20px; margin-top: 10px;
+            border: 4px solid #2dd4bf; box-shadow: inset 0 0 25px rgba(0,0,0,0.4), 0 10px 20px rgba(21,128,61,0.35);
+        }
+        .genius-timer-track {
+            width: 100%; height: 14px; background: rgba(0,0,0,0.35);
+            border-radius: 10px; overflow: hidden; margin-bottom: 18px;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+        .genius-timer-bar {
+            height: 100%; width: 100%;
+            background: linear-gradient(to right, #2dd4bf, #0d9488, #ef4444);
+            border-radius: 10px;
+            transition: width 0.1s linear;
+        }
+        .genius-options { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        @media (max-width: 600px) { .genius-options { grid-template-columns: 1fr; } }
+        .genius-options .btn {
+            padding: 16px 10px; font-size: clamp(1rem, 3vw, 1.25rem);
+            background: linear-gradient(to bottom, #14b8a6, #0f766e);
+            border-bottom: 3px solid #134e4a; border-radius: 14px; min-height: 70px;
+        }
+        .genius-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(74, 222, 128, 0.15); color: #2dd4bf;
+            font-weight: 800; padding: 6px 16px; border-radius: 20px;
+            border: 1px solid rgba(253,224,71,0.4); margin-bottom: 12px; font-size: 0.95rem;
+        }
+
+        /* Result Share (WhatsApp) */
+        .share-box {
+            margin-top: 25px; background: #f0fdfa; border: 2px solid #99f6e4;
+            border-radius: 16px; padding: 20px; text-align: center;
+        }
+        .share-box h4 { color: #115e59; font-size: 1.2rem; margin-bottom: 12px; font-weight: 800;}
+        .share-name-input {
+            width: 100%; max-width: 320px; padding: 12px 16px; border-radius: 12px;
+            border: 2px solid #5eead4; font-size: 1.05rem; text-align: center;
+            font-family: 'Cairo', sans-serif; font-weight: 700; margin-bottom: 12px;
+            color: var(--dark);
+        }
+        .share-name-input:focus { outline: none; border-color: #0d9488; }
+        .btn-share {
+            background: linear-gradient(to bottom, #25d366, #1da851);
+            border-bottom-color: #128c3e; display: inline-flex; gap: 10px;
+        }
+        .share-warning { color: var(--danger); font-weight: 700; font-size: 0.9rem; margin-top: 8px; display: none; }
+
+        /* Modal Overlay */
+        .overlay {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(4px);
+            display: flex; justify-content: center; align-items: center;
+            z-index: 1000; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+        }
+        .overlay.active { opacity: 1; pointer-events: all; }
+        .modal {
+            background: white; padding: 40px; border-radius: 25px;
+            text-align: center; max-width: 90%; width: 400px;
+            transform: scale(0.7) translateY(50px); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+        }
+        .overlay.active .modal { transform: scale(1) translateY(0); }
+        .modal-icon { display: flex; justify-content: center; margin-bottom: 20px; }
+
+        /* Summary Errors Scrolling */
+        .errors-list::-webkit-scrollbar { width: 8px; }
+        .errors-list::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 8px; }
+        .errors-list::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 8px; }
+        .errors-list::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+        /* الفوتر (Footer) */
+        .footer-main {
+            background: var(--dark); color: #cbd5e1;
+            text-align: center; padding: 25px 20px; margin-top: auto;
+            border-top: 4px solid var(--primary);
+        }
+        .footer-main p { margin: 5px 0; font-size: 1.1rem; font-weight: 600;}
+        .footer-main .designer { font-size: 1rem; color: #94a3b8; font-weight: 400;}
+
+        /* WhatsApp */
+        .whatsapp-float {
+            position: fixed; bottom: 25px; left: 25px;
+            background: #25d366; color: white;
+            width: 65px; height: 65px; border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            text-decoration: none; box-shadow: 0 8px 15px rgba(37, 211, 102, 0.4);
+            z-index: 100; transition: all 0.3s;
+        }
+        .whatsapp-float:hover { transform: scale(1.15) rotate(-5deg); box-shadow: 0 12px 20px rgba(37, 211, 102, 0.6); }
+        .whatsapp-float svg { width: 35px; height: 35px; fill: currentColor; }
+
+        /* Confetti effect */
+        .confetti {
+            position: fixed; top: -10px; width: 12px; height: 12px; z-index: 9999;
+            animation: fall linear forwards; border-radius: 3px;
+        }
+        @keyframes fall { to { transform: translateY(110vh) rotate(720deg); opacity: 0; } }
+
+        /* Map Challenge Style */
+        .map-stage { text-align: center; margin-bottom: 18px; }
+        .map-wrap { position: relative; display: inline-block; max-width: 100%; border-radius: 14px; overflow: hidden;
+            border: 4px solid #0d9488; box-shadow: 0 10px 20px rgba(0,0,0,0.12); background: #fff; }
+        .map-wrap img { display: block; max-width: 100%; max-height: 58vh; width: auto; height: auto; margin: 0 auto; }
+        .map-mask { position: absolute; background: linear-gradient(135deg, #f59e0b, #ea580c); border: 2px solid #fff;
+            border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #fff;
+            font-weight: 900; font-size: clamp(0.9rem, 2.4vw, 1.4rem); box-shadow: 0 3px 8px rgba(0,0,0,0.35);
+            transition: opacity 0.5s ease; animation: maskPulse 1.6s ease-in-out infinite; }
+        .map-mask.revealed { opacity: 0; animation: none; }
+        @keyframes maskPulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+        .map-stage.zoomed { overflow: auto; -webkit-overflow-scrolling: touch; padding-bottom: 6px; }
+        .map-stage.zoomed .map-wrap { max-width: none; }
+        .map-stage.zoomed .map-wrap img { max-width: none; max-height: none; width: min(1400px, 230vw); }
+        .map-wrap { cursor: zoom-in; }
+        .map-stage.zoomed .map-wrap { cursor: zoom-out; }
+        .map-hint { color: #0f766e; font-weight: 700; font-size: 0.95rem; margin-top: 8px; }
+        .map-options { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        @media (max-width: 600px) { .map-options { grid-template-columns: 1fr; } }
+        .map-options .btn { padding: 14px 10px; font-size: clamp(1rem, 3vw, 1.2rem); min-height: 60px; }
+        .map-options .btn.ok { background: linear-gradient(to bottom, #10b981, #047857) !important; }
+        .map-options .btn.bad { background: linear-gradient(to bottom, #ef4444, #b91c1c) !important; }
+        .header-logo { width: 260px; height: 260px; border-radius: 30px; border: 4px solid var(--warning);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.4); background-color: white; object-fit: cover; flex-shrink: 0; }
+        @media (max-width: 600px) { .header-logo { width: 170px; height: 170px; } }
+    </style>
+</head>
+<body>
+
+    <!-- الهيدر مع اللوجو -->
+    <header class="header-main" id="main-header">
+        <div class="header-content">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap;">
+                <!-- اللوجو (على اليمين) -->
+                <img src="logo.jpg" alt="الأستاذة داليا السايح" class="header-logo">
+                
+                <!-- النصوص -->
+                <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <h1 class="title-line1">
+                        درس 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                        لعبة
+                    </h1>
+                    <h1 class="title-line2">مع الأستاذة دَالْيَا السَّايِح</h1>
+                    <h2>الصَّفُّ الثَّانِي الإِعْدَادِيُّ - الْوَحْدَةُ الثَّالِثَةُ - الدَّرْسُ الثَّالِثُ: النُّظُمُ البِيئِيَّةُ المَائِيَّةُ فِي قَارَّتَيْ آسِيَا وَأُورُوبَّا</h2>
+                    <p style="margin-top: 10px;">الدِّرَاسَاتُ الاجْتِمَاعِيَّةُ</p>
+                </div>
+            </div>
+        </div>
+        <!-- تموجات زخرفية -->
+        <svg class="header-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#ecfeff" fill-opacity="1" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,170.7C960,160,1056,192,1152,208C1248,224,1344,224,1392,224L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+    </header>
+
+    <!-- الشاشة الرئيسية -->
+    <div id="home-screen">
+        <div class="grid-menu" id="menu-grid">
+            <!-- سيتم حقن البطاقات هنا برمجياً -->
+        </div>
+    </div>
+
+    <!-- شاشة اللعب -->
+    <div id="game-screen" class="hidden">
+        <div class="game-nav">
+            <button class="btn back-btn" onclick="returnToMenu()">
+                <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                رجوع
+            </button>
+            <strong id="game-title">عنوان اللعبة</strong>
+            <span id="game-progress">1 / 25</span>
+        </div>
+        <div class="game-container" id="game-container">
+            <!-- سيتم حقن الأسئلة هنا برمجياً -->
+        </div>
+    </div>
+
+    <!-- نافذة الملاحظات السريعة -->
+    <div class="overlay" id="feedback-modal">
+        <div class="modal">
+            <div class="modal-icon" id="feedback-icon"></div>
+            <h2 id="feedback-title" style="font-size: 2.5rem; font-weight: 900;">إجابة صحيحة!</h2>
+        </div>
+    </div>
+
+    <!-- الفوتر -->
+    <footer class="footer-main" id="main-footer">
+        <p>جميع الحقوق محفوظة &copy; | دروس وألعاب تعليمية</p>
+        <p class="designer">الأستاذة / دَالْيَا السَّايِح - 01030866428</p>
+    </footer>
+
+    <!-- زر الواتساب -->
+    <a href="https://wa.me/201030866428" class="whatsapp-float" target="_blank" title="تواصل معنا">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.656.843 5.12 2.26 7.15L.626 24l5.01-1.61c1.983 1.25 4.27 1.91 6.395 1.91 6.646 0 12.03-5.385 12.03-12.031S18.677 0 12.031 0zm6.544 17.202c-.273.766-1.58 1.464-2.185 1.503-.56.035-1.28.23-4.085-.86-3.39-1.32-5.59-4.78-5.736-4.97-.145-.19-1.37-1.82-1.37-3.475 0-1.655.857-2.47 1.164-2.8.307-.33.67-.413.89-.413.22 0 .44 0 .633.01.205.01.482-.08.736.53.264.634.904 2.203.984 2.366.08.163.133.353.033.553-.1.2-.153.326-.307.506-.154.18-.32.38-.453.506-.153.153-.314.316-.134.626.18.31.8 1.32 1.71 2.13.176.157.363.31.558.45 1.05.76 1.83 1.05 2.13 1.18.3.13.474.11.652-.09.18-.205.766-.893.97-1.2.204-.307.41-.256.69-.153.28.103 1.77.836 2.074.99.304.153.506.23.582.356.076.126.076.73-.197 1.496z"/>
+        </svg>
+    </a>
+
+<script>
+    const LESSON_NAME = "الدراسات الاجتماعية: النظم البيئية المائية في قارتي آسيا وأوروبا - الصف الثاني الإعدادي";
+    const allGamesData = [
+    {
+        "id": "mcq_1",
+        "title": "اختيار من متعدد",
+        "type": "mcq",
+        "desc": "أسئلة اختيار من متعدد حول النظم البيئية المائية في قارتي آسيا وأوروبا",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><polygon points=\"11 5 6 9 2 9 2 15 6 15 11 19 11 5\"></polygon><path d=\"M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07\"></path></svg>",
+        "questions": [
+            {
+                "q": "تتسم النظم البيئية المائية في آسيا وأوروبا بـ:",
+                "options": [
+                    "خلوها من الكائنات",
+                    "ملوحتها الشديدة فقط",
+                    "تجمدها الدائم",
+                    "تنوعها البيولوجي"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "تتميز أنهار آسيا بأنها أكثر تنوعًا بيولوجيًا من أنهار:",
+                "options": [
+                    "أستراليا",
+                    "أمريكا الجنوبية",
+                    "أوروبا",
+                    "إفريقيا"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "يرجع التنوع البيولوجي الكبير لأنهار آسيا إلى:",
+                "options": [
+                    "تنوع المناخ واتساع البيئات المائية الدافئة",
+                    "قلة الأنهار",
+                    "قلة الأمطار",
+                    "انخفاض الحرارة"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "من كائنات الأنهار الآسيوية:",
+                "options": [
+                    "طيور البطريق",
+                    "السلاحف المائية العذبة والتماسيح والدلافين النهرية",
+                    "الحيتان الزرقاء",
+                    "الدببة القطبية"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "يُعد نهر ... في آسيا ثالث أنهار العالم من حيث التنوع البيولوجي:",
+                "options": [
+                    "اليانجتسي",
+                    "ميكونج",
+                    "السند",
+                    "الجانج"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "يُعد نهر ... مركزًا رئيسيًا للحفاظ على التنوع البيولوجي في أوروبا:",
+                "options": [
+                    "الراين",
+                    "الفولجا",
+                    "السين",
+                    "الدانوب"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "من المحميات الطبيعية في أوروبا:",
+                "options": [
+                    "محمية دلتا الدانوب",
+                    "محمية رأس محمد",
+                    "محمية نبق",
+                    "محمية الزرانيق"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "من التهديدات التي تواجه الكائنات الحية في أنهار آسيا وأوروبا:",
+                "options": [
+                    "المحميات الطبيعية",
+                    "زيادة الغابات",
+                    "تحسين جودة المياه",
+                    "بناء السدود ومحطات توليد الطاقة والصيد الجائر والتلوث"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "من الأنهار التي تدهورت بسبب التهديدات:",
+                "options": [
+                    "هوانج هو في الصين والسين في فرنسا",
+                    "ميكونج",
+                    "الأمازون",
+                    "الدانوب"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "تحصل البحيرات العذبة على مياهها من:",
+                "options": [
+                    "السيول المالحة",
+                    "المحيطات",
+                    "مياه البحر فقط",
+                    "الأنهار والأمطار والمياه الجوفية وذوبان الجليد"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "تساهم البحيرات العذبة بدور مهم في:",
+                "options": [
+                    "تلوث البيئة",
+                    "الحفاظ على التوازن البيئي في المناطق المجاورة",
+                    "زيادة الملوحة",
+                    "زيادة التصحر"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "تقع بحيرة بيكال في قارة:",
+                "options": [
+                    "أوروبا",
+                    "آسيا",
+                    "إفريقيا",
+                    "أمريكا الشمالية"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "تُعد بحيرة بيكال:",
+                "options": [
+                    "أكبر بحيرة مالحة",
+                    "أصغر بحيرة في آسيا",
+                    "بحيرة صناعية",
+                    "أعمق بحيرة في العالم"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "يُطلق على بحيرة بيكال:",
+                "options": [
+                    "مثلث المرجان",
+                    "جوهرة أوروبا",
+                    "لؤلؤة سيبيريا",
+                    "سقف العالم"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أدرجت ... بحيرة بيكال على قائمة التراث العالمي:",
+                "options": [
+                    "اليونسكو",
+                    "الأمم المتحدة للتجارة",
+                    "منظمة الصحة العالمية",
+                    "الفاو"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكبر بحيرة عذبة في قارة أوروبا:",
+                "options": [
+                    "بحيرة جنيف",
+                    "بحيرة بلكاش",
+                    "بحيرة لادوجا",
+                    "بحيرة بيكال"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "تُعد بحيرة لادوجا محطة رئيسية لـ:",
+                "options": [
+                    "الحيتان",
+                    "السفن التجارية فقط",
+                    "الطيور المهاجرة",
+                    "الشعاب المرجانية"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "تعاني بحيرة لادوجا من:",
+                "options": [
+                    "الجفاف التام",
+                    "الملوحة الشديدة",
+                    "التجمد الدائم",
+                    "التلوث والصيد الجائر"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "تُعد ... أولى قارات العالم من حيث مساحة الأراضي الرطبة:",
+                "options": [
+                    "أستراليا",
+                    "آسيا",
+                    "إفريقيا",
+                    "أوروبا"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "تنتشر الأراضي الرطبة في آسيا في جنوب شرق آسيا وإقليم منشوريا و:",
+                "options": [
+                    "إيران",
+                    "شمال سيبيريا",
+                    "الهند",
+                    "شبه الجزيرة العربية"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "تتركز الأراضي الرطبة في أوروبا في:",
+                "options": [
+                    "الجنوب",
+                    "الشمال خاصة الدول الإسكندنافية",
+                    "الوسط فقط",
+                    "الغرب فقط"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "من الدول الإسكندنافية التي تتركز بها الأراضي الرطبة:",
+                "options": [
+                    "ألمانيا وبولندا",
+                    "فرنسا وإسبانيا",
+                    "إيطاليا واليونان",
+                    "السويد وفنلندا والنرويج"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "عندما تتدهور الأراضي الرطبة فإنها تطلق كميات كبيرة من:",
+                "options": [
+                    "الأملاح",
+                    "الغازات المسببة للاحتباس الحراري",
+                    "الأكسجين",
+                    "المياه العذبة"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "من البحار المفتوحة المتصلة بالمحيط:",
+                "options": [
+                    "الخليج العربي",
+                    "البحر المتوسط",
+                    "البحر الأسود",
+                    "بحر العرب وبحر الشمال"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "من البحار شبه المغلقة المتصلة بالمحيط بممر مائي ضيق:",
+                "options": [
+                    "بحر الشمال",
+                    "البحر المتوسط والخليج العربي",
+                    "المحيط الهندي",
+                    "بحر العرب"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "من العوامل المؤثرة في التنوع البيولوجي للبحار:",
+                "options": [
+                    "اللغة",
+                    "درجات الحرارة ونسبة الملوحة وكمية مياه الأنهار ومدى الاتصال بالمحيط",
+                    "الحدود السياسية",
+                    "عدد السكان"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "البحار ... أكثر ثراء في التنوع البيولوجي:",
+                "options": [
+                    "المفتوحة",
+                    "المغلقة تمامًا",
+                    "المتجمدة",
+                    "شبه المغلقة"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "يتسم البحر المتوسط بتنوع بيولوجي كبير لـ:",
+                "options": [
+                    "ملوحته الشديدة",
+                    "اتساعه الكبير",
+                    "تجمده",
+                    "كثرة الأنهار العذبة التي تصب فيه"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "تزيد الأنهار العذبة التي تصب في البحر المتوسط في الجزء ... منه:",
+                "options": [
+                    "الشرقي",
+                    "الغربي",
+                    "الجنوبي",
+                    "الشمالي"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "من التهديدات التي تواجه البحر المتوسط:",
+                "options": [
+                    "التلوث بمياه الصرف والنفايات البلاستيكية وضيق اتصاله بالأطلنطي",
+                    "زيادة الأسماك",
+                    "كثرة المحميات",
+                    "اتساعه"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "يُعد ... أكبر خليج في العالم:",
+                "options": [
+                    "خليج عدن",
+                    "الخليج العربي",
+                    "خليج المكسيك",
+                    "خليج البنغال"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "يحتوي خليج البنغال على:",
+                "options": [
+                    "شعاب مرجانية فقط",
+                    "ثروة سمكية هائلة",
+                    "بترول فقط",
+                    "جليد دائم"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "تنمو الشعاب المرجانية على سواحل المناطق المدارية بين دائرتي عرض:",
+                "options": [
+                    "٦٠° شمالًا وجنوبًا",
+                    "٣٠° شمالًا وجنوبًا",
+                    "٤٥° جنوبًا فقط",
+                    "١٠° شمالًا فقط"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "تختفي الشعاب المرجانية من قارة:",
+                "options": [
+                    "إفريقيا",
+                    "أستراليا",
+                    "أوروبا",
+                    "آسيا"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "تظهر الشعاب المرجانية في آسيا على سواحل:",
+                "options": [
+                    "البحر الأسود",
+                    "شمال سيبيريا",
+                    "جنوب وجنوب شرق آسيا",
+                    "بحر الشمال"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "تُعرف منطقة الشعاب في جنوب شرق آسيا باسم:",
+                "options": [
+                    "لؤلؤة سيبيريا",
+                    "مثلث المرجان",
+                    "الهلال الخصيب",
+                    "سقف العالم"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "توجد الشعاب المرجانية أيضًا في بحر العرب والبحر الأحمر و:",
+                "options": [
+                    "الخليج العربي",
+                    "بحر الشمال",
+                    "البحر الأسود",
+                    "بحر البلطيق"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "تتعرض الشعاب المرجانية للتدهور خاصة في مناطق:",
+                "options": [
+                    "الغابات",
+                    "الصحاري",
+                    "الجبال",
+                    "التجمعات السكانية"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "تؤكد التقارير الدولية أن ارتفاع حرارة المياه بمقدار ... سيؤدي لخسارة كبيرة للشعاب:",
+                "options": [
+                    "١٠ درجات",
+                    "٥ درجات",
+                    "١,٥ درجة مئوية",
+                    "٢٠ درجة"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "يوجد في قارة آسيا نحو ... مساحة المانجروف في العالم:",
+                "options": [
+                    "نصف",
+                    "ثلث",
+                    "عُشر",
+                    "ربع"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "تنتشر أشجار المانجروف بكثافة عالية في سواحل:",
+                "options": [
+                    "شمال أوروبا",
+                    "بحر الشمال",
+                    "سيبيريا",
+                    "جنوب وجنوب شرق آسيا"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "يختفي نظام المانجروف تمامًا من سواحل قارة:",
+                "options": [
+                    "أوروبا",
+                    "آسيا",
+                    "أمريكا الجنوبية",
+                    "إفريقيا"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "تُعد قارة آسيا من أكثر قارات العالم تعرضًا لـ:",
+                "options": [
+                    "البراكين فقط",
+                    "الكوارث الطبيعية",
+                    "الجفاف التام",
+                    "الزلازل فقط"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "من أكثر الكوارث الطبيعية حدوثًا في آسيا:",
+                "options": [
+                    "الانهيارات الجليدية",
+                    "العواصف الرملية",
+                    "الفيضانات والأعاصير",
+                    "البراكين"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "تُعرف الأعاصير المدارية في جنوب وجنوب شرق وشرق آسيا باسم:",
+                "options": [
+                    "التيفون",
+                    "السيكلون فقط",
+                    "الهاريكين",
+                    "التورنادو"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "حركة سريعة لمساحات كبيرة من الجليد تنحدر من المرتفعات إلى المنخفضات:",
+                "options": [
+                    "الفيضانات",
+                    "الزلازل",
+                    "الانهيارات الجليدية",
+                    "الأعاصير"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "تحدث الانهيارات الجليدية بوضوح في جبال:",
+                "options": [
+                    "البحر الأحمر",
+                    "أطلس",
+                    "أورال",
+                    "الألب والهيمالايا"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "تصل سرعة الانهيارات الجليدية إلى أكثر من:",
+                "options": [
+                    "١٠ كم/الساعة",
+                    "٥٠ كم/الساعة",
+                    "٣٠٠ كم/الساعة",
+                    "١٠٠ كم/الساعة"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "تهدف أوروبا لزراعة ... شجرة بحلول عام ٢٠٣٠م:",
+                "options": [
+                    "٣ ملايين",
+                    "٣ مليارات",
+                    "٣٠ مليارًا",
+                    "٣٠٠ ألف"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أطلقت الصين مبادرة لإصلاح النظم البيئية تضمنت ٧٥ مشروعًا باسم:",
+                "options": [
+                    "برشلونة",
+                    "الحزام والطريق",
+                    "شان شوي",
+                    "الاتفاق الأخضر"
+                ],
+                "ans": 2
+            }
+        ]
+    },
+    {
+        "id": "bubbles_2",
+        "title": "الفقاعات المتساقطة",
+        "type": "bubbles",
+        "desc": "التقط الفقاعة ذات الإجابة الصحيحة عن النظم البيئية المائية في قارتي آسيا وأوروبا",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M21.21 15.89A10 10 0 1 1 8 2.83\"></path><path d=\"M22 12A10 10 0 0 0 12 2v10z\"></path></svg>",
+        "questions": [
+            {
+                "q": "نهر آسيوي ثالث عالميًا في التنوع؟",
+                "options": [
+                    "الجانج",
+                    "ميكونج",
+                    "السند",
+                    "اليانجتسي"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "نهر أوروبي مركز للتنوع البيولوجي؟",
+                "options": [
+                    "السين",
+                    "التايمز",
+                    "الراين",
+                    "الدانوب"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "محمية في أوروبا؟",
+                "options": [
+                    "نبق",
+                    "الزرانيق",
+                    "دلتا الدانوب",
+                    "رأس محمد"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "نهر صيني تدهور؟",
+                "options": [
+                    "آمور",
+                    "ميكونج",
+                    "اليانجتسي",
+                    "هوانج هو"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "نهر فرنسي تدهور؟",
+                "options": [
+                    "السين",
+                    "الراين",
+                    "اللوار",
+                    "الدانوب"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أعمق بحيرة في العالم؟",
+                "options": [
+                    "لادوجا",
+                    "فيكتوريا",
+                    "بلكاش",
+                    "بيكال"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "لقب بحيرة بيكال؟",
+                "options": [
+                    "لؤلؤة سيبيريا",
+                    "جوهرة أوروبا",
+                    "سقف العالم",
+                    "مثلث المرجان"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكبر بحيرة عذبة في أوروبا؟",
+                "options": [
+                    "جنيف",
+                    "لادوجا",
+                    "بيكال",
+                    "كومو"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "محطة للطيور المهاجرة في أوروبا؟",
+                "options": [
+                    "بحيرة بيكال",
+                    "الخليج العربي",
+                    "بحيرة لادوجا",
+                    "بحر العرب"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "القارة الأولى في الأراضي الرطبة؟",
+                "options": [
+                    "آسيا",
+                    "أمريكا",
+                    "إفريقيا",
+                    "أوروبا"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "إقليم صيني به أراضٍ رطبة؟",
+                "options": [
+                    "منشوريا",
+                    "سيتشوان",
+                    "التبت",
+                    "يونان"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "دولة إسكندنافية بها أراضٍ رطبة؟",
+                "options": [
+                    "إسبانيا",
+                    "فنلندا",
+                    "اليونان",
+                    "إيطاليا"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "دلتا أوروبية بها أراضٍ رطبة؟",
+                "options": [
+                    "ميكونج",
+                    "الدانوب",
+                    "النيل",
+                    "الجانج"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "ما تطلقه الأراضي الرطبة المتدهورة؟",
+                "options": [
+                    "غازات الاحتباس الحراري",
+                    "الأكسجين",
+                    "الأملاح",
+                    "المياه"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "بحر مفتوح متصل بالمحيط؟",
+                "options": [
+                    "البحر الأسود",
+                    "البحر المتوسط",
+                    "الخليج العربي",
+                    "بحر العرب"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "بحر شبه مغلق؟",
+                "options": [
+                    "بحر الصين الجنوبي",
+                    "بحر الشمال",
+                    "بحر العرب",
+                    "البحر المتوسط"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "بحار أكثر تنوعًا بيولوجيًا؟",
+                "options": [
+                    "شبه المغلقة",
+                    "المفتوحة",
+                    "المغلقة",
+                    "المتجمدة"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "محيط يتصل به المتوسط بممر ضيق؟",
+                "options": [
+                    "الأطلنطي",
+                    "القطبي",
+                    "الهادي",
+                    "الهندي"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "ملوث بلاستيكي يهدد المتوسط؟",
+                "options": [
+                    "النفايات البلاستيكية",
+                    "الرمال",
+                    "الأسماك",
+                    "الطحالب"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكبر خليج في العالم؟",
+                "options": [
+                    "العربي",
+                    "عدن",
+                    "المكسيك",
+                    "البنغال"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "ثروة يحتويها خليج البنغال؟",
+                "options": [
+                    "سمكية",
+                    "بترولية فقط",
+                    "مرجانية فقط",
+                    "جليدية"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "دائرتا عرض الشعاب المرجانية؟",
+                "options": [
+                    "٤٥° فقط",
+                    "١٠° فقط",
+                    "٣٠° شمالًا وجنوبًا",
+                    "٦٠° شمالًا وجنوبًا"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "قارة تختفي منها الشعاب؟",
+                "options": [
+                    "إفريقيا",
+                    "أستراليا",
+                    "آسيا",
+                    "أوروبا"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "اسم منطقة الشعاب بجنوب شرق آسيا؟",
+                "options": [
+                    "مثلث المرجان",
+                    "الهلال الخصيب",
+                    "سقف العالم",
+                    "حزام النار"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "خليج به شعاب مرجانية؟",
+                "options": [
+                    "بوثنيا",
+                    "البلطيق",
+                    "بسكاي",
+                    "العربي"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "ارتفاع الحرارة المهدد للشعاب؟",
+                "options": [
+                    "٥ درجات",
+                    "٢٠ درجة",
+                    "١,٥ درجة",
+                    "١٠ درجات"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "نسبة مانجروف آسيا عالميًا؟",
+                "options": [
+                    "النصف",
+                    "العُشر",
+                    "الربع",
+                    "الثلث"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "قارة يختفي منها المانجروف؟",
+                "options": [
+                    "آسيا",
+                    "إفريقيا",
+                    "أستراليا",
+                    "أوروبا"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "خليج به مانجروف؟",
+                "options": [
+                    "عمان",
+                    "فنلندا",
+                    "البلطيق",
+                    "بوثنيا"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "اسم الأعاصير المدارية في آسيا؟",
+                "options": [
+                    "الخماسين",
+                    "السموم",
+                    "التورنادو",
+                    "التيفون"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "مناطق تتعرض للتيفون؟",
+                "options": [
+                    "جنوب وشرق آسيا",
+                    "سيبيريا",
+                    "شمال أوروبا",
+                    "وسط آسيا"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "جبال أوروبية بها انهيارات جليدية؟",
+                "options": [
+                    "القوقاز",
+                    "أورال",
+                    "الألب",
+                    "البرانس"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "جبال آسيوية بها انهيارات جليدية؟",
+                "options": [
+                    "طوروس",
+                    "الهيمالايا",
+                    "زاجروس",
+                    "أورال"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "سرعة الانهيارات الجليدية تتجاوز؟",
+                "options": [
+                    "١٠ كم/س",
+                    "٥٠ كم/س",
+                    "١٠٠ كم/س",
+                    "٣٠٠ كم/س"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "اتفاقية أوروبية لحماية البيئة البحرية؟",
+                "options": [
+                    "مونتريال",
+                    "باريس",
+                    "برشلونة",
+                    "كيوتو"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "مبادرات أوروبية لاستعادة التنوع البيولوجي؟",
+                "options": [
+                    "الحزام والطريق",
+                    "شان شوي",
+                    "الاتفاق الأخضر",
+                    "أجندة ٢٠٦٣"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "عام قانون استعادة النظم البيئية الأوروبي؟",
+                "options": [
+                    "٢٠٠٥م",
+                    "٢٠٣٠م",
+                    "٢٠٢٤م",
+                    "٢٠١٥م"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "عدد الأشجار المستهدفة أوروبيًا؟",
+                "options": [
+                    "٣ مليارات",
+                    "٣٠٠ ألف",
+                    "٣ ملايين",
+                    "مليار"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "دولة أصلحت الأراضي المتدهورة؟",
+                "options": [
+                    "إيران",
+                    "العراق",
+                    "السعودية",
+                    "الكويت"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "نهر أعادت الهند تأهيله؟",
+                "options": [
+                    "السند",
+                    "ميكونج",
+                    "براهمابوترا",
+                    "الجانج"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "مبادرة صينية بيئية؟",
+                "options": [
+                    "الاتفاق الأخضر",
+                    "رامسار",
+                    "شان شوي",
+                    "برشلونة"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "عدد مشروعات شان شوي؟",
+                "options": [
+                    "٧٥",
+                    "٥٠",
+                    "٢٥",
+                    "١٠٠"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "عقد الماء من أجل الحياة؟",
+                "options": [
+                    "٢٠٢٠-٢٠٣٠م",
+                    "٢٠٠٥-٢٠١٥م",
+                    "١٩٩٠-٢٠٠٠م",
+                    "٢٠١٨-٢٠٢٨م"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "عقد الماء من أجل التنمية المستدامة؟",
+                "options": [
+                    "٢٠٣٠-٢٠٤٠م",
+                    "٢٠١٨-٢٠٢٨م",
+                    "٢٠٠٠-٢٠١٠م",
+                    "٢٠٠٥-٢٠١٥م"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "هدف التنمية المستدامة للمحيطات؟",
+                "options": [
+                    "الهدف ١٤",
+                    "الهدف ٢٠",
+                    "الهدف ١",
+                    "الهدف ٧"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "كائن نهري آسيوي؟",
+                "options": [
+                    "الدب القطبي",
+                    "الدلفين النهري",
+                    "الحوت الأزرق",
+                    "البطريق"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "زاحف في أنهار آسيا؟",
+                "options": [
+                    "الحرباء",
+                    "التمساح",
+                    "الضب",
+                    "السحلية الصحراوية"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "ما يدمره الإعصار في البحر؟",
+                "options": [
+                    "الصحاري",
+                    "الأنهار الجليدية",
+                    "الشعاب المرجانية",
+                    "الجبال"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "ما يدفنه الانهيار الجليدي؟",
+                "options": [
+                    "الغابات",
+                    "الشعاب",
+                    "الصحاري",
+                    "البحار"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "مصدر مياه البحيرات العذبة؟",
+                "options": [
+                    "مياه البحر",
+                    "ذوبان الجليد",
+                    "الآبار المالحة",
+                    "المحيطات"
+                ],
+                "ans": 1
+            }
+        ]
+    },
+    {
+        "id": "shooting_3",
+        "title": "التنشين والاصطياد",
+        "type": "shooting",
+        "desc": "صوّب نحو الكلمة الصحيحة لإكمال عبارات النظم البيئية المائية في قارتي آسيا وأوروبا",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><circle cx=\"12\" cy=\"12\" r=\"6\"></circle><circle cx=\"12\" cy=\"12\" r=\"2\"></circle></svg>",
+        "questions": [
+            {
+                "q": "أكمل: «وهب الله قارتي آسيا وأوروبا عديدًا من النظم البيئية المائية سواء العذبة أو ...».",
+                "options": [
+                    "الصناعية",
+                    "المالحة",
+                    "الجافة",
+                    "المتجمدة"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أكمل: «تسهم الثروات الطبيعية في النظم المائية في دعم استدامة الحياة و... على البيئة».",
+                "options": [
+                    "الحفاظ",
+                    "القضاء",
+                    "الضغط",
+                    "التأثير السلبي"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «تواجه النظم المائية عديدًا من التهديدات ...».",
+                "options": [
+                    "المتزايدة",
+                    "المتناقصة",
+                    "المعدومة",
+                    "البسيطة"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «البيئات المائية الدافئة موطن لعديد من الكائنات مثل السلاحف المائية العذبة و...».",
+                "options": [
+                    "البطاريق",
+                    "الفقمات",
+                    "التماسيح",
+                    "الدببة"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «يُعد نهر الدانوب مركزًا رئيسيًا للحفاظ على التنوع البيولوجي خاصة في محمية ... الدانوب».",
+                "options": [
+                    "دلتا",
+                    "وادي",
+                    "منبع",
+                    "سهل"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «من تهديدات الأنهار التلوث الناتج عن الصرف الصحي والزراعي و...».",
+                "options": [
+                    "الصناعي",
+                    "السياحي",
+                    "العسكري",
+                    "التجاري"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «تؤثر التغيرات المناخية على فترات الفيضان و...».",
+                "options": [
+                    "الزراعة",
+                    "الجفاف",
+                    "الصيد",
+                    "الملاحة"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أكمل: «تختلف البحيرات العذبة في مساحتها وتنوعها ...».",
+                "options": [
+                    "السياسي",
+                    "السكاني",
+                    "البيولوجي",
+                    "اللغوي"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «تحصل البحيرات العذبة على المياه من الأنهار والأمطار والمياه الجوفية أو ذوبان ...».",
+                "options": [
+                    "الجليد",
+                    "الأملاح",
+                    "الصخور",
+                    "الرمال"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «تُعد بحيرة بيكال من أكبر الخزانات الطبيعية للمياه ... على سطح الأرض».",
+                "options": [
+                    "العذبة",
+                    "المعدنية",
+                    "الجوفية",
+                    "المالحة"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «تُعد بحيرة بيكال واحدة من أنقى ... في العالم».",
+                "options": [
+                    "البحيرات",
+                    "البحار",
+                    "المحيطات",
+                    "الأنهار"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «تضم بحيرة بيكال آلاف الأنواع من الكائنات ...».",
+                "options": [
+                    "المهاجرة",
+                    "الحية",
+                    "الصناعية",
+                    "المنقرضة"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أكمل: «تتميز بحيرة لادوجا بتنوعها ...».",
+                "options": [
+                    "المعدني",
+                    "السكاني",
+                    "البيولوجي",
+                    "الثقافي"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «تنتشر الأراضي الرطبة في جنوب شرق آسيا وإقليم منشوريا شمال شرق ...».",
+                "options": [
+                    "اليابان",
+                    "روسيا",
+                    "الهند",
+                    "الصين"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "أكمل: «تظهر الأراضي الرطبة في أوروبا بصورة أقل في ... القارة».",
+                "options": [
+                    "غرب",
+                    "شمال",
+                    "وسط",
+                    "جنوب"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «تتعرض الأراضي الرطبة للتجفيف أو تصريف مياهها لأغراض ...».",
+                "options": [
+                    "السياحة",
+                    "الصناعة",
+                    "الملاحة",
+                    "الزراعة"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "أكمل: «تطلق الأراضي الرطبة المتدهورة غازات تؤثر سلبًا على المناخ ...».",
+                "options": [
+                    "القطبي",
+                    "المحلي فقط",
+                    "العالمي",
+                    "الصحراوي"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «تضم قارتا آسيا وأوروبا مجموعة متنوعة من البحار و...».",
+                "options": [
+                    "الهضاب",
+                    "الخلجان",
+                    "الجبال",
+                    "الصحاري"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أكمل: «البحر شبه المغلق يتصل بالمحيط بممر مائي ...».",
+                "options": [
+                    "ضيق",
+                    "عميق جدًا",
+                    "طويل جدًا",
+                    "واسع"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «يتأثر التنوع البيولوجي في البحار بنسبة ... وكمية مياه الأنهار».",
+                "options": [
+                    "الجبال",
+                    "السكان",
+                    "الصخور",
+                    "الملوحة"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "أكمل: «يمثل ضيق اتصال المتوسط بالأطلنطي تهديدًا كبيرًا للكائنات ... به».",
+                "options": [
+                    "الجوية",
+                    "البرية",
+                    "الصحراوية",
+                    "البحرية"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "أكمل: «يُعد خليج البنغال من أهم النظم البيئية البحرية ...».",
+                "options": [
+                    "القطبية",
+                    "المعتدلة",
+                    "المدارية",
+                    "الصحراوية"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «يعيش في خليج البنغال العديد من الثدييات ...».",
+                "options": [
+                    "الصحراوية",
+                    "البحرية",
+                    "البرية",
+                    "القطبية"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أكمل: «تختفي الشعاب المرجانية من أوروبا لوقوعها خارج المنطقة ...».",
+                "options": [
+                    "المدارية",
+                    "المعتدلة",
+                    "الصحراوية",
+                    "القطبية"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «تُعد منطقة مثلث المرجان من أغنى مناطق العالم بالحياة ...».",
+                "options": [
+                    "البرية",
+                    "الجوية",
+                    "النباتية",
+                    "البحرية"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "أكمل: «ارتفاع حرارة المياه سيؤدي إلى اختفاء عدد كبير من الكائنات الحية ... بالشعاب».",
+                "options": [
+                    "المهاجرة",
+                    "المرتبطة",
+                    "المنفصلة",
+                    "البعيدة"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أكمل: «تنتشر أشجار المانجروف بكثافة عالية و... كبيرة في جنوب شرق آسيا».",
+                "options": [
+                    "ارتفاعات",
+                    "مساحات صغيرة",
+                    "أعداد قليلة",
+                    "انخفاضات"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «توجد مناطق متفرقة من المانجروف على سواحل الخليج العربي وخليج عمان والبحر ...».",
+                "options": [
+                    "المتوسط",
+                    "الأسود",
+                    "الأحمر",
+                    "الشمال"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «يؤدي تدهور النظم البيئية إلى زيادة الأزمات المناخية والصحية و...».",
+                "options": [
+                    "السياسية",
+                    "الغذائية",
+                    "الرياضية",
+                    "العسكرية"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أكمل: «تتعرض النظم البيئية لتهديدات بشرية مثل الإفراط في استغلال مواردها ... والتلوث».",
+                "options": [
+                    "الصناعية",
+                    "الطبيعية",
+                    "البشرية",
+                    "الثقافية"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أكمل: «الأعاصير ظاهرة مناخية متطرفة تنتج عن دوامات ... تتحرك بسرعة شديدة».",
+                "options": [
+                    "رملية",
+                    "مائية",
+                    "هوائية",
+                    "جليدية"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «تتحرك الأعاصير من سطح المحيط إلى ...».",
+                "options": [
+                    "اليابس",
+                    "البحر",
+                    "السماء",
+                    "القطب"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «تتسبب الأمطار الغزيرة المصاحبة للإعصار في حدوث فيضانات ...».",
+                "options": [
+                    "هادئة",
+                    "نادرة",
+                    "عنيفة",
+                    "بسيطة"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «من التأثيرات السلبية للأعاصير تدهور التربة واقتلاع ...».",
+                "options": [
+                    "الصخور",
+                    "الجبال",
+                    "الأشجار",
+                    "الجليد"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «تدمر الأعاصير موائل الحيوانات مما يؤدي إلى فقدان التنوع ...».",
+                "options": [
+                    "الاقتصادي",
+                    "الثقافي",
+                    "البيولوجي",
+                    "السكاني"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «تدمر الأعاصير البنية الطبيعية للشعاب ...».",
+                "options": [
+                    "المرجانية",
+                    "الجليدية",
+                    "الصخرية",
+                    "الرملية"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «تؤدي الانهيارات الجليدية إلى نفوق أعداد كبيرة من الحيوانات ...».",
+                "options": [
+                    "المنزلية",
+                    "الأليفة",
+                    "البحرية",
+                    "البرية"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "أكمل: «من التأثيرات السلبية للانهيارات الجليدية تدمير البنية ...».",
+                "options": [
+                    "التحتية",
+                    "الفوقية",
+                    "الاجتماعية",
+                    "الثقافية"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «طورت أوروبا أنظمة معالجة مياه الصرف ... للحد من تلوث البحار».",
+                "options": [
+                    "الصحي",
+                    "الصناعي",
+                    "المنزلي فقط",
+                    "الزراعي"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «وقعت أوروبا اتفاقية ... لحماية البيئة البحرية والساحلية».",
+                "options": [
+                    "برشلونة",
+                    "مدريد",
+                    "باريس",
+                    "كيوتو"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «يستهدف الاتفاق الأخضر الأوروبي استعادة التنوع البيولوجي وخفض انبعاثات ثاني أكسيد ...».",
+                "options": [
+                    "النيتروجين",
+                    "الكربون",
+                    "الكبريت",
+                    "الأوزون"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أكمل: «أصدرت أوروبا قانونًا عام ٢٠٢٤م لاستعادة النظم البيئية بإعادة الأنهار لوضعها ...».",
+                "options": [
+                    "المعدل",
+                    "الجاف",
+                    "الطبيعي",
+                    "الصناعي"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «تبنت السعودية مبادرات لإصلاح الأراضي المتدهورة وإعادة الحياة ...».",
+                "options": [
+                    "البرية",
+                    "الصناعية",
+                    "البحرية",
+                    "الحضرية"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «قامت الهند بجهود لإعادة تأهيل نهر ... لتقليل التلوث».",
+                "options": [
+                    "براهمابوترا",
+                    "السند",
+                    "ميكونج",
+                    "الجانج"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "أكمل: «أطلقت الصين مبادرة شان شوي التي تضمنت ... مشروعًا».",
+                "options": [
+                    "١٠٠",
+                    "٢٥",
+                    "٥٠",
+                    "٧٥"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "أكمل: «أعلنت الأمم المتحدة العقد الدولي للعمل الماء من أجل ...».",
+                "options": [
+                    "التجارة",
+                    "الحياة",
+                    "السياحة",
+                    "الصناعة"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أكمل: «يتعلق الهدف ١٤ من أهداف التنمية المستدامة بالحفاظ على المحيطات والبحار والموارد ...».",
+                "options": [
+                    "الصحراوية",
+                    "البحرية",
+                    "البرية",
+                    "الجوية"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أكمل: «تُعد الفيضانات و... الأكثر حدوثًا في آسيا».",
+                "options": [
+                    "العواصف الرملية",
+                    "الزلازل",
+                    "الأعاصير",
+                    "البراكين"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «تهدف أوروبا لزراعة ٣ مليارات شجرة بحلول عام ...».",
+                "options": [
+                    "٢٠٥٠م",
+                    "٢٠٢٥م",
+                    "٢٠٦٣م",
+                    "٢٠٣٠م"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "أكمل: «يوجد في آسيا نحو ... مساحة المانجروف في العالم».",
+                "options": [
+                    "نصف",
+                    "ربع",
+                    "خمس",
+                    "ثلث"
+                ],
+                "ans": 0
+            }
+        ]
+    },
+    {
+        "id": "true_false_4",
+        "title": "صح أم خطأ",
+        "type": "true_false",
+        "desc": "حدد صحة العبارات المتعلقة بـ النظم البيئية المائية في قارتي آسيا وأوروبا",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M22 11.08V12a10 10 0 1 1-5.93-9.14\"></path><polyline points=\"22 4 12 14.01 9 11.01\"></polyline></svg>",
+        "questions": [
+            {
+                "q": "تتميز أنهار آسيا بأنها أكثر تنوعًا بيولوجيًا من أنهار أوروبا.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "يرجع تنوع أنهار آسيا إلى قلة البيئات المائية الدافئة.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "يُعد نهر ميكونج ثالث أنهار العالم من حيث التنوع البيولوجي.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "يُعد نهر الدانوب مركزًا للتنوع البيولوجي في آسيا.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "محمية دلتا الدانوب من المحميات الأوروبية.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "بناء السدود والصيد الجائر من تهديدات الأنهار.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "تدهور نهر هوانج هو في الصين ونهر السين في فرنسا.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "تحصل البحيرات العذبة على مياهها من مياه البحر فقط.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "تقع بحيرة بيكال في قارة أوروبا.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "بحيرة بيكال أعمق بحيرة في العالم.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "يُطلق على بحيرة بيكال لؤلؤة سيبيريا.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أدرجت اليونسكو بحيرة بيكال على قائمة التراث العالمي.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "بحيرة لادوجا أكبر بحيرة عذبة في آسيا.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "تُعد بحيرة لادوجا محطة رئيسية للطيور المهاجرة.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "تعاني بحيرة لادوجا من التلوث والصيد الجائر.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "تُعد أوروبا أولى قارات العالم في مساحة الأراضي الرطبة.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "تتركز الأراضي الرطبة في أوروبا في الدول الإسكندنافية.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "تطلق الأراضي الرطبة المتدهورة غازات مسببة للاحتباس الحراري.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "بحر العرب وبحر الشمال من البحار المفتوحة.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "البحر المتوسط والخليج العربي من البحار المفتوحة.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "البحار المفتوحة أكثر ثراء في التنوع البيولوجي من شبه المغلقة.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "يتسم البحر المتوسط بتنوع بيولوجي كبير لكثرة الأنهار العذبة التي تصب فيه.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "تزيد الأنهار العذبة التي تصب في المتوسط في الجزء الشرقي منه.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "يُمثل التلوث بالنفايات البلاستيكية تهديدًا للبحر المتوسط.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "خليج البنغال أكبر خليج في العالم.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "يحتوي خليج البنغال على ثروة سمكية هائلة.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "تنمو الشعاب المرجانية بين دائرتي عرض ٦٠° شمالًا وجنوبًا.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "تختفي الشعاب المرجانية من أوروبا.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "تُعرف منطقة الشعاب في جنوب شرق آسيا بمثلث المرجان.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "لا توجد شعاب مرجانية في البحر الأحمر.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "تتعرض الشعاب المرجانية للتدهور خاصة في مناطق التجمعات السكانية.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "ارتفاع حرارة المياه ١,٥ درجة سيؤدي لخسارة كبيرة للشعاب.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "يوجد في آسيا نحو ربع مساحة المانجروف في العالم.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "يختفي نظام المانجروف تمامًا من سواحل أوروبا.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "توجد مناطق من المانجروف على سواحل الخليج العربي.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "تُعد آسيا من أقل القارات تعرضًا للكوارث الطبيعية.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "تُعرف الأعاصير المدارية في آسيا باسم التيفون.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "تتحرك الأعاصير من اليابس إلى المحيط.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "تدمر الأعاصير البنية الطبيعية للشعاب المرجانية.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "تحدث الانهيارات الجليدية في جبال الألب والهيمالايا.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "تصل سرعة الانهيارات الجليدية لأكثر من ٣٠٠ كم/الساعة.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "تؤدي الانهيارات الجليدية إلى دفن مساحات من الغابات.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "وقعت أوروبا اتفاقية برشلونة لحماية البيئة البحرية.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أصدرت أوروبا قانونًا عام ٢٠٢٤م لاستعادة النظم البيئية.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "تهدف أوروبا لزراعة ٣ ملايين شجرة بحلول ٢٠٣٠م.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أعادت الهند تأهيل نهر الجانج لتقليل التلوث.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أطلقت السعودية مبادرة شان شوي.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "تضمنت مبادرة شان شوي الصينية ٧٥ مشروعًا.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "يتعلق الهدف ١٤ من أهداف التنمية المستدامة بالمحيطات والبحار.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "الفيضانات والأعاصير من أكثر الكوارث حدوثًا في آسيا.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            }
+        ]
+    },
+    {
+        "id": "genius_5",
+        "title": "تحدي العباقرة",
+        "type": "genius",
+        "desc": "تحدٍّ سريع للعباقرة: فكّر وفسّر وقارن في النظم البيئية المائية في قارتي آسيا وأوروبا",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9.663 17h4.673M12 3a6 6 0 0 0-6 6c0 1.887.454 2.921 1.5 4.5.5.75 1 1.5 1 2.5h7c0-1 .5-1.75 1-2.5C17.546 11.921 18 10.887 18 9a6 6 0 0 0-6-6z\"></path></svg>",
+        "questions": [
+            {
+                "q": "بم تفسر زيادة التنوع البيولوجي لأنهار آسيا عن أوروبا؟",
+                "options": [
+                    "قلة الأنهار في آسيا",
+                    "انخفاض الحرارة في آسيا",
+                    "كثرة السدود في أوروبا",
+                    "تنوع المناخ واتساع البيئات المائية الدافئة في آسيا"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "ما التهديدات التي تواجه الكائنات الحية في أنهار آسيا وأوروبا؟",
+                "options": [
+                    "تحسين جودة المياه",
+                    "زراعة الأشجار",
+                    "زيادة المحميات",
+                    "بناء السدود ومحطات الطاقة والصيد الجائر والتلوث والتغيرات المناخية"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "ما نتيجة التهديدات التي تواجه الأنهار؟",
+                "options": [
+                    "زيادة التنوع الحيوي",
+                    "زيادة الأسماك",
+                    "تدهور بعض الأنهار مثل هوانج هو والسين",
+                    "نقاء المياه"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "ما دور البحيرات العذبة؟",
+                "options": [
+                    "زيادة الملوحة",
+                    "زيادة التصحر",
+                    "الحفاظ على التوازن البيئي في المناطق المجاورة لها",
+                    "تلويث البيئة"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "بم تفسر إدراج اليونسكو بحيرة بيكال على قائمة التراث العالمي؟",
+                "options": [
+                    "لأنها أعمق بحيرة وأنقاها وتتميز بتنوع بيولوجي كبير",
+                    "لأنها أكبر بحيرة مالحة",
+                    "لأنها في أوروبا",
+                    "لأنها صناعية"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "بم تفسر أهمية بحيرة لادوجا؟",
+                "options": [
+                    "بها شعاب مرجانية",
+                    "أعمق بحيرة في العالم",
+                    "أكبر خليج",
+                    "أكبر بحيرة عذبة في أوروبا ومحطة رئيسية للطيور المهاجرة"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "ما المخاطر التي تتعرض لها الأراضي الرطبة؟",
+                "options": [
+                    "التجفيف أو تصريف مياهها لأغراض الزراعة",
+                    "كثرة الطيور",
+                    "زيادة الأمطار",
+                    "زيادة المحميات"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "ما أثر تدهور الأراضي الرطبة على المناخ العالمي؟",
+                "options": [
+                    "زيادة الأكسجين",
+                    "زيادة الأمطار",
+                    "خفض الحرارة",
+                    "إطلاق كميات كبيرة من غازات الاحتباس الحراري"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "بم تفسر زيادة التنوع البيولوجي في البحار المفتوحة عن شبه المغلقة؟",
+                "options": [
+                    "قلة الأسماك",
+                    "صغر مساحتها",
+                    "ملوحتها الشديدة",
+                    "اتصالها المباشر بالمحيط مما يجدد المياه ويزيد التنوع"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "ما العوامل المؤثرة في التنوع البيولوجي للبحار؟",
+                "options": [
+                    "عمق البحر فقط",
+                    "لون المياه",
+                    "درجة الحرارة ونسبة الملوحة وكمية مياه الأنهار ومدى الاتصال بالمحيط",
+                    "عدد الجزر فقط"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "بم تفسر التنوع البيولوجي الكبير في البحر المتوسط؟",
+                "options": [
+                    "تجمده",
+                    "ملوحته الشديدة",
+                    "اتساعه الهائل",
+                    "كثرة الأنهار العذبة التي تصب فيه خاصة في الجزء الغربي"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "ما التهديدات التي تواجه البحر المتوسط؟",
+                "options": [
+                    "كثرة الأسماك",
+                    "التلوث بمياه الصرف والنفايات البلاستيكية وضيق اتصاله بالأطلنطي",
+                    "اتساعه",
+                    "كثرة المحميات"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "بم تفسر أهمية خليج البنغال؟",
+                "options": [
+                    "أكبر خليج في العالم ومن أهم النظم البحرية المدارية ويحتوي على ثروة سمكية هائلة",
+                    "أعمق بحيرة",
+                    "بلا كائنات",
+                    "به جليد دائم"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "بم تفسر اختفاء الشعاب المرجانية من أوروبا؟",
+                "options": [
+                    "لقلة السكان",
+                    "لكثرة الأنهار",
+                    "لكثرة الأمطار",
+                    "لوقوع أوروبا خارج المنطقة المدارية (بين ٣٠° شمالًا وجنوبًا)"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "بم تفسر تسمية منطقة جنوب شرق آسيا بمثلث المرجان؟",
+                "options": [
+                    "لشكلها الهندسي فقط",
+                    "لأنها من أغنى مناطق العالم بالشعاب المرجانية والحياة البحرية",
+                    "لوجود الجليد",
+                    "لقلة الكائنات"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "ما أثر ارتفاع حرارة المياه على الشعاب المرجانية؟",
+                "options": [
+                    "زيادة نموها",
+                    "زيادة الكائنات",
+                    "خسارة كبيرة لمناطق الشعاب واختفاء الكائنات المرتبطة بها",
+                    "لا تأثير"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "بم تفسر اختفاء المانجروف من سواحل أوروبا؟",
+                "options": [
+                    "لكثرة السكان",
+                    "لأن المانجروف ينمو في الشواطئ المدارية الدافئة وأوروبا في المنطقة المعتدلة",
+                    "لكثرة الشعاب",
+                    "لكثرة الأمطار"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "ما التأثيرات السلبية للأعاصير المدارية؟",
+                "options": [
+                    "فيضانات عنيفة وتدهور التربة واقتلاع الأشجار وتدمير الموائل والشعاب",
+                    "زيادة التنوع",
+                    "خصوبة التربة",
+                    "زيادة الغابات"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "ما التأثيرات السلبية للانهيارات الجليدية؟",
+                "options": [
+                    "تحسين المناخ",
+                    "تكسير الأشجار ودفن الغابات ونفوق الحيوانات وتدمير البنية التحتية",
+                    "زيادة المياه العذبة فقط",
+                    "زيادة الغطاء النباتي"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "ما جهود أوروبا لحماية النظم البيئية؟",
+                "options": [
+                    "ردم السواحل",
+                    "زيادة الصيد",
+                    "معالجة مياه الصرف واتفاقية برشلونة والاتفاق الأخضر وقانون ٢٠٢٤م وزراعة ٣ مليارات شجرة",
+                    "قطع الغابات"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "ما جهود آسيا لحماية النظم البيئية؟",
+                "options": [
+                    "الصيد الجائر",
+                    "زيادة التلوث",
+                    "مبادرات السعودية لإصلاح الأراضي وتأهيل الهند لنهر الجانج ومبادرة شان شوي الصينية",
+                    "بناء السدود فقط"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "ما الهدف من قرارات الأمم المتحدة الخاصة بالمياه؟",
+                "options": [
+                    "النهوض بالتنمية المستدامة والإدارة المتكاملة للموارد المائية",
+                    "تلويث البحار",
+                    "زيادة استهلاك المياه",
+                    "منع الصيد نهائيًا"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "قارن من حيث الموقع: بحيرة بيكال وبحيرة لادوجا:",
+                "options": [
+                    "بيكال في أوروبا",
+                    "كلاهما في آسيا",
+                    "كلاهما في إفريقيا",
+                    "بيكال في آسيا (سيبيريا)، ولادوجا في أوروبا"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "قارن من حيث الخصائص: بحيرة بيكال وبحيرة لادوجا:",
+                "options": [
+                    "كلاهما مالح",
+                    "بيكال أعمق بحيرة في العالم، ولادوجا أكبر بحيرة عذبة في أوروبا",
+                    "بيكال أكبر بحيرة في أوروبا",
+                    "لادوجا أعمق بحيرة في العالم"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "قارن من حيث التنوع البيولوجي: البحار المفتوحة وشبه المغلقة:",
+                "options": [
+                    "لا تنوع في المفتوحة",
+                    "شبه المغلقة أكثر تنوعًا",
+                    "المفتوحة أكثر ثراء في التنوع من شبه المغلقة",
+                    "متساويتان"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "قارن من حيث الأخطار: الأعاصير والانهيارات الجليدية:",
+                "options": [
+                    "كلاهما زلازل",
+                    "الأعاصير في الألب",
+                    "الأعاصير دوامات هوائية من المحيط لليابس، والانهيارات حركة جليد من المرتفعات للمنخفضات",
+                    "الانهيارات في المحيط"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "قارن من حيث المكان: الأعاصير المدارية والانهيارات الجليدية:",
+                "options": [
+                    "كلاهما في أوروبا فقط",
+                    "الأعاصير في الألب",
+                    "الأعاصير في جنوب وشرق آسيا، والانهيارات في الألب والهيمالايا",
+                    "الانهيارات في البنغال"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "ماذا يحدث لو استمر تلوث البحر المتوسط؟",
+                "options": [
+                    "نقاء المياه",
+                    "زيادة الشعاب",
+                    "زيادة الأسماك",
+                    "تهديد كبير للكائنات البحرية وتراجع التنوع البيولوجي"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "ماذا يحدث لو ارتفعت حرارة المياه أكثر من ١,٥ درجة مئوية؟",
+                "options": [
+                    "لا تأثير",
+                    "خسارة كبيرة للشعاب المرجانية واختفاء الكائنات المرتبطة بها",
+                    "زيادة الشعاب",
+                    "نمو المانجروف في أوروبا"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "سبب استبعاد البحر المتوسط من (بحر العرب - بحر الشمال):",
+                "options": [
+                    "لأنه بحر شبه مغلق والباقي بحار مفتوحة",
+                    "لأنه بحيرة",
+                    "لأنه في آسيا",
+                    "لأنه بحر مفتوح"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "استبعد الغريب: (الأعاصير - الانهيارات الجليدية - الفيضانات - الصيد الجائر) كأخطار طبيعية:",
+                "options": [
+                    "الانهيارات الجليدية",
+                    "الفيضانات",
+                    "الأعاصير",
+                    "الصيد الجائر"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "استبعد الغريب: (السعودية - الهند - الصين - فرنسا) كدول آسيوية لها مبادرات بيئية:",
+                "options": [
+                    "فرنسا",
+                    "الهند",
+                    "السعودية",
+                    "الصين"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "من أكون؟ «أعمق بحيرة في العالم ويطلق عليها لؤلؤة سيبيريا»",
+                "options": [
+                    "بحيرة بلكاش",
+                    "بحيرة بيكال",
+                    "بحيرة فيكتوريا",
+                    "بحيرة لادوجا"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "من أكون؟ «أكبر خليج في العالم وبه ثروة سمكية هائلة»",
+                "options": [
+                    "الخليج العربي",
+                    "خليج عمان",
+                    "خليج عدن",
+                    "خليج البنغال"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "من أكون؟ «أعاصير مدارية تضرب جنوب وشرق آسيا»",
+                "options": [
+                    "الخماسين",
+                    "التيفون",
+                    "التورنادو",
+                    "الانهيارات الجليدية"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "من أكون؟ «نهر آسيوي ثالث أنهار العالم في التنوع البيولوجي»",
+                "options": [
+                    "ميكونج",
+                    "الدانوب",
+                    "الجانج",
+                    "هوانج هو"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "من أكون؟ «مبادرة صينية تضمنت ٧٥ مشروعًا لإصلاح النظم البيئية»",
+                "options": [
+                    "الاتفاق الأخضر",
+                    "برشلونة",
+                    "الحزام والطريق",
+                    "شان شوي"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "صوّب الخطأ: «بحيرة لادوجا أعمق بحيرة في العالم».",
+                "options": [
+                    "فيكتوريا",
+                    "بلكاش",
+                    "تانا",
+                    "بيكال"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "صوّب الخطأ: «تُعد أوروبا أولى قارات العالم في مساحة الأراضي الرطبة».",
+                "options": [
+                    "أمريكا",
+                    "أستراليا",
+                    "آسيا",
+                    "إفريقيا"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "صوّب الخطأ: «البحار شبه المغلقة أكثر ثراء في التنوع البيولوجي».",
+                "options": [
+                    "المفتوحة",
+                    "المتجمدة",
+                    "المغلقة",
+                    "الداخلية"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "صوّب الخطأ: «يوجد في آسيا نحو ربع مساحة المانجروف في العالم».",
+                "options": [
+                    "عُشر",
+                    "ثلث",
+                    "نصف",
+                    "خمس"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "صوّب الخطأ: «تختفي الشعاب المرجانية من قارة آسيا».",
+                "options": [
+                    "أستراليا",
+                    "أمريكا الجنوبية",
+                    "أوروبا",
+                    "إفريقيا"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "صوّب الخطأ: «تحدث الانهيارات الجليدية بوضوح في جبال أورال».",
+                "options": [
+                    "زاجروس فقط",
+                    "الألب والهيمالايا",
+                    "أطلس",
+                    "البحر الأحمر"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "صوّب الخطأ: «وقعت أوروبا اتفاقية باريس لحماية البيئة البحرية والساحلية».",
+                "options": [
+                    "مدريد",
+                    "كيوتو",
+                    "برشلونة",
+                    "روما"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "صوّب الخطأ: «قامت الصين بإعادة تأهيل نهر الجانج».",
+                "options": [
+                    "الهند",
+                    "بنجلاديش",
+                    "نيبال",
+                    "باكستان"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "ما القيمة المستفادة من دراسة النظم البيئية المائية؟",
+                "options": [
+                    "تلويث البحار",
+                    "إهدار المياه",
+                    "الحفاظ على الموارد المائية واستخدامها على نحو مستدام",
+                    "الصيد الجائر"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "بم تفسر وصف آسيا بأنها من أكثر القارات تعرضًا للكوارث الطبيعية؟",
+                "options": [
+                    "لقلة الأمطار",
+                    "لبعدها عن المحيطات",
+                    "لصغر مساحتها",
+                    "لكثرة الفيضانات والأعاصير بها"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "استبعد الغريب: (بحر العرب - بحر الشمال - البحر المتوسط - المحيط الهندي) كبحار مفتوحة:",
+                "options": [
+                    "المحيط الهندي",
+                    "بحر الشمال",
+                    "البحر المتوسط",
+                    "بحر العرب"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "ما الذي يدل على اهتمام أوروبا بالتنوع البيولوجي في الأنهار؟",
+                "options": [
+                    "ردم الأنهار",
+                    "زيادة الصيد",
+                    "إنشاء محمية دلتا الدانوب وإصدار قانون ٢٠٢٤م لإعادة الأنهار لوضعها الطبيعي",
+                    "بناء السدود"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "كيف يؤثر بناء السدود على الكائنات الحية في الأنهار؟",
+                "options": [
+                    "يزيد التنوع البيولوجي",
+                    "يغير البيئة النهرية ويهدد الكائنات الحية بها",
+                    "ينقي المياه",
+                    "لا تأثير له"
+                ],
+                "ans": 1
+            }
+        ]
+    },
+    {
+        "id": "map_6",
+        "title": "تحدي الخرائط والصور",
+        "type": "map",
+        "desc": "اكتشف المخفي على خرائط وصور الكتاب في النظم البيئية المائية في قارتي آسيا وأوروبا",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><polygon points=\"1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6\"></polygon><line x1=\"8\" y1=\"2\" x2=\"8\" y2=\"18\"></line><line x1=\"16\" y1=\"6\" x2=\"16\" y2=\"22\"></line></svg>",
+        "questions": [
+            {
+                "q": "استعن بمفتاح الخريطة: ما الذي يمثله اللون الأحمر على السواحل؟",
+                "options": [
+                    "الشعاب المرجانية",
+                    "المسطحات المائية",
+                    "الأراضي الرطبة",
+                    "غابات المانجروف"
+                ],
+                "ans": 3,
+                "img": "images/g2u3l3_aquatic.jpg",
+                "masks": []
+            },
+            {
+                "q": "استعن بمفتاح الخريطة: ما الذي يمثله اللون البنفسجي؟",
+                "options": [
+                    "الشعاب المرجانية",
+                    "الأراضي الرطبة",
+                    "غابات المانجروف",
+                    "الأنهار"
+                ],
+                "ans": 0,
+                "img": "images/g2u3l3_aquatic.jpg",
+                "masks": []
+            },
+            {
+                "q": "استعن بمفتاح الخريطة: ما الذي يمثله اللون الأخضر داخل اليابس؟",
+                "options": [
+                    "الغابات المدارية",
+                    "غابات المانجروف",
+                    "الشعاب المرجانية",
+                    "الأراضي الرطبة"
+                ],
+                "ans": 3,
+                "img": "images/g2u3l3_aquatic.jpg",
+                "masks": []
+            },
+            {
+                "q": "تتركز غابات المانجروف والشعاب المرجانية كما توضح الخريطة في:",
+                "options": [
+                    "سيبيريا",
+                    "وسط آسيا",
+                    "جنوب شرق آسيا",
+                    "شمال أوروبا"
+                ],
+                "ans": 2,
+                "img": "images/g2u3l3_aquatic.jpg",
+                "masks": []
+            },
+            {
+                "q": "من البحار شبه المغلقة الظاهرة على الخريطة:",
+                "options": [
+                    "المحيط الهادي",
+                    "البحر المتوسط",
+                    "المحيط الهندي",
+                    "بحر العرب"
+                ],
+                "ans": 1,
+                "img": "images/g2u3l3_aquatic.jpg",
+                "masks": []
+            },
+            {
+                "q": "أعمق بحيرة في العالم وتظهر على الخريطة في سيبيريا هي:",
+                "options": [
+                    "بحيرة لادوجا",
+                    "بحيرة بلكاش",
+                    "بحيرة بيكال",
+                    "بحر آرال"
+                ],
+                "ans": 2,
+                "img": "images/g2u3l3_aquatic.jpg",
+                "masks": []
+            },
+            {
+                "q": "أكبر بحيرة عذبة في قارة أوروبا هي:",
+                "options": [
+                    "بحيرة لادوجا",
+                    "بحيرة فيكتوريا",
+                    "بحيرة بيكال",
+                    "بحر قزوين"
+                ],
+                "ans": 0,
+                "img": "images/g2u3l3_aquatic.jpg",
+                "masks": []
+            },
+            {
+                "q": "تُظهر الصورة نهرًا أوروبيًا يُعد مركزًا رئيسيًا للحفاظ على التنوع البيولوجي، ما اسمه؟",
+                "options": [
+                    "نهر هوانج هو",
+                    "نهر الدانوب",
+                    "نهر ميكونج",
+                    "نهر السين"
+                ],
+                "ans": 1,
+                "img": "images/g2u3l3_danube.jpg",
+                "masks": []
+            },
+            {
+                "q": "تُظهر الصورة مشكلة تهدد الكائنات البحرية في البحر المتوسط، ما هي؟",
+                "options": [
+                    "زيادة الملوحة",
+                    "الصيد بالمتفجرات",
+                    "ذوبان الجليد",
+                    "التلوث بالنفايات البلاستيكية"
+                ],
+                "ans": 3,
+                "img": "images/g2u3l3_medpollution.jpg",
+                "masks": []
+            },
+            {
+                "q": "تُظهر الصورة نظامًا بيئيًا مائيًا مالحًا، ما اسمه؟",
+                "options": [
+                    "الأراضي الرطبة",
+                    "غابات المانجروف",
+                    "البحيرات العذبة",
+                    "الشعاب المرجانية"
+                ],
+                "ans": 3,
+                "img": "images/g2u3l3_coral.jpg",
+                "masks": []
+            }
+        ]
+    }
+];
+
+    // --- محرك الصوت للمؤثرات التفاعلية ---
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    let audioCtx = null;
+
+    function initAudio() {
+        if (!audioCtx) {
+            audioCtx = new AudioContext();
+        }
+        if (audioCtx.state === 'suspended') {
+            audioCtx.resume();
+        }
+    }
+
+    function playTone(freq, type, duration, vol = 0.1) {
+        if (!audioCtx) return;
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        gain.gain.setValueAtTime(vol, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
+    }
+
+    function playCorrect() {
+        initAudio();
+        playTone(523.25, 'sine', 0.1, 0.1); 
+        setTimeout(() => playTone(659.25, 'sine', 0.1, 0.1), 100); 
+        setTimeout(() => playTone(783.99, 'sine', 0.2, 0.15), 200); 
+        setTimeout(() => playTone(1046.50, 'sine', 0.4, 0.2), 300); 
+        triggerConfetti();
+    }
+
+    function playWrong() {
+        initAudio();
+        playTone(300, 'sawtooth', 0.15, 0.1);
+        setTimeout(() => playTone(200, 'sawtooth', 0.25, 0.15), 150);
+        
+        const qBox = document.querySelector('.question-box');
+        if(qBox) {
+            qBox.classList.remove('shake');
+            void qBox.offsetWidth; 
+            qBox.classList.add('shake');
+        }
+    }
+
+    // --- مؤثرات بصرية ---
+    function triggerConfetti() {
+        const colors = ['#f72585', '#4cc9f0', '#fee440', '#00f5d4', '#8b5cf6'];
+        for(let i=0; i<40; i++) {
+            let conf = document.createElement('div');
+            conf.className = 'confetti';
+            conf.style.left = Math.random() * 100 + 'vw';
+            conf.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            conf.style.animationDuration = (Math.random() * 2 + 1) + 's';
+            document.body.appendChild(conf);
+            setTimeout(() => conf.remove(), 3000);
+        }
+    }
+
+    function shuffleArray(arr) {
+        return arr.map(a => ({sort: Math.random(), value: a}))
+            .sort((a, b) => a.sort - b.sort)
+            .map(a => a.value);
+    }
+
+    function showFeedback(isCorrect, callback) {
+        const modal = document.getElementById('feedback-modal');
+        const icon = document.getElementById('feedback-icon');
+        const title = document.getElementById('feedback-title');
+        
+        if (isCorrect) {
+            playCorrect();
+            icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>`;
+            title.textContent = 'إجابة صحيحة، بطل!';
+            title.style.color = 'var(--success)';
+        } else {
+            playWrong();
+            icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="var(--danger)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>`;
+            title.textContent = 'إجابة خاطئة!';
+            title.style.color = 'var(--danger)';
+        }
+
+        modal.classList.add('active');
+        setTimeout(() => {
+            modal.classList.remove('active');
+            if (callback) callback();
+        }, 1300); // وقت الانتقال للسؤال التالي
+    }
+
+    // --- متغيرات محرك اللعبة ---
+    let currentGame = null;
+    let currentQuestions = [];
+    let qIndex = 0;
+    let animInterval = null;
+    let geniusTimerInterval = null;
+    let wrongAnswers = []; // مصفوفة لتخزين الأخطاء
+
+    // --- التهيئة ---
+    function initApp() {
+        const menuGrid = document.getElementById('menu-grid');
+        menuGrid.innerHTML = '';
+        allGamesData.forEach(game => {
+            const card = document.createElement('div');
+            card.className = 'menu-card';
+            card.innerHTML = `
+                <div class="icon-container">${game.icon}</div>
+                <h3>${game.title}</h3>
+                <p>${game.desc}</p>
+            `;
+            card.onclick = () => startGame(game);
+            menuGrid.appendChild(card);
+        });
+        
+        document.body.addEventListener('touchstart', initAudio, { once: true });
+        document.body.addEventListener('click', initAudio, { once: true });
+    }
+
+    function returnToMenu() {
+        clearInterval(animInterval); clearInterval(geniusTimerInterval);
+        clearInterval(geniusTimerInterval);
+        document.getElementById('game-screen').classList.add('hidden');
+        document.getElementById('home-screen').classList.remove('hidden');
+        document.getElementById('main-header').classList.remove('hidden');
+        document.getElementById('main-footer').classList.remove('hidden');
+    }
+
+    function updateProgress() {
+        document.getElementById('game-progress').innerText = `${qIndex + 1} / ${currentQuestions.length}`;
+    }
+
+    function gameComplete() {
+        const gc = document.getElementById('game-container');
+        playCorrect();
+        setTimeout(playCorrect, 300);
+
+        let score = currentQuestions.length - wrongAnswers.length;
+        let summaryHTML = '';
+
+        if (wrongAnswers.length > 0) {
+            summaryHTML += `
+            <div style="margin-top: 25px; text-align: right; background: #f8fafc; padding: 20px; border-radius: 15px; border: 2px solid #e2e8f0; max-height: 350px; overflow-y: auto;" class="errors-list">
+                <h3 style="color: var(--danger); margin-bottom: 15px; text-align: center; font-size: 1.4rem;">الأسئلة التي أخطأت فيها 📝</h3>
+                <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 15px;">`;
+            
+            wrongAnswers.forEach((item, index) => {
+                summaryHTML += `
+                <li style="background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-right: 5px solid var(--danger);">
+                    <div style="font-weight: bold; color: var(--primary); margin-bottom: 8px; font-size: 1.1rem;">${index + 1}. ${item.question}</div>
+                    <div style="color: #64748b; font-size: 1rem; margin-bottom: 5px;">إجابتك: <span style="color: var(--danger); text-decoration: line-through;">${item.selected}</span></div>
+                    <div style="color: var(--success); font-weight: bold; font-size: 1.1rem;">الإجابة الصحيحة: ${item.correct}</div>
+                </li>`;
+            });
+            summaryHTML += `</ul></div>`;
+        } else {
+            summaryHTML += `<p style="color: var(--success); font-size: 1.5rem; font-weight: bold; margin-top: 20px;">أداء مثالي! لم تخطئ في أي سؤال 🌟</p>`;
+        }
+
+        gc.innerHTML = `
+            <div style="text-align:center; padding: 40px 20px; background: white; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+                <div style="display:flex; justify-content:center; margin-bottom: 20px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="var(--warning)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 17v4"/><path d="M12 3v14"/><path d="M5 7h14"/><path d="M12 3l-4 4 4 4 4-4-4-4z"/></svg>
+                </div>
+                <h2 style="color: var(--primary); margin-bottom: 10px; font-size:2rem; font-weight:800;">انتهت اللعبة!</h2>
+                <p style="font-size: 1.4rem; margin-bottom: 10px; color:#64748b; font-weight:bold;">نتيجتك: ${score} من ${currentQuestions.length}</p>
+                ${summaryHTML}
+                <div class="share-box">
+                    <h4>📲 أرسل نتيجتك إلى الأستاذة داليا السايح</h4>
+                    <input type="text" id="student-name-input" class="share-name-input" placeholder="اكتب اسمك هنا أولًا">
+                    <div id="share-warning" class="share-warning">من فضلك اكتب اسمك أولًا قبل الإرسال ✋</div>
+                    <div>
+                        <button class="btn btn-share" onclick="sendResultToTeacher(${score}, ${currentQuestions.length})">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.656.843 5.12 2.26 7.15L.626 24l5.01-1.61c1.983 1.25 4.27 1.91 6.395 1.91 6.646 0 12.03-5.385 12.03-12.031S18.677 0 12.031 0zm6.544 17.202c-.273.766-1.58 1.464-2.185 1.503-.56.035-1.28.23-4.085-.86-3.39-1.32-5.59-4.78-5.736-4.97-.145-.19-1.37-1.82-1.37-3.475 0-1.655.857-2.47 1.164-2.8.307-.33.67-.413.89-.413.22 0 .44 0 .633.01.205.01.482-.08.736.53.264.634.904 2.203.984 2.366.08.163.133.353.033.553-.1.2-.153.326-.307.506-.154.18-.32.38-.453.506-.153.153-.314.316-.134.626.18.31.8 1.32 1.71 2.13.176.157.363.31.558.45 1.05.76 1.83 1.05 2.13 1.18.3.13.474.11.652-.09.18-.205.766-.893.97-1.2.204-.307.41-.256.69-.153.28.103 1.77.836 2.074.99.304.153.506.23.582.356.076.126.076.73-.197 1.496z"/></svg>
+                            إرسال النتيجة عبر واتساب
+                        </button>
+                    </div>
+                </div>
+                <button class="btn back-btn" style="font-size:1.1rem; padding:15px 30px; margin-top: 18px;" onclick="returnToMenu()">العودة للقائمة الرئيسية</button>
+            </div>
+        `;
+    }
+
+    function sendResultToTeacher(score, total) {
+        const nameInput = document.getElementById('student-name-input');
+        const warning = document.getElementById('share-warning');
+        const name = nameInput.value.trim();
+        if (!name) {
+            warning.style.display = 'block';
+            nameInput.classList.add('shake');
+            nameInput.focus();
+            setTimeout(() => nameInput.classList.remove('shake'), 500);
+            return;
+        }
+        warning.style.display = 'none';
+        const gameTitle = currentGame ? currentGame.title : '';
+        const message =
+            `📚 نتيجة طالب - ${LESSON_NAME}\n` +
+            `👤 اسم الطالب: ${name}\n` +
+            `🎮 اللعبة: ${gameTitle}\n` +
+            `✅ النتيجة: ${score} من ${total}\n` +
+            `⭐ نسبة النجاح: ${Math.round((score/total)*100)}%`;
+        const url = `https://wa.me/201030866428?text=${encodeURIComponent(message)}`;
+        window.open(url, '_blank');
+    }
+
+    function startGame(gameData) {
+        initAudio();
+        currentGame = gameData;
+        currentQuestions = shuffleArray([...gameData.questions]).slice(0, 20);
+        qIndex = 0;
+        wrongAnswers = []; // تصفير قائمة الأخطاء
+        
+        document.getElementById('home-screen').classList.add('hidden');
+        document.getElementById('main-header').classList.add('hidden');
+        document.getElementById('main-footer').classList.add('hidden');
+        document.getElementById('game-screen').classList.remove('hidden');
+        document.getElementById('game-title').innerText = gameData.title;
+        
+        renderNextState();
+    }
+
+    function renderNextState() {
+        if (qIndex >= currentQuestions.length) {
+            gameComplete();
+            return;
+        }
+
+        const gc = document.getElementById('game-container');
+        gc.innerHTML = '';
+        updateProgress();
+
+        if (currentGame.type === 'mcq') {
+            renderMCQ(gc);
+        } else if (currentGame.type === 'bubbles') {
+            renderBubbles(gc);
+        } else if (currentGame.type === 'shooting') {
+            renderShooting(gc);
+        } else if (currentGame.type === 'true_false') {
+            renderTrueFalse(gc);
+        } else if (currentGame.type === 'genius') {
+            renderGenius(gc);
+        } else if (currentGame.type === 'map') {
+            renderMap(gc);
+        }
+    }
+
+    // --- أنماط الألعاب ---
+
+    // 1. اختيارات (MCQ)
+    function renderMCQ(container) {
+        clearInterval(geniusTimerInterval);
+        const qData = currentQuestions[qIndex];
+        const correctText = qData.options[qData.ans];
+        const shuffledOptions = shuffleArray([...qData.options]);
+
+        const btnContainer = document.createElement('div');
+        btnContainer.className = 'options-grid';
+        
+        let isAnswered = false;
+
+        shuffledOptions.forEach(opt => {
+            const btn = document.createElement('button');
+            btn.className = 'btn';
+            btn.innerText = opt;
+            btn.onclick = () => {
+                if(isAnswered) return;
+                isAnswered = true;
+
+                if (opt === correctText) {
+                    btn.classList.add('btn-correct');
+                    showFeedback(true, () => { qIndex++; renderNextState(); });
+                } else {
+                    btn.classList.add('btn-wrong');
+                    wrongAnswers.push({ question: qData.q, correct: correctText, selected: opt });
+                    showFeedback(false, () => { qIndex++; renderNextState(); });
+                }
+            };
+            btnContainer.appendChild(btn);
+        });
+
+        const qBox = document.createElement('div');
+        qBox.className = 'question-box';
+        qBox.innerText = qData.q;
+        
+        container.appendChild(qBox);
+        container.appendChild(btnContainer);
+    }
+
+    // 2. صح أم خطأ
+    function renderTrueFalse(container) {
+        clearInterval(geniusTimerInterval);
+        const qData = currentQuestions[qIndex];
+        const correctText = qData.options[qData.ans];
+
+        const qBox = document.createElement('div');
+        qBox.className = 'question-box';
+        qBox.innerText = qData.q;
+        
+        const tfContainer = document.createElement('div');
+        tfContainer.className = 'tf-grid';
+        
+        let isAnswered = false;
+
+        // ترتيب ثابت (صح يميناً وخطأ يساراً)
+        const fixedOptions = ["صح", "خطأ"];
+
+        fixedOptions.forEach(opt => {
+            const btn = document.createElement('button');
+            btn.className = 'btn';
+            btn.style.flex = '1';
+            btn.style.minWidth = '200px';
+            btn.style.fontSize = '2rem';
+            btn.style.padding = '30px';
+            btn.style.justifyContent = 'center';
+            
+            if(opt === "صح") {
+                btn.style.background = "linear-gradient(to bottom, #10b981, #0e7490)";
+                btn.style.borderBottomColor = "#047857";
+            } else {
+                btn.style.background = "linear-gradient(to bottom, #ef4444, #dc2626)";
+                btn.style.borderBottomColor = "#b91c1c";
+            }
+
+            btn.innerText = opt;
+            
+            btn.onclick = () => {
+                if(isAnswered) return;
+                isAnswered = true;
+
+                if (opt === correctText) {
+                    btn.classList.add('btn-correct');
+                    showFeedback(true, () => { qIndex++; renderNextState(); });
+                } else {
+                    btn.classList.add('btn-wrong');
+                    wrongAnswers.push({ question: qData.q, correct: correctText, selected: opt });
+                    showFeedback(false, () => { qIndex++; renderNextState(); });
+                }
+            };
+            tfContainer.appendChild(btn);
+        });
+
+        container.appendChild(qBox);
+        container.appendChild(tfContainer);
+    }
+
+    // 5. تحدي العباقرة (سؤال بعدّاد زمني)
+    function renderGenius(container) {
+        clearInterval(animInterval); clearInterval(geniusTimerInterval);
+        clearInterval(geniusTimerInterval);
+        const qData = currentQuestions[qIndex];
+        const correctText = qData.options[qData.ans];
+        const shuffledOptions = shuffleArray([...qData.options]);
+
+        const wrap = document.createElement('div');
+        wrap.className = 'genius-wrap';
+
+        const badge = document.createElement('div');
+        badge.className = 'genius-badge';
+        badge.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.663 17h4.673M12 3a6 6 0 0 0-6 6c0 1.887.454 2.921 1.5 4.5.5.75 1 1.5 1 2.5h7c0-1 .5-1.75 1-2.5C17.546 11.921 18 10.887 18 9a6 6 0 0 0-6-6z"></path></svg> تحدي العباقرة`;
+
+        const timerTrack = document.createElement('div');
+        timerTrack.className = 'genius-timer-track';
+        const timerBar = document.createElement('div');
+        timerBar.className = 'genius-timer-bar';
+        timerTrack.appendChild(timerBar);
+
+        const qBox = document.createElement('div');
+        qBox.className = 'question-box';
+        qBox.style.background = 'rgba(255,255,255,0.95)';
+        qBox.innerText = qData.q;
+
+        const optContainer = document.createElement('div');
+        optContainer.className = 'genius-options';
+
+        let isAnswered = false;
+        const TOTAL_TIME = 12000; // 12 ثانية لكل سؤال
+        let startTime = Date.now();
+
+        function finishQuestion(isCorrect, selectedText) {
+            if (isAnswered) return;
+            isAnswered = true;
+            clearInterval(geniusTimerInterval);
+            if (!isCorrect) {
+                wrongAnswers.push({ question: qData.q, correct: correctText, selected: selectedText || "انتهى الوقت!" });
+            }
+            showFeedback(isCorrect, () => { qIndex++; renderNextState(); });
+        }
+
+        shuffledOptions.forEach(opt => {
+            const btn = document.createElement('button');
+            btn.className = 'btn';
+            btn.innerText = opt;
+            btn.onclick = () => {
+                if (isAnswered) return;
+                if (opt === correctText) {
+                    btn.classList.add('btn-correct');
+                    finishQuestion(true, opt);
+                } else {
+                    btn.classList.add('btn-wrong');
+                    finishQuestion(false, opt);
+                }
+            };
+            optContainer.appendChild(btn);
+        });
+
+        wrap.appendChild(badge);
+        wrap.appendChild(timerTrack);
+        container.appendChild(wrap);
+        container.appendChild(qBox);
+        container.appendChild(optContainer);
+
+        geniusTimerInterval = setInterval(() => {
+            if (isAnswered) { clearInterval(geniusTimerInterval); return; }
+            const elapsed = Date.now() - startTime;
+            const pct = Math.max(0, 100 - (elapsed / TOTAL_TIME) * 100);
+            timerBar.style.width = pct + '%';
+            if (elapsed >= TOTAL_TIME) {
+                clearInterval(geniusTimerInterval);
+                finishQuestion(false, null);
+            }
+        }, 80);
+    }
+
+    // 3. الفقاعات المتساقطة
+    function renderBubbles(container) {
+        clearInterval(animInterval); clearInterval(geniusTimerInterval);
+        const qData = currentQuestions[qIndex];
+        const correctText = qData.options[qData.ans];
+        const shuffledOptions = shuffleArray([...qData.options]);
+
+        const qBox = document.createElement('div');
+        qBox.className = 'question-box';
+        qBox.innerText = qData.q;
+        
+        const area = document.createElement('div');
+        area.className = 'bubbles-area';
+
+        let bubbles = [];
+        let isAnswered = false;
+
+        shuffledOptions.forEach((opt, index) => {
+            const bubble = document.createElement('div');
+            bubble.className = 'bubble';
+            bubble.innerHTML = `<span>${opt}</span>`;
+            
+            let leftPos = 2 + (index * 24); 
+            bubble.style.left = leftPos + '%';
+            
+            let topPos = -100 - (Math.random() * 80);
+            bubble.style.top = topPos + 'px';
+            
+            let speed = 0.95 + Math.random() * 0.65; 
+
+            bubble.onclick = () => {
+                if (isAnswered) return;
+                isAnswered = true;
+                clearInterval(animInterval); clearInterval(geniusTimerInterval);
+                if (opt === correctText) {
+                    bubble.style.background = 'var(--success)';
+                    bubble.style.color = 'white';
+                    showFeedback(true, () => { qIndex++; renderNextState(); });
+                } else {
+                    bubble.style.background = 'var(--danger)';
+                    bubble.style.color = 'white';
+                    wrongAnswers.push({ question: qData.q, correct: correctText, selected: opt });
+                    showFeedback(false, () => { qIndex++; renderNextState(); });
+                }
+            };
+
+            area.appendChild(bubble);
+            bubbles.push({ el: bubble, top: topPos, speed: speed, isCorrect: opt === correctText, active: true });
+        });
+
+        container.appendChild(qBox);
+        container.appendChild(area);
+        
+        let hint = document.createElement('div');
+        hint.style.textAlign = 'center';
+        hint.style.marginTop = '15px';
+        hint.style.color = 'var(--primary)';
+        hint.style.fontWeight = 'bold';
+        hint.style.fontSize = '1.1rem';
+        hint.innerHTML = `💡 اضغط على الفقاعة التي تحمل الإجابة الصحيحة قبل أن تسقط!`;
+        container.appendChild(hint);
+
+        let areaHeight = 400;
+
+        animInterval = setInterval(() => {
+            if (isAnswered) return;
+            bubbles.forEach(b => {
+                if (!b.active) return;
+                b.top += b.speed;
+                b.el.style.top = b.top + 'px';
+                
+                b.el.style.transform = `translateX(${Math.sin(b.top / 20) * 5}px)`;
+
+                if (b.top > areaHeight) {
+                    b.active = false;
+                    b.el.style.display = 'none';
+                    if (b.isCorrect && !isAnswered) {
+                        isAnswered = true;
+                        clearInterval(animInterval); clearInterval(geniusTimerInterval);
+                        wrongAnswers.push({ question: qData.q, correct: correctText, selected: "سقطت دون اختيار" });
+                        showFeedback(false, () => { qIndex++; renderNextState(); });
+                    }
+                }
+            });
+        }, 30);
+    }
+
+    // 4. التنشين
+    function renderShooting(container) {
+        clearInterval(animInterval); clearInterval(geniusTimerInterval);
+        const qData = currentQuestions[qIndex];
+        const correctText = qData.options[qData.ans];
+        const shuffledOptions = shuffleArray([...qData.options]);
+
+        const qBox = document.createElement('div');
+        qBox.className = 'question-box';
+        qBox.innerText = qData.q;
+        
+        const area = document.createElement('div');
+        area.className = 'shooting-area';
+
+        let isAnswered = false;
+
+        shuffledOptions.forEach((opt, index) => {
+            const bird = document.createElement('div');
+            bird.className = 'target-bird';
+            
+            bird.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg> <span>${opt}</span>`;
+            
+            let topPos = 15 + (index * 20); 
+            bird.style.top = topPos + '%';
+            
+            let pos = (index % 2 === 0) ? -200 : window.innerWidth;
+            let speed = (Math.random() * 2.5 + 1.5) * ((index % 2 === 0) ? 1 : -1);
+            
+            bird.style.left = pos + 'px';
+
+            bird.onclick = () => {
+                if(isAnswered) return;
+                isAnswered = true;
+
+                if (opt === correctText) {
+                    bird.style.background = 'var(--success)';
+                    bird.style.color = 'white';
+                    bird.style.borderColor = 'white';
+                    showFeedback(true, () => { qIndex++; renderNextState(); });
+                } else {
+                    bird.style.background = 'var(--danger)';
+                    bird.style.color = 'white';
+                    bird.style.borderColor = 'white';
+                    wrongAnswers.push({ question: qData.q, correct: correctText, selected: opt });
+                    showFeedback(false, () => { qIndex++; renderNextState(); });
+                }
+            };
+
+            area.appendChild(bird);
+
+            animInterval = setInterval(() => {
+                if (isAnswered) return;
+                pos += speed;
+                if (pos > window.innerWidth + 50) pos = -250;
+                if (pos < -250) pos = window.innerWidth + 50;
+                bird.style.left = pos + 'px';
+            }, 20);
+        });
+
+        container.appendChild(qBox);
+        container.appendChild(area);
+        
+        let hint = document.createElement('div');
+        hint.style.textAlign = 'center';
+        hint.style.marginTop = '15px';
+        hint.style.color = 'var(--primary)';
+        hint.style.fontWeight = 'bold';
+        hint.style.fontSize = '1.1rem';
+        hint.style.display = 'flex';
+        hint.style.alignItems = 'center';
+        hint.style.justifyContent = 'center';
+        hint.style.gap = '8px';
+        hint.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg> اضغط على الإجابة الصحيحة وهي تتحرك لاصطيادها!`;
+        container.appendChild(hint);
+    }
+
+
+    // 6. تحدي الخرائط والصور
+    function renderMap(container) {
+        clearInterval(animInterval); clearInterval(geniusTimerInterval);
+        const qData = currentQuestions[qIndex];
+        const correctText = qData.options[qData.ans];
+        const shuffledOptions = shuffleArray([...qData.options]);
+
+        const qBox = document.createElement('div');
+        qBox.className = 'question-box';
+        qBox.innerText = qData.q;
+
+        const stage = document.createElement('div');
+        stage.className = 'map-stage';
+        const wrap = document.createElement('div');
+        wrap.className = 'map-wrap';
+        const img = document.createElement('img');
+        img.src = qData.img;
+        img.alt = 'خريطة أو صورة من الكتاب المدرسي';
+        wrap.appendChild(img);
+        const masks = [];
+        (qData.masks || []).forEach(m => {
+            const d = document.createElement('div');
+            d.className = 'map-mask';
+            d.style.left = m[0] + '%'; d.style.top = m[1] + '%';
+            d.style.width = m[2] + '%'; d.style.height = m[3] + '%';
+            d.textContent = '؟';
+            wrap.appendChild(d); masks.push(d);
+        });
+        stage.appendChild(wrap);
+        wrap.onclick = () => stage.classList.toggle('zoomed');
+        const hint = document.createElement('div');
+        hint.className = 'map-hint';
+        hint.textContent = (masks.length ? '💡 الإجابة مخفية تحت المربع البرتقالي (؟) • ' : '💡 ') + 'اضغط على الصورة لتكبيرها';
+        stage.appendChild(hint);
+
+        const optContainer = document.createElement('div');
+        optContainer.className = 'map-options';
+        let isAnswered = false;
+        const btns = [];
+        shuffledOptions.forEach(opt => {
+            const btn = document.createElement('button');
+            btn.className = 'btn';
+            btn.innerText = opt;
+            btn.onclick = () => {
+                if (isAnswered) return;
+                isAnswered = true;
+                const ok = opt === correctText;
+                masks.forEach(d => d.classList.add('revealed'));
+                btns.forEach(b => { if (b.innerText === correctText) b.classList.add('ok'); });
+                if (!ok) {
+                    btn.classList.add('bad');
+                    wrongAnswers.push({ question: qData.q, correct: correctText, selected: opt });
+                }
+                setTimeout(() => showFeedback(ok, () => { qIndex++; renderNextState(); }), 1100);
+            };
+            btns.push(btn);
+            optContainer.appendChild(btn);
+        });
+
+        container.appendChild(qBox);
+        container.appendChild(stage);
+        container.appendChild(optContainer);
+    }
+
+    window.onload = initApp;
+</script>
+</body>
+</html>

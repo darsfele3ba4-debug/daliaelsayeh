@@ -1,0 +1,3850 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>درس نماذج للحضارات القديمة بالشرق الأدنى - الصف الثاني الإعدادي</title>
+    <!-- استدعاء خط احترافي -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #134e4a;      
+            --primary-light: #0d9488; 
+            --secondary: #0e7490;    
+            --success: #10b981;      
+            --danger: #ef4444;       
+            --warning: #f59e0b;      
+            --dark: #1e293b;         
+            --light: #f8fafc;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Cairo', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: #ecfeff;
+            background-image: radial-gradient(#a5d4ce 1.5px, transparent 1.5px);
+            background-size: 25px 25px;
+            color: var(--dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        .hidden { display: none !important; }
+        
+        /* --- الهيدر الرئيسي --- */
+        .header-main {
+            background: linear-gradient(135deg, #042f2e, var(--primary), var(--secondary));
+            color: white;
+            padding: 30px 20px 90px 20px; 
+            text-align: center;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .title-line1 {
+            font-size: clamp(1.1rem, 4vw, 1.5rem); 
+            font-weight: 700;
+            color: #ccfbf1;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-shadow: 1px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .title-line2 {
+            font-size: clamp(1.4rem, 5.5vw, 2.6rem); 
+            font-weight: 900;
+            background: linear-gradient(to right, #2dd4bf, #0f766e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.5));
+            line-height: 1.3;
+            text-align: center;
+        }
+
+        .header-main h2 { font-size: clamp(1rem, 3vw, 1.3rem); font-weight: 600; color: #f0fdfa; margin-bottom: 8px; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);}
+        .header-main p { font-size: clamp(0.9rem, 2.5vw, 1.1rem); font-weight: 600; background: rgba(0,0,0,0.3); display: inline-block; padding: 6px 20px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 4px 6px rgba(0,0,0,0.1);}
+
+        .header-wave {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: auto;
+            z-index: 1;
+        }
+
+        /* --- الأزرار --- */
+        .btn {
+            background: linear-gradient(to bottom, var(--primary-light), var(--primary));
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-bottom: 3px solid rgba(0,0,0,0.3);
+        }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.2); }
+        .btn:active { transform: translateY(2px); border-bottom: 0px; margin-top: 3px; }
+        .btn-correct { filter: brightness(1.2); pointer-events: none; border-bottom-width: 0; transform: translateY(2px);}
+        .btn-wrong { filter: brightness(0.8); pointer-events: none; border-bottom-width: 0; transform: translateY(2px);}
+
+        /* --- الشاشة الرئيسية --- */
+        #home-screen {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .grid-menu {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            width: 100%;
+            max-width: 1000px;
+            padding-bottom: 80px;
+        }
+
+        .menu-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05), 0 4px 6px -2px rgba(0,0,0,0.025);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        .menu-card::before {
+            content: ""; position: absolute; top: 0; left: 0; right: 0; height: 6px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            opacity: 0; transition: opacity 0.3s;
+        }
+        .menu-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); border-color: rgba(34, 197, 94, 0.25); }
+        .menu-card:hover::before { opacity: 1; }
+        
+        .menu-card .icon-container {
+            width: 80px; height: 80px;
+            margin: 0 auto 15px auto;
+            background: linear-gradient(135deg, #ccfbf1, #99f6e4);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: inset 0 3px 6px rgba(255,255,255,0.8), 0 4px 8px rgba(0,0,0,0.05);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .menu-card .icon-container svg {
+            width: 40px; height: 40px; stroke: #134e4a; fill: none;
+            stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+        }
+        .menu-card:hover .icon-container { transform: scale(1.1) rotate(10deg); }
+        .menu-card h3 { font-size: 1.4rem; color: var(--dark); font-weight: 800; margin-bottom: 8px;}
+        .menu-card p { font-size: 1rem; color: #64748b; font-weight: 600;}
+
+        /* --- شاشة اللعب --- */
+        #game-screen {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-nav {
+            background: white;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            font-size: clamp(0.9rem, 3vw, 1.2rem);
+        }
+        .back-btn { background: #e2e8f0; color: var(--dark); border-bottom: 3px solid #cbd5e1; padding: 8px 15px;}
+        #game-progress { background: #0d9488; color: white; padding: 6px 15px; border-radius: 20px;}
+        
+        .game-container {
+            flex: 1;
+            padding: 0 20px 40px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .question-box {
+            background: white;
+            padding: 20px 25px;
+            border-radius: 16px;
+            text-align: center;
+            font-size: clamp(1.2rem, 4vw, 1.6rem);
+            font-weight: 800;
+            color: #134e4a;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+            border-right: 8px solid #0e7490;
+            line-height: 1.6;
+        }
+
+        .shake { animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both; }
+        @keyframes shake {
+            10%, 90% { transform: translate3d(-2px, 0, 0); }
+            20%, 80% { transform: translate3d(4px, 0, 0); }
+            30%, 50%, 70% { transform: translate3d(-6px, 0, 0); }
+            40%, 60% { transform: translate3d(6px, 0, 0); }
+        }
+
+        /* MCQ Style */
+        .options-grid { display: flex; flex-direction: column; gap: 15px; }
+        .options-grid .btn { padding: 18px; font-size: clamp(1.1rem, 3.5vw, 1.4rem); text-align: right; justify-content: flex-start; border-radius: 12px;}
+
+        /* True/False Style */
+        .tf-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+
+        /* Bubbles Style */
+        .bubbles-area {
+            position: relative; height: 400px;
+            background: linear-gradient(to bottom, #042f2e, #134e4a);
+            border-radius: 16px; overflow: hidden;
+            border: 4px solid #0d9488; margin-top: 10px;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+        }
+        .bubble {
+            position: absolute;
+            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), rgba(224,231,255,0.9));
+            color: #134e4a;
+            border: 2px solid #ffffff;
+            padding: 10px 5px;
+            border-radius: 30px;
+            font-weight: 800; font-size: clamp(0.85rem, 2vw, 1.05rem);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.2), inset -4px -4px 10px rgba(0,0,0,0.1);
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center;
+            width: 22%;
+            transition: transform 0.2s, background 0.2s;
+            z-index: 5;
+        }
+        .bubble:hover { transform: scale(1.05); }
+        .bubble::after {
+            content: ''; position: absolute; top: 10%; left: 15%;
+            width: 20%; height: 20%; background: rgba(255,255,255,0.8);
+            border-radius: 50%; filter: blur(2px);
+        }
+
+        /* Shooting Style */
+        .shooting-area {
+            position: relative; height: 400px; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><rect fill="%23e0fbfc" width="100%" height="100%"/><circle fill="%23bae6fd" cx="20%" cy="30%" r="50"/><circle fill="%23bae6fd" cx="80%" cy="60%" r="70"/><circle fill="%23bae6fd" cx="50%" cy="80%" r="40"/></svg>') no-repeat center center;
+            background-size: cover; border-radius: 16px; overflow: hidden;
+            border: 4px solid #0d9488; margin-top: 10px; box-shadow: inset 0 0 20px rgba(0,0,0,0.1);
+        }
+        .target-bird {
+            position: absolute; background: white; color: var(--dark);
+            padding: 10px 20px; border-radius: 30px; font-weight: 800; font-size: clamp(0.95rem, 3vw, 1.15rem);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15); cursor: crosshair;
+            border: 3px solid var(--warning); white-space: nowrap; transition: background 0.2s;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .target-bird:hover { transform: scale(1.05); background: #f0fdfa; }
+
+        /* Genius Challenge Style */
+        .genius-wrap {
+            background: linear-gradient(135deg, #042f2e, #134e4a, #0f766e);
+            border-radius: 16px; padding: 20px; margin-top: 10px;
+            border: 4px solid #2dd4bf; box-shadow: inset 0 0 25px rgba(0,0,0,0.4), 0 10px 20px rgba(21,128,61,0.35);
+        }
+        .genius-timer-track {
+            width: 100%; height: 14px; background: rgba(0,0,0,0.35);
+            border-radius: 10px; overflow: hidden; margin-bottom: 18px;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+        .genius-timer-bar {
+            height: 100%; width: 100%;
+            background: linear-gradient(to right, #2dd4bf, #0d9488, #ef4444);
+            border-radius: 10px;
+            transition: width 0.1s linear;
+        }
+        .genius-options { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        @media (max-width: 600px) { .genius-options { grid-template-columns: 1fr; } }
+        .genius-options .btn {
+            padding: 16px 10px; font-size: clamp(1rem, 3vw, 1.25rem);
+            background: linear-gradient(to bottom, #14b8a6, #0f766e);
+            border-bottom: 3px solid #134e4a; border-radius: 14px; min-height: 70px;
+        }
+        .genius-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(74, 222, 128, 0.15); color: #2dd4bf;
+            font-weight: 800; padding: 6px 16px; border-radius: 20px;
+            border: 1px solid rgba(253,224,71,0.4); margin-bottom: 12px; font-size: 0.95rem;
+        }
+
+        /* Result Share (WhatsApp) */
+        .share-box {
+            margin-top: 25px; background: #f0fdfa; border: 2px solid #99f6e4;
+            border-radius: 16px; padding: 20px; text-align: center;
+        }
+        .share-box h4 { color: #115e59; font-size: 1.2rem; margin-bottom: 12px; font-weight: 800;}
+        .share-name-input {
+            width: 100%; max-width: 320px; padding: 12px 16px; border-radius: 12px;
+            border: 2px solid #5eead4; font-size: 1.05rem; text-align: center;
+            font-family: 'Cairo', sans-serif; font-weight: 700; margin-bottom: 12px;
+            color: var(--dark);
+        }
+        .share-name-input:focus { outline: none; border-color: #0d9488; }
+        .btn-share {
+            background: linear-gradient(to bottom, #25d366, #1da851);
+            border-bottom-color: #128c3e; display: inline-flex; gap: 10px;
+        }
+        .share-warning { color: var(--danger); font-weight: 700; font-size: 0.9rem; margin-top: 8px; display: none; }
+
+        /* Modal Overlay */
+        .overlay {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(4px);
+            display: flex; justify-content: center; align-items: center;
+            z-index: 1000; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+        }
+        .overlay.active { opacity: 1; pointer-events: all; }
+        .modal {
+            background: white; padding: 40px; border-radius: 25px;
+            text-align: center; max-width: 90%; width: 400px;
+            transform: scale(0.7) translateY(50px); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+        }
+        .overlay.active .modal { transform: scale(1) translateY(0); }
+        .modal-icon { display: flex; justify-content: center; margin-bottom: 20px; }
+
+        /* Summary Errors Scrolling */
+        .errors-list::-webkit-scrollbar { width: 8px; }
+        .errors-list::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 8px; }
+        .errors-list::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 8px; }
+        .errors-list::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+        /* الفوتر (Footer) */
+        .footer-main {
+            background: var(--dark); color: #cbd5e1;
+            text-align: center; padding: 25px 20px; margin-top: auto;
+            border-top: 4px solid var(--primary);
+        }
+        .footer-main p { margin: 5px 0; font-size: 1.1rem; font-weight: 600;}
+        .footer-main .designer { font-size: 1rem; color: #94a3b8; font-weight: 400;}
+
+        /* WhatsApp */
+        .whatsapp-float {
+            position: fixed; bottom: 25px; left: 25px;
+            background: #25d366; color: white;
+            width: 65px; height: 65px; border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            text-decoration: none; box-shadow: 0 8px 15px rgba(37, 211, 102, 0.4);
+            z-index: 100; transition: all 0.3s;
+        }
+        .whatsapp-float:hover { transform: scale(1.15) rotate(-5deg); box-shadow: 0 12px 20px rgba(37, 211, 102, 0.6); }
+        .whatsapp-float svg { width: 35px; height: 35px; fill: currentColor; }
+
+        /* Confetti effect */
+        .confetti {
+            position: fixed; top: -10px; width: 12px; height: 12px; z-index: 9999;
+            animation: fall linear forwards; border-radius: 3px;
+        }
+        @keyframes fall { to { transform: translateY(110vh) rotate(720deg); opacity: 0; } }
+
+        /* Map Challenge Style */
+        .map-stage { text-align: center; margin-bottom: 18px; }
+        .map-wrap { position: relative; display: inline-block; max-width: 100%; border-radius: 14px; overflow: hidden;
+            border: 4px solid #0d9488; box-shadow: 0 10px 20px rgba(0,0,0,0.12); background: #fff; }
+        .map-wrap img { display: block; max-width: 100%; max-height: 58vh; width: auto; height: auto; margin: 0 auto; }
+        .map-mask { position: absolute; background: linear-gradient(135deg, #f59e0b, #ea580c); border: 2px solid #fff;
+            border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #fff;
+            font-weight: 900; font-size: clamp(0.9rem, 2.4vw, 1.4rem); box-shadow: 0 3px 8px rgba(0,0,0,0.35);
+            transition: opacity 0.5s ease; animation: maskPulse 1.6s ease-in-out infinite; }
+        .map-mask.revealed { opacity: 0; animation: none; }
+        @keyframes maskPulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+        .map-stage.zoomed { overflow: auto; -webkit-overflow-scrolling: touch; padding-bottom: 6px; }
+        .map-stage.zoomed .map-wrap { max-width: none; }
+        .map-stage.zoomed .map-wrap img { max-width: none; max-height: none; width: min(1400px, 230vw); }
+        .map-wrap { cursor: zoom-in; }
+        .map-stage.zoomed .map-wrap { cursor: zoom-out; }
+        .map-hint { color: #0f766e; font-weight: 700; font-size: 0.95rem; margin-top: 8px; }
+        .map-options { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        @media (max-width: 600px) { .map-options { grid-template-columns: 1fr; } }
+        .map-options .btn { padding: 14px 10px; font-size: clamp(1rem, 3vw, 1.2rem); min-height: 60px; }
+        .map-options .btn.ok { background: linear-gradient(to bottom, #10b981, #047857) !important; }
+        .map-options .btn.bad { background: linear-gradient(to bottom, #ef4444, #b91c1c) !important; }
+        .header-logo { width: 260px; height: 260px; border-radius: 30px; border: 4px solid var(--warning);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.4); background-color: white; object-fit: cover; flex-shrink: 0; }
+        @media (max-width: 600px) { .header-logo { width: 170px; height: 170px; } }
+    </style>
+</head>
+<body>
+
+    <!-- الهيدر مع اللوجو -->
+    <header class="header-main" id="main-header">
+        <div class="header-content">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap;">
+                <!-- اللوجو (على اليمين) -->
+                <img src="logo.jpg" alt="الأستاذة داليا السايح" class="header-logo">
+                
+                <!-- النصوص -->
+                <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <h1 class="title-line1">
+                        درس 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                        لعبة
+                    </h1>
+                    <h1 class="title-line2">مع الأستاذة دَالْيَا السَّايِح</h1>
+                    <h2>الصَّفُّ الثَّانِي الإِعْدَادِيُّ - الْوَحْدَةُ الثَّانِيَةُ - الدَّرْسُ الأَوَّلُ: نَمَاذِجُ لِلْحَضَارَاتِ القَدِيمَةِ بِالشَّرْقِ الأَدْنَى</h2>
+                    <p style="margin-top: 10px;">الدِّرَاسَاتُ الاجْتِمَاعِيَّةُ</p>
+                </div>
+            </div>
+        </div>
+        <!-- تموجات زخرفية -->
+        <svg class="header-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#ecfeff" fill-opacity="1" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,170.7C960,160,1056,192,1152,208C1248,224,1344,224,1392,224L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+    </header>
+
+    <!-- الشاشة الرئيسية -->
+    <div id="home-screen">
+        <div class="grid-menu" id="menu-grid">
+            <!-- سيتم حقن البطاقات هنا برمجياً -->
+        </div>
+    </div>
+
+    <!-- شاشة اللعب -->
+    <div id="game-screen" class="hidden">
+        <div class="game-nav">
+            <button class="btn back-btn" onclick="returnToMenu()">
+                <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                رجوع
+            </button>
+            <strong id="game-title">عنوان اللعبة</strong>
+            <span id="game-progress">1 / 25</span>
+        </div>
+        <div class="game-container" id="game-container">
+            <!-- سيتم حقن الأسئلة هنا برمجياً -->
+        </div>
+    </div>
+
+    <!-- نافذة الملاحظات السريعة -->
+    <div class="overlay" id="feedback-modal">
+        <div class="modal">
+            <div class="modal-icon" id="feedback-icon"></div>
+            <h2 id="feedback-title" style="font-size: 2.5rem; font-weight: 900;">إجابة صحيحة!</h2>
+        </div>
+    </div>
+
+    <!-- الفوتر -->
+    <footer class="footer-main" id="main-footer">
+        <p>جميع الحقوق محفوظة &copy; | دروس وألعاب تعليمية</p>
+        <p class="designer">الأستاذة / دَالْيَا السَّايِح - 01030866428</p>
+    </footer>
+
+    <!-- زر الواتساب -->
+    <a href="https://wa.me/201030866428" class="whatsapp-float" target="_blank" title="تواصل معنا">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.656.843 5.12 2.26 7.15L.626 24l5.01-1.61c1.983 1.25 4.27 1.91 6.395 1.91 6.646 0 12.03-5.385 12.03-12.031S18.677 0 12.031 0zm6.544 17.202c-.273.766-1.58 1.464-2.185 1.503-.56.035-1.28.23-4.085-.86-3.39-1.32-5.59-4.78-5.736-4.97-.145-.19-1.37-1.82-1.37-3.475 0-1.655.857-2.47 1.164-2.8.307-.33.67-.413.89-.413.22 0 .44 0 .633.01.205.01.482-.08.736.53.264.634.904 2.203.984 2.366.08.163.133.353.033.553-.1.2-.153.326-.307.506-.154.18-.32.38-.453.506-.153.153-.314.316-.134.626.18.31.8 1.32 1.71 2.13.176.157.363.31.558.45 1.05.76 1.83 1.05 2.13 1.18.3.13.474.11.652-.09.18-.205.766-.893.97-1.2.204-.307.41-.256.69-.153.28.103 1.77.836 2.074.99.304.153.506.23.582.356.076.126.076.73-.197 1.496z"/>
+        </svg>
+    </a>
+
+<script>
+    const LESSON_NAME = "الدراسات الاجتماعية: نماذج للحضارات القديمة بالشرق الأدنى - الصف الثاني الإعدادي";
+    const allGamesData = [
+    {
+        "id": "mcq_1",
+        "title": "اختيار من متعدد",
+        "type": "mcq",
+        "desc": "أسئلة اختيار من متعدد حول نماذج للحضارات القديمة بالشرق الأدنى",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><polygon points=\"11 5 6 9 2 9 2 15 6 15 11 19 11 5\"></polygon><path d=\"M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07\"></path></svg>",
+        "questions": [
+            {
+                "q": "ارتبط موقع معظم الحضارات القديمة في قارة آسيا بتوافر:",
+                "options": [
+                    "الثروات المعدنية فقط",
+                    "المياه العذبة والتربة الخصبة",
+                    "الجبال المرتفعة",
+                    "الصحاري الواسعة"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أدت التضاريس المتنوعة دورًا مهمًا في:",
+                "options": [
+                    "حماية الحضارات من الغزو الخارجي",
+                    "منع قيام الزراعة",
+                    "تقليل الموارد الطبيعية",
+                    "عزل الحضارات عن الأنهار"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "ساعد اعتدال المناخ في آسيا على:",
+                "options": [
+                    "قلة الإنتاج الزراعي",
+                    "انتشار الصحاري",
+                    "هجرة السكان",
+                    "استقرار السكان واستغلالهم للموارد المتاحة"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "نشأت حضارات بلاد العراق القديم في السهول الفيضية الواقعة بين نهري:",
+                "options": [
+                    "النيل والأردن",
+                    "السند والجانج",
+                    "دجلة والفرات",
+                    "اليانجتسي والهوانج هو"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "سُميت حضارات بلاد العراق القديم بحضارات:",
+                "options": [
+                    "بلاد الشام",
+                    "بلاد الرافدين",
+                    "بلاد اليمن",
+                    "بلاد فارس"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "من أوائل الشعوب التي سكنت جنوب بلاد العراق القديم على ضفاف نهر الفرات:",
+                "options": [
+                    "الأكاديون",
+                    "السومريون",
+                    "البابليون",
+                    "الآشوريون"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "اتخذ السومريون عاصمة لهم مدينة:",
+                "options": [
+                    "أور",
+                    "آشور",
+                    "بابل",
+                    "أكاد"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "كانت كل مدينة سومرية بمثابة:",
+                "options": [
+                    "ولاية تابعة لمصر",
+                    "مستعمرة فينيقية",
+                    "دويلة مستقلة لها حاكمها ومعبودها وقوانينها",
+                    "إقليم فارسي"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "هاجر الأكاديون إلى وسط بلاد العراق القديم من:",
+                "options": [
+                    "بلاد الإغريق",
+                    "بلاد فارس",
+                    "آسيا الصغرى",
+                    "شبه الجزيرة العربية"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "الملك الذي وحّد المدن السومرية المتنازعة وأسس أول مملكة موحدة في العراق القديم:",
+                "options": [
+                    "سرجون الأول",
+                    "سلوقس",
+                    "حمورابي",
+                    "الإسكندر الأكبر"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "اتخذ الأكاديون عاصمة لهم مدينة:",
+                "options": [
+                    "أور",
+                    "أكاد",
+                    "بابل",
+                    "نينوى"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "استقر البابليون في وسط بلاد العراق القديم واتخذوا عاصمة لهم مدينة:",
+                "options": [
+                    "أور",
+                    "بابل",
+                    "آشور",
+                    "أكاد"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "استقر الآشوريون في ... بلاد العراق القديم:",
+                "options": [
+                    "جنوب",
+                    "شمال",
+                    "وسط",
+                    "غرب"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "اتخذ الآشوريون عاصمة لهم مدينة:",
+                "options": [
+                    "بابل",
+                    "آشور",
+                    "صور",
+                    "أور"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "اتبع الآشوريون سياسة ... ضد الشعوب التي احتلوها:",
+                "options": [
+                    "العنف",
+                    "التسامح",
+                    "الحياد",
+                    "المساواة"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "كان نظام الحكم في حضارات بلاد العراق القديم:",
+                "options": [
+                    "ملكيًا وراثيًا",
+                    "ديمقراطيًا",
+                    "جمهوريًا",
+                    "انتخابيًا"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "نظام عرفه العراق القديم كانت فيه كل مدينة مستقلة ولها حاكم يجمع بين السلطتين السياسية والدينية:",
+                "options": [
+                    "الحكومة المركزية",
+                    "الاتحاد الفيدرالي",
+                    "نظام الولايات",
+                    "دولة المدينة"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "أصبح للعراق القديم حكومة مركزية بعد توحيده على يد:",
+                "options": [
+                    "الآشوريين",
+                    "السومريين",
+                    "الأكاديين",
+                    "الفرس"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "آمن سكان بلاد العراق القديم بفكرة:",
+                "options": [
+                    "عبادة الملوك فقط",
+                    "تعدد المعبودات",
+                    "عدم وجود معبودات",
+                    "التوحيد"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "من أشهر معبودات بلاد العراق القديم:",
+                "options": [
+                    "بعل",
+                    "رع",
+                    "آمون",
+                    "عشتار"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "كانت ... نواة النظام الاجتماعي في بلاد العراق القديم:",
+                "options": [
+                    "المدينة",
+                    "القبيلة",
+                    "الأسرة",
+                    "الطبقة"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "على رأس الطبقة العليا في مجتمع العراق القديم:",
+                "options": [
+                    "الملك ورجال الحكم والكهنة",
+                    "التجار",
+                    "الفلاحون",
+                    "الحرفيون"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "صدر أول قانون مدون في العصر:",
+                "options": [
+                    "الآشوري",
+                    "الأكادي",
+                    "البابلي",
+                    "السومري"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "من أشهر القوانين التي ظهرت في عصر الدولة البابلية الأولى:",
+                "options": [
+                    "قوانين دراكون",
+                    "تشريعات حمورابي",
+                    "الألواح الاثنا عشر",
+                    "قوانين سولون"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "من المحاصيل الزراعية في بلاد العراق القديم:",
+                "options": [
+                    "القطن والمطاط",
+                    "القمح والشعير والنخيل",
+                    "الأرز والشاي",
+                    "البن والكاكاو"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "برع سكان العراق القديم في صناعة:",
+                "options": [
+                    "السفن من خشب الأرز",
+                    "الزجاج الملون فقط",
+                    "الخزف والأدوات المنزلية",
+                    "الورق من البردي"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أقام سكان العراق القديم علاقات تجارية واسعة مع مصر وبلاد فارس (إيران حاليًا) و:",
+                "options": [
+                    "الأمريكتين",
+                    "الصين واليابان",
+                    "الهند وبلاد الشام",
+                    "أوروبا وأمريكا"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "اعتمد سكان العراق القديم في البداية في التبادل التجاري على:",
+                "options": [
+                    "النقود الفضية فقط",
+                    "المقايضة",
+                    "الشيكات",
+                    "العملات الورقية"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "اخترع السومريون الكتابة:",
+                "options": [
+                    "المسمارية",
+                    "الصينية",
+                    "الهيروغليفية",
+                    "الأبجدية"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "رموز تشبه رؤوس المسامير تُكتب بأداة خشبية مدببة على ألواح من الطين هي:",
+                "options": [
+                    "الأبجدية الفينيقية",
+                    "الكتابة الهيروغليفية",
+                    "الكتابة التصويرية للمايا",
+                    "الكتابة المسمارية"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "وضع سكان العراق القديم تقويمًا:",
+                "options": [
+                    "شمسيًا فقط",
+                    "قمريًا فقط",
+                    "نجميًا فقط",
+                    "شمسيًا وقمريًا"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "هرم مدرج يُبنى عليه معبد من الطوب الطيني هو:",
+                "options": [
+                    "البوابة",
+                    "المسلة",
+                    "الزقورة",
+                    "المصطبة"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "من أشهر تماثيل حضارة العراق القديم:",
+                "options": [
+                    "تمثال أبي الهول",
+                    "تمثال الكاتب",
+                    "تمثال شيخ البلد",
+                    "تمثال الثور المجنح"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "نقل المصريون القدماء عن حضارة العراق القديم:",
+                "options": [
+                    "الكتابة الهيروغليفية",
+                    "بناء الأهرامات",
+                    "استخدام الأختام ونحت الحيوانات المجنحة",
+                    "التحنيط"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "نقلت حضارات العراق القديم عن المصريين القدماء:",
+                "options": [
+                    "استخدام الأختام",
+                    "الكتابة المسمارية",
+                    "صناعة الخزف وزخارفه وبناء الزقورات على شكل الهرم المدرج",
+                    "عبادة عشتار"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "قامت حضارة فينيقيا على أرض بلاد:",
+                "options": [
+                    "الشام",
+                    "فارس",
+                    "الرافدين",
+                    "اليمن"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "استقر الفينيقيون على الشريط الساحلي:",
+                "options": [
+                    "شرق البحر المتوسط",
+                    "جنوب الخليج العربي",
+                    "شمال البحر الأسود",
+                    "غرب البحر الأحمر"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "من المدن الفينيقية:",
+                "options": [
+                    "أور وأكاد وبابل",
+                    "أثينا وإسبرطة",
+                    "مأرب وظفار",
+                    "جبيل وبيروت وأوغاريت"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "من أشهر معبودات الفينيقيين:",
+                "options": [
+                    "عشتار",
+                    "آتون",
+                    "حورس",
+                    "بعل"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "جسّد الفينيقيون معبوداتهم في صورة:",
+                "options": [
+                    "هندسية",
+                    "نباتية",
+                    "بشرية",
+                    "حيوانية"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "حوّل الفينيقيون سفوح جبال ... إلى مصاطب زراعية:",
+                "options": [
+                    "زاجروس",
+                    "أطلس",
+                    "طوروس",
+                    "لبنان"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "اشتهر الفينيقيون بصناعة الأصباغ المستخرجة من:",
+                "options": [
+                    "الصخور",
+                    "الكائنات البحرية",
+                    "المعادن",
+                    "النباتات الصحراوية"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "صنع الفينيقيون السفن من أخشاب:",
+                "options": [
+                    "الصنوبر",
+                    "الأبنوس",
+                    "الأرز",
+                    "الماهوجني"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "من المراكز التجارية التي أسسها الفينيقيون:",
+                "options": [
+                    "أور",
+                    "مأرب",
+                    "بابل",
+                    "قرطاج"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "ابتكر الفينيقيون حروفًا أبجدية تتكون من:",
+                "options": [
+                    "٢٨ حرفًا",
+                    "٢٦ حرفًا",
+                    "٢٢ حرفًا",
+                    "١٢ حرفًا"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "انتقلت الأبجدية الفينيقية إلى:",
+                "options": [
+                    "الفرس ثم الهند",
+                    "الإغريق ثم انتشرت في أوروبا",
+                    "الصينيين ثم اليابان",
+                    "المصريين ثم إفريقيا"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "استورد المصريون القدماء من فينيقيا أخشاب:",
+                "options": [
+                    "السنط",
+                    "الأبنوس",
+                    "الماهوجني",
+                    "الأرز"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "الملك المصري الذي استعان بالبحارة الفينيقيين للدوران حول إفريقيا:",
+                "options": [
+                    "خوفو",
+                    "أحمس",
+                    "نخاو الثاني",
+                    "رمسيس الثاني"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "غزا الفرس بلاد العراق القديم وبلاد الشام حوالي القرن:",
+                "options": [
+                    "الأول الميلادي",
+                    "السادس قبل الميلاد",
+                    "العاشر قبل الميلاد",
+                    "الثالث الميلادي"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "قائد الإسكندر الذي أسس الدولة السلوقية:",
+                "options": [
+                    "سرجون",
+                    "حمورابي",
+                    "بطليموس",
+                    "سلوقس"
+                ],
+                "ans": 3
+            }
+        ]
+    },
+    {
+        "id": "bubbles_2",
+        "title": "الفقاعات المتساقطة",
+        "type": "bubbles",
+        "desc": "التقط الفقاعة ذات الإجابة الصحيحة عن نماذج للحضارات القديمة بالشرق الأدنى",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M21.21 15.89A10 10 0 1 1 8 2.83\"></path><path d=\"M22 12A10 10 0 0 0 12 2v10z\"></path></svg>",
+        "questions": [
+            {
+                "q": "نهران قامت بينهما حضارات العراق القديم؟",
+                "options": [
+                    "العاصي والليطاني",
+                    "النيل والأردن",
+                    "دجلة والفرات",
+                    "السند والجانج"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "الاسم الآخر لحضارات العراق القديم؟",
+                "options": [
+                    "بلاد الشام",
+                    "بلاد الرافدين",
+                    "بلاد بونت",
+                    "بلاد فارس"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أوائل سكان جنوب العراق القديم؟",
+                "options": [
+                    "الآشوريون",
+                    "الأكاديون",
+                    "الفرس",
+                    "السومريون"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "عاصمة السومريين؟",
+                "options": [
+                    "أور",
+                    "أكاد",
+                    "بابل",
+                    "آشور"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "موحد المدن السومرية؟",
+                "options": [
+                    "نخاو",
+                    "حمورابي",
+                    "سلوقس",
+                    "سرجون الأول"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "عاصمة الأكاديين؟",
+                "options": [
+                    "أور",
+                    "جبيل",
+                    "أكاد",
+                    "آشور"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "عاصمة البابليين؟",
+                "options": [
+                    "بابل",
+                    "نينوى",
+                    "صور",
+                    "أور"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "عاصمة الآشوريين؟",
+                "options": [
+                    "بابل",
+                    "أوغاريت",
+                    "آشور",
+                    "أكاد"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "شعب اتبع سياسة العنف؟",
+                "options": [
+                    "البابليون",
+                    "الفينيقيون",
+                    "الآشوريون",
+                    "السومريون"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "مصدر هجرة الأكاديين؟",
+                "options": [
+                    "شبه الجزيرة العربية",
+                    "الإغريق",
+                    "بلاد فارس",
+                    "الهند"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أشهر معبودات العراق القديم؟",
+                "options": [
+                    "آمون",
+                    "زيوس",
+                    "بعل",
+                    "عشتار"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "صاحب أشهر التشريعات البابلية؟",
+                "options": [
+                    "سلوقس",
+                    "سرجون",
+                    "حمورابي",
+                    "الإسكندر"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "عصر أول قانون مدون؟",
+                "options": [
+                    "السومري",
+                    "الفينيقي",
+                    "الفارسي",
+                    "الآشوري"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "نوع كتابة السومريين؟",
+                "options": [
+                    "المسمارية",
+                    "التصويرية",
+                    "الأبجدية",
+                    "الهيروغليفية"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "مادة ألواح الكتابة المسمارية؟",
+                "options": [
+                    "الطين",
+                    "الجلد",
+                    "البردي",
+                    "الحجر"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "هرم مدرج عليه معبد؟",
+                "options": [
+                    "المصطبة",
+                    "الزقورة",
+                    "الهرم الكامل",
+                    "المسلة"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "تمثال آشوري شهير؟",
+                "options": [
+                    "أبو الهول",
+                    "الثور المجنح",
+                    "الكاتب الجالس",
+                    "حورس"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "نوع التقويم في العراق القديم؟",
+                "options": [
+                    "نجمي",
+                    "شمسي فقط",
+                    "شمسي وقمري",
+                    "قمري فقط"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "محصول زرعه العراقيون القدماء؟",
+                "options": [
+                    "القمح",
+                    "الشاي",
+                    "البن",
+                    "الكاكاو"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "معدن استخدمه العراقيون للأدوات؟",
+                "options": [
+                    "الألومنيوم",
+                    "البرونز",
+                    "التيتانيوم",
+                    "اليورانيوم"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أسلوب التجارة الأول؟",
+                "options": [
+                    "البطاقات",
+                    "العملات الورقية",
+                    "الشيكات",
+                    "المقايضة"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "أرض قامت عليها حضارة فينيقيا؟",
+                "options": [
+                    "الحبشة",
+                    "العراق",
+                    "بلاد الشام",
+                    "اليمن"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "مدينة فينيقية؟",
+                "options": [
+                    "أكاد",
+                    "أور",
+                    "مأرب",
+                    "جبيل"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "مدينة فينيقية على الساحل؟",
+                "options": [
+                    "بيروت",
+                    "بابل",
+                    "آشور",
+                    "ظفار"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أشهر معبودات الفينيقيين؟",
+                "options": [
+                    "المقة",
+                    "بعل",
+                    "عشتار",
+                    "سين"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "جبال حوّلوها لمصاطب زراعية؟",
+                "options": [
+                    "لبنان",
+                    "الهيمالايا",
+                    "أورال",
+                    "زاجروس"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "مصدر الأصباغ الفينيقية؟",
+                "options": [
+                    "الطين",
+                    "الكائنات البحرية",
+                    "النباتات",
+                    "الصخور"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "خشب صنعوا منه السفن؟",
+                "options": [
+                    "الماهوجني",
+                    "البلوط",
+                    "الأرز",
+                    "الأبنوس"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "مركز تجاري فينيقي في تونس؟",
+                "options": [
+                    "قرطاج",
+                    "مأرب",
+                    "بابل",
+                    "جبيل"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "عدد حروف الأبجدية الفينيقية؟",
+                "options": [
+                    "٢٦",
+                    "٣٠",
+                    "٢٢",
+                    "٢٨"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "شعب نقل الأبجدية لأوروبا؟",
+                "options": [
+                    "الرومان",
+                    "الآشوريون",
+                    "الإغريق",
+                    "الفرس"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "ما استورده المصريون من فينيقيا؟",
+                "options": [
+                    "العاج",
+                    "البخور",
+                    "الذهب",
+                    "خشب الأرز"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "ملك استعان بالبحارة الفينيقيين؟",
+                "options": [
+                    "زوسر",
+                    "خوفو",
+                    "حتشبسوت",
+                    "نخاو الثاني"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "بحر سيطر عليه الفينيقيون تجاريًا؟",
+                "options": [
+                    "العرب",
+                    "الأسود",
+                    "الأحمر",
+                    "المتوسط"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "شعب غزا العراق والشام في القرن ٦ ق.م؟",
+                "options": [
+                    "الهكسوس",
+                    "الإغريق",
+                    "الرومان",
+                    "الفرس"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "القائد المقدوني الذي هزم الفرس؟",
+                "options": [
+                    "سلوقس",
+                    "الإسكندر الأكبر",
+                    "يوليوس قيصر",
+                    "سرجون"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "عام وفاة الإسكندر؟",
+                "options": [
+                    "٣١ ق.م",
+                    "٥٣٩ ق.م",
+                    "١٤٩٢ م",
+                    "٣٢٣ ق.م"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "دولة أسسها سلوقس؟",
+                "options": [
+                    "الأكادية",
+                    "السلوقية",
+                    "البطلمية",
+                    "الآشورية"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "من استولى على بلاد الشام بعد السلوقيين؟",
+                "options": [
+                    "الأكاديون",
+                    "الآشوريون",
+                    "الروم",
+                    "الفرس"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "من فتح العراق والشام في النهاية؟",
+                "options": [
+                    "العثمانيون",
+                    "المغول",
+                    "العرب المسلمون",
+                    "الإغريق"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "معبودة نقل المصريون عبادتها من العراق؟",
+                "options": [
+                    "المقة",
+                    "بعل",
+                    "عشتار",
+                    "إنانا"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "ما نقله المصريون عن العراقيين؟",
+                "options": [
+                    "البردي",
+                    "التحنيط",
+                    "الأهرامات",
+                    "الأختام"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "ما نقله العراقيون عن المصريين؟",
+                "options": [
+                    "الثور المجنح",
+                    "الكتابة المسمارية",
+                    "صناعة الخزف",
+                    "الأختام"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "شكل الزقورة يشبه؟",
+                "options": [
+                    "المسلة",
+                    "الهرم المدرج",
+                    "الهرم الكامل",
+                    "المصطبة"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "عصر تشريعات حمورابي؟",
+                "options": [
+                    "البابلي الأول",
+                    "الآشوري",
+                    "الأكادي",
+                    "السومري"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "مكانة الكاتب في العراق القديم؟",
+                "options": [
+                    "متدنية",
+                    "معدومة",
+                    "مرموقة",
+                    "عسكرية"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "نواة المجتمع العراقي القديم؟",
+                "options": [
+                    "الأسرة",
+                    "السوق",
+                    "المعبد",
+                    "القبيلة"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "نوع حكم المدن الفينيقية؟",
+                "options": [
+                    "ديمقراطي",
+                    "ملكي وراثي",
+                    "انتخابي",
+                    "جمهوري"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "ما برع فيه الفينيقيون صناعيًا؟",
+                "options": [
+                    "الخزف الصيني",
+                    "الزجاج الملون",
+                    "الورق",
+                    "البارود"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "ما نحت منه الفينيقيون تماثيلهم الصغيرة؟",
+                "options": [
+                    "الذهب الخالص",
+                    "البرونز",
+                    "الطين",
+                    "العاج"
+                ],
+                "ans": 3
+            }
+        ]
+    },
+    {
+        "id": "shooting_3",
+        "title": "التنشين والاصطياد",
+        "type": "shooting",
+        "desc": "صوّب نحو الكلمة الصحيحة لإكمال عبارات نماذج للحضارات القديمة بالشرق الأدنى",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><circle cx=\"12\" cy=\"12\" r=\"6\"></circle><circle cx=\"12\" cy=\"12\" r=\"2\"></circle></svg>",
+        "questions": [
+            {
+                "q": "أكمل: «ارتبط موقع معظم الحضارات القديمة في آسيا بتوافر المياه العذبة والتربة ...».",
+                "options": [
+                    "الجيرية",
+                    "الخصبة",
+                    "الحمراء",
+                    "الرملية"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أكمل: «ساعد توافر المياه والتربة الخصبة على قيام ... وازدهارها».",
+                "options": [
+                    "الزراعة",
+                    "الرعي",
+                    "التعدين",
+                    "الصناعة"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «أدت التضاريس المتنوعة دورًا مهمًا في حماية الحضارات من الغزو ...».",
+                "options": [
+                    "الخارجي",
+                    "الثقافي",
+                    "البحري",
+                    "الداخلي"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «ساعد اعتدال المناخ على استقرار السكان واستغلالهم ... المتاحة».",
+                "options": [
+                    "للموارد",
+                    "للسفن",
+                    "للمستعمرات",
+                    "للأسلحة"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «تُعد حضارات بلاد العراق القديم إحدى أقدم الحضارات التي ظهرت في قارة ...».",
+                "options": [
+                    "أوروبا",
+                    "آسيا",
+                    "أمريكا",
+                    "إفريقيا"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أكمل: «استفاد سكان الرافدين من النهرين في الزراعة والتجارة ونقل ...».",
+                "options": [
+                    "الأخشاب فقط",
+                    "المياه",
+                    "البضائع",
+                    "الجيوش"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «نقل سكان الرافدين البضائع إلى المناطق المجاورة في شمال ...».",
+                "options": [
+                    "مصر",
+                    "الجزيرة العربية",
+                    "فارس",
+                    "سوريا"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "أكمل: «سكن السومريون جنوب العراق القديم على ضفاف نهر ...».",
+                "options": [
+                    "الفرات",
+                    "النيل",
+                    "الأردن",
+                    "دجلة"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «تمكن الأكاديون في عهد الملك سرجون الأول من السيطرة على المدن ... المتنازعة».",
+                "options": [
+                    "البابلية",
+                    "الفينيقية",
+                    "الآشورية",
+                    "السومرية"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "أكمل: «بتوحيد المدن السومرية تأسست أول مملكة ... في بلاد العراق القديم».",
+                "options": [
+                    "مستقلة",
+                    "ديمقراطية",
+                    "موحدة",
+                    "تجارية"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «أدت سياسة العنف الآشورية إلى ثورات متكررة ... دولتهم».",
+                "options": [
+                    "وحّدت",
+                    "أضعفت",
+                    "وسّعت",
+                    "قوّت"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أكمل: «كان حاكم دولة المدينة يجمع بين السلطتين السياسية و...».",
+                "options": [
+                    "العسكرية",
+                    "القضائية",
+                    "التجارية",
+                    "الدينية"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "أكمل: «قدّس سكان العراق القديم قوى ...».",
+                "options": [
+                    "الطبيعة",
+                    "البحر فقط",
+                    "الحيوانات فقط",
+                    "الملوك"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «اعتقد سكان العراق القديم في البعث و...».",
+                "options": [
+                    "التحنيط",
+                    "الفناء",
+                    "التناسخ",
+                    "الخلود"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "أكمل: «وضع سكان العراق القديم الطعام و... في قبور موتاهم».",
+                "options": [
+                    "الشراب",
+                    "العملات",
+                    "الكتب",
+                    "الأسلحة"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «انقسم مجتمع العراق القديم إلى عدة ...».",
+                "options": [
+                    "طبقات",
+                    "دويلات",
+                    "أقاليم",
+                    "قبائل"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «مع نمو المجتمع ظهرت الحاجة إلى ... تنظم العلاقات».",
+                "options": [
+                    "معابد",
+                    "أسواق",
+                    "قوانين",
+                    "جيوش"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «أكد أول قانون مدون على تحقيق العدالة ... وحماية الضعفاء».",
+                "options": [
+                    "الاقتصادية",
+                    "الاجتماعية",
+                    "العسكرية",
+                    "الدينية"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أكمل: «نظمت تشريعات حمورابي مختلف جوانب الحياة كما كفلت حقوق ...».",
+                "options": [
+                    "التجار",
+                    "المرأة",
+                    "الكهنة",
+                    "الملك"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أكمل: «قامت حضارات العراق القديم على الزراعة لتوافر المياه و... الخصبة».",
+                "options": [
+                    "الجبال",
+                    "الغابات",
+                    "التربة",
+                    "السهول"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «اهتم سكان الرافدين بتنظيم شئون الزراعة والري فأقاموا ...».",
+                "options": [
+                    "السدود",
+                    "الموانئ",
+                    "المسلات",
+                    "الأهرامات"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «طوّر سكان الرافدين أدوات حرث الأرض و... البذور».",
+                "options": [
+                    "استيراد",
+                    "بذر",
+                    "تخزين",
+                    "بيع"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أكمل: «استخدم العراقيون القدماء النحاس والذهب والفضة و... في صناعة الأدوات».",
+                "options": [
+                    "الرصاص",
+                    "الألومنيوم",
+                    "الحديد الصلب",
+                    "البرونز"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "أكمل: «استخدم العراقيون فيما بعد الذهب والفضة ك... معدنية».",
+                "options": [
+                    "نقود",
+                    "أسلحة",
+                    "أدوات",
+                    "حلي"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «ساعد اختراع الكتابة المسمارية على تدوين الأحداث ونقلها عبر ...».",
+                "options": [
+                    "الجبال",
+                    "الحدود",
+                    "الأجيال",
+                    "البحار"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «ترك السومريون إرثًا أدبيًا متنوعًا من الأساطير والقصص و...».",
+                "options": [
+                    "الخرائط",
+                    "الشعر",
+                    "العملات",
+                    "القوانين"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أكمل: «رصد سكان العراق القديم حركة الكواكب و...».",
+                "options": [
+                    "الحيوانات",
+                    "النجوم",
+                    "الرياح",
+                    "الأنهار"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أكمل: «برع سكان العراق القديم في الحساب والهندسة و...».",
+                "options": [
+                    "صناعة الورق",
+                    "الملاحة",
+                    "التحنيط",
+                    "الطب"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "أكمل: «شُيدت الزقورات لإقامة الشعائر الدينية وتتويج ...».",
+                "options": [
+                    "الكاهن",
+                    "التاجر",
+                    "الملك",
+                    "القائد"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «كانت الزقورات مكانًا لتلقي ...».",
+                "options": [
+                    "الجيوش",
+                    "العلم",
+                    "البضائع",
+                    "الضرائب"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أكمل: «أسهمت العلاقات التجارية بين مصر والعراق القديم في تعميق التبادل ...».",
+                "options": [
+                    "العسكري",
+                    "الثقافي",
+                    "الزراعي",
+                    "السكاني"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أكمل: «تأثرت حضارات العراق القديم بفكرة تعدد المعبودات والبعث و... عند المصريين».",
+                "options": [
+                    "التحنيط",
+                    "الكتابة",
+                    "الخلود",
+                    "الأهرامات"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «قامت على أرض الشام حضارات في سوريا ولبنان والأردن و...».",
+                "options": [
+                    "اليمن",
+                    "مصر",
+                    "فلسطين",
+                    "العراق"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «كان الفينيقيون أول من استقر على الشريط الساحلي شرق البحر ...».",
+                "options": [
+                    "العربي",
+                    "الأسود",
+                    "الأحمر",
+                    "المتوسط"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "أكمل: «كانت كل مدينة فينيقية تمثل مملكة مستقلة لها حاكم يحكمها ب...».",
+                "options": [
+                    "الوراثة",
+                    "القوة",
+                    "القرعة",
+                    "الانتخاب"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «اتخذ الفينيقيون معبوداتهم من قوى الطبيعة وشيدوا لها ...».",
+                "options": [
+                    "الأهرامات",
+                    "المعابد",
+                    "المسلات",
+                    "الزقورات"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أكمل: «كان المجتمع الفينيقي مقسمًا لطبقات مثل المجتمعين المصري و...».",
+                "options": [
+                    "اليوناني",
+                    "الصيني",
+                    "الروماني",
+                    "العراقي القديم"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "أكمل: «زرع الفينيقيون العنب والتين و...».",
+                "options": [
+                    "الزيتون",
+                    "القمح",
+                    "البن",
+                    "الأرز"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «صنع الفينيقيون الملابس من الحرير والقطن و...».",
+                "options": [
+                    "الصوف",
+                    "البردي",
+                    "الكتان",
+                    "الجلد"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «سيطر الفينيقيون على التجارة ... في البحر المتوسط».",
+                "options": [
+                    "النهرية",
+                    "الجوية",
+                    "البحرية",
+                    "البرية"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «استخدم الفينيقيون المقايضة ثم سُكّت النقود من ...».",
+                "options": [
+                    "الذهب",
+                    "الفضة",
+                    "النحاس",
+                    "الحديد"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «تُعد الأبجدية الفينيقية من أقدم ... في التاريخ».",
+                "options": [
+                    "الأبجديات",
+                    "الخرائط",
+                    "القوانين",
+                    "التقاويم"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «أصبحت الأبجدية الفينيقية أساس الأبجدية ...».",
+                "options": [
+                    "الهيروغليفية",
+                    "المسمارية",
+                    "الصينية",
+                    "الحديثة"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "أكمل: «اهتم الفينيقيون بالفلك والحساب لمساعدتهم في الملاحة البحرية و...».",
+                "options": [
+                    "البناء",
+                    "التجارة",
+                    "الزراعة",
+                    "الحرب"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أكمل: «ساهم الفينيقيون في تطوير علم ... من خلال رحلاتهم البحرية».",
+                "options": [
+                    "الجغرافيا",
+                    "التاريخ",
+                    "الكيمياء",
+                    "الطب"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «بنى الفينيقيون الأسوار حول المدن لحمايتها من ...».",
+                "options": [
+                    "الأعداء",
+                    "الفيضانات",
+                    "الحيوانات",
+                    "الرياح"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «نقل الفينيقيون عن المصريين القدماء صناعة الخزف و...».",
+                "options": [
+                    "الفخار",
+                    "الأصباغ",
+                    "الورق",
+                    "الزجاج"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «استخدم المصريون خشب الأرز في صناعة السفن وتوابيت ...».",
+                "options": [
+                    "التجار",
+                    "الملوك",
+                    "الكهنة",
+                    "الجنود"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أكمل: «كان المصريون يديرون الحكم في الشام بتعيين حكام محليين ... لمصر».",
+                "options": [
+                    "أوفياء",
+                    "معادين",
+                    "مستقلين",
+                    "أجانب"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «اهتم المصريون بإنشاء المعابد والمراكز و... العسكرية في الشام».",
+                "options": [
+                    "الأسواق",
+                    "المدارس",
+                    "الحاميات",
+                    "المزارع"
+                ],
+                "ans": 2
+            }
+        ]
+    },
+    {
+        "id": "true_false_4",
+        "title": "صح أم خطأ",
+        "type": "true_false",
+        "desc": "حدد صحة العبارات المتعلقة بـ نماذج للحضارات القديمة بالشرق الأدنى",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M22 11.08V12a10 10 0 1 1-5.93-9.14\"></path><polyline points=\"22 4 12 14.01 9 11.01\"></polyline></svg>",
+        "questions": [
+            {
+                "q": "ارتبط موقع معظم الحضارات القديمة في آسيا بتوافر المياه العذبة والتربة الخصبة.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أدت التضاريس المتنوعة إلى سهولة غزو الحضارات القديمة.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "نشأت حضارات العراق القديم في السهول الفيضية بين نهري دجلة والفرات.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "سُميت حضارات العراق القديم بحضارات بلاد الشام.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "يُعد السومريون من أوائل الشعوب التي سكنت جنوب العراق القديم.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "اتخذ السومريون من مدينة بابل عاصمة لهم.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "كانت كل مدينة سومرية بمثابة دويلة مستقلة.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "هاجر الأكاديون من بلاد فارس إلى وسط العراق القديم.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أسس الملك سرجون الأول أول مملكة موحدة في العراق القديم.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "اتخذ الأكاديون من مدينة أكاد عاصمة لهم.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "استقر البابليون في شمال العراق القديم.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "اتخذ الآشوريون من مدينة آشور عاصمة لهم.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "اتبع الآشوريون سياسة التسامح مع الشعوب التي احتلوها.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أدت سياسة العنف الآشورية إلى ثورات متكررة أضعفت دولتهم.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "كان نظام الحكم في العراق القديم ملكيًا وراثيًا.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "عرف العراق القديم نظام دولة المدينة.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أصبح للعراق القديم حكومة مركزية بعد توحيده على يد السومريين.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "آمن سكان العراق القديم بفكرة التوحيد.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "تُعد عشتار من أشهر معبودات العراق القديم.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "كانت القبيلة نواة النظام الاجتماعي في العراق القديم.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "تمتع الكاتب بمكانة اجتماعية مرموقة في العراق القديم.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "صدر أول قانون مدون في العصر الآشوري.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "كفلت تشريعات حمورابي حقوق المرأة.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "عرف سكان العراق القديم زراعة النخيل.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "اعتمد العراقيون القدماء على العملات الورقية في التجارة.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "اخترع السومريون الكتابة المسمارية.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "الكتابة المسمارية رموز تشبه رؤوس المسامير تكتب على ألواح الطين.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "وضع سكان العراق القديم تقويمًا قمريًا فقط.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "الزقورة هرم مدرج يبنى عليه معبد من الطوب الطيني.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "تمثال الثور المجنح من أشهر تماثيل الحضارة المصرية القديمة.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "نقل المصريون القدماء عن العراق القديم استخدام الأختام.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "عبد المصريون القدماء المعبودة عشتار تأثرًا بالعراق القديم.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "قامت حضارة فينيقيا على أرض العراق القديم.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "استقر الفينيقيون على الشريط الساحلي شرق البحر المتوسط.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "جبيل وبيروت وأوغاريت من المدن الفينيقية.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "كانت فينيقيا دولة مركزية موحدة.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "من أشهر معبودات الفينيقيين بعل.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "جسّد الفينيقيون معبوداتهم في صورة حيوانية.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "حوّل الفينيقيون سفوح جبال لبنان إلى مصاطب زراعية.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "اشتهر الفينيقيون بصناعة الأصباغ من الكائنات البحرية.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "صنع الفينيقيون السفن من خشب الأبنوس.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أسس الفينيقيون مراكز تجارية مثل قرطاج.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "تتكون الأبجدية الفينيقية من ٢٨ حرفًا.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "انتقلت الأبجدية الفينيقية إلى الإغريق ثم انتشرت في أوروبا.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "استورد الفينيقيون أخشاب الأرز من مصر.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "استعان الملك نخاو الثاني بالبحارة الفينيقيين للدوران حول إفريقيا.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "حكم المصريون القدماء بلاد الشام في فترات متقطعة خاصة في الدولة الحديثة.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "غزا الفرس العراق والشام في حوالي القرن السادس قبل الميلاد.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "بعد وفاة الإسكندر كانت بلاد العراق والشام من نصيب قائده بطليموس.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "ظلت العراق والشام تحت الاحتلال حتى فتحها العرب المسلمون.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            }
+        ]
+    },
+    {
+        "id": "genius_5",
+        "title": "تحدي العباقرة",
+        "type": "genius",
+        "desc": "تحدٍّ سريع للعباقرة: فكّر وفسّر وقارن في نماذج للحضارات القديمة بالشرق الأدنى",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9.663 17h4.673M12 3a6 6 0 0 0-6 6c0 1.887.454 2.921 1.5 4.5.5.75 1 1.5 1 2.5h7c0-1 .5-1.75 1-2.5C17.546 11.921 18 10.887 18 9a6 6 0 0 0-6-6z\"></path></svg>",
+        "questions": [
+            {
+                "q": "بم تفسر قيام معظم الحضارات القديمة في آسيا قرب الأنهار؟",
+                "options": [
+                    "قربها من البحار فقط",
+                    "وجود المعادن قرب الأنهار",
+                    "توافر المياه العذبة والتربة الخصبة اللازمة للزراعة",
+                    "سهولة الدفاع في الصحاري"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "ما دور التضاريس المتنوعة في قيام الحضارات الآسيوية؟",
+                "options": [
+                    "إضعاف الحضارات",
+                    "حمايتها من الغزو الخارجي وتوفير الموارد الطبيعية",
+                    "منع قيام الزراعة",
+                    "عزل السكان عن الأنهار"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "بم تفسر تسمية حضارات العراق القديم بحضارات بلاد الرافدين؟",
+                "options": [
+                    "لأنها أسست مدينة الرافدين",
+                    "لكثرة الجبال فيها",
+                    "لوقوعها على البحر المتوسط",
+                    "لنشأتها في السهول الفيضية بين نهري دجلة والفرات"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "ما نتيجة توحيد سرجون الأول للمدن السومرية؟",
+                "options": [
+                    "سيطرة الفرس على العراق",
+                    "تأسيس أول مملكة موحدة في العراق القديم",
+                    "انتشار الأبجدية الفينيقية",
+                    "انهيار الحضارة الأكادية"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "بم تفسر ضعف الدولة الآشورية؟",
+                "options": [
+                    "توحيد المدن السومرية",
+                    "اتباع سياسة العنف مما أدى إلى ثورات متكررة",
+                    "كثرة التجارة",
+                    "قلة الأنهار"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "ما المقصود بنظام دولة المدينة؟",
+                "options": [
+                    "مدينة يحكمها الكهنة فقط",
+                    "حكومة مركزية تحكم كل المدن",
+                    "كل مدينة مستقلة لها حاكم يجمع بين السلطتين السياسية والدينية",
+                    "اتحاد مدن تحت حكم الفرس"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "دلل على إيمان سكان العراق القديم بالبعث والخلود:",
+                "options": [
+                    "زراعة النخيل",
+                    "سك النقود",
+                    "بناء الأسوار",
+                    "وضعهم الطعام والشراب في قبور موتاهم"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "بم تفسر ظهور القوانين في العراق القديم؟",
+                "options": [
+                    "رغبة الكهنة في السيطرة",
+                    "نمو المجتمع والحاجة إلى تنظيم العلاقات والتعاملات بين الناس",
+                    "تقليد الفينيقيين",
+                    "كثرة الحروب فقط"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "ما أهمية أول قانون مدون في العصر السومري؟",
+                "options": [
+                    "تقسيم المجتمع",
+                    "زيادة الضرائب",
+                    "منع التجارة",
+                    "تحقيق العدالة الاجتماعية وحماية الضعفاء وتنظيم المعاملات التجارية"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "علام تدل تشريعات حمورابي؟",
+                "options": [
+                    "سيطرة الآشوريين",
+                    "تقدم التنظيم القانوني في الدولة البابلية الأولى وكفالة حقوق المرأة",
+                    "انتشار الفوضى",
+                    "ضعف الدولة البابلية"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "بم تفسر قيام حضارات العراق القديم على الزراعة؟",
+                "options": [
+                    "قلة السكان",
+                    "توافر المياه والتربة الخصبة",
+                    "كثرة المعادن",
+                    "وجود الغابات"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "كيف نظم سكان الرافدين شئون الزراعة والري؟",
+                "options": [
+                    "بحفر الآبار في الصحراء",
+                    "بإقامة السدود وتطوير أدوات الحرث وبذر البذور",
+                    "بالتجارة مع فينيقيا",
+                    "بالاعتماد على الأمطار فقط"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "ما أهمية اختراع الكتابة المسمارية؟",
+                "options": [
+                    "زيادة التجارة البحرية",
+                    "تدوين الأحداث ونقلها عبر الأجيال",
+                    "نحت التماثيل",
+                    "بناء الزقورات"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "علام يدل وضع سكان العراق القديم تقويمًا شمسيًا وقمريًا؟",
+                "options": [
+                    "ضعفهم في الحساب",
+                    "اعتمادهم على الفينيقيين",
+                    "انتشار التجارة",
+                    "براعتهم في علم الفلك ورصد حركة الكواكب والنجوم"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "ما وظائف الزقورات في العراق القديم؟",
+                "options": [
+                    "إقامة الشعائر الدينية وتتويج الملك ومكان لتلقي العلم",
+                    "سك النقود",
+                    "الدفاع عن المدن",
+                    "تخزين الحبوب"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "علام يدل تمثال الثور المجنح؟",
+                "options": [
+                    "دقة ومهارة سكان العراق القديم في النحت",
+                    "تأثرهم بالفينيقيين",
+                    "ضعف الفن العراقي",
+                    "انتشار الزراعة"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "دلل على التأثير المتبادل بين الحضارة المصرية وحضارة العراق القديم:",
+                "options": [
+                    "بناء الأهرامات في العراق",
+                    "انتشار الأبجدية في مصر",
+                    "نقل المصريين الأختام وعبادة عشتار ونقل العراقيين صناعة الخزف وبناء الزقورات",
+                    "حكم العراقيين لمصر"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "ما سبب التبادل الثقافي بين مصر والعراق القديم؟",
+                "options": [
+                    "العلاقات التجارية بين الحضارتين",
+                    "الحروب المستمرة",
+                    "الاحتلال الفارسي",
+                    "الهجرة الجماعية"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "قارن: الكتابة المسمارية والأبجدية الفينيقية من حيث الشعب المخترع:",
+                "options": [
+                    "المسمارية للفينيقيين والأبجدية للسومريين",
+                    "كلاهما من اختراع المصريين",
+                    "المسمارية اخترعها السومريون، والأبجدية ابتكرها الفينيقيون",
+                    "كلاهما من اختراع الآشوريين"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "بم تفسر استقرار الفينيقيين على الشريط الساحلي شرق المتوسط؟",
+                "options": [
+                    "لكثرة الصحاري",
+                    "لممارسة الملاحة والتجارة البحرية",
+                    "للهروب من المصريين",
+                    "لقربهم من نهر الفرات"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "بم تفسر تحويل الفينيقيين سفوح جبال لبنان إلى مصاطب زراعية؟",
+                "options": [
+                    "لتخزين المياه فقط",
+                    "لبناء القلاع",
+                    "لصيد الحيوانات",
+                    "للاستفادة من الأراضي الجبلية في الزراعة"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "ما أهمية الأبجدية الفينيقية في تاريخ البشرية؟",
+                "options": [
+                    "استخدمت في مصر فقط",
+                    "أصبحت أساس الكتابة المسمارية",
+                    "اندثرت تمامًا",
+                    "انتقلت إلى الإغريق ثم أوروبا لتصبح أساس الأبجدية الحديثة"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "بم تفسر اهتمام الفينيقيين بعلم الفلك والحساب؟",
+                "options": [
+                    "للتحنيط",
+                    "لزراعة الصحاري",
+                    "لبناء الأهرامات",
+                    "لمساعدتهم في الملاحة البحرية والتجارة"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "كيف ساهم الفينيقيون في تطوير علم الجغرافيا؟",
+                "options": [
+                    "برسم الزقورات",
+                    "من خلال رحلاتهم البحرية التي أدت إلى اكتشاف مناطق جديدة",
+                    "بكتابة القوانين",
+                    "بنحت التماثيل"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "بم تفسر بناء الفينيقيين الأسوار حول المدن؟",
+                "options": [
+                    "لتزيين المدن",
+                    "لحمايتها من الأعداء",
+                    "لتخزين البضائع",
+                    "لمنع الفيضانات"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "دلل على التواصل بين الحضارة المصرية والحضارة الفينيقية:",
+                "options": [
+                    "عبادة المصريين للإله بعل فقط",
+                    "انتشار المسمارية في فينيقيا",
+                    "بناء الزقورات في مصر",
+                    "نقل الفينيقيين الخزف والفخار واستيراد المصريين خشب الأرز"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "بم تفسر استيراد المصريين القدماء خشب الأرز من فينيقيا؟",
+                "options": [
+                    "لصناعة الحلي",
+                    "لاستخدامه في صناعة السفن وتوابيت الملوك",
+                    "لصناعة الورق",
+                    "لبناء الأهرامات"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "كيف كان المصريون يديرون الحكم في بلاد الشام؟",
+                "options": [
+                    "بنقل العاصمة إلى الشام",
+                    "بإبادة السكان",
+                    "بتعيين حكام محليين أوفياء لمصر وإنشاء المعابد والحاميات العسكرية",
+                    "بترك الشام بلا حكم"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "ما نهاية حضارات العراق القديم وفينيقيا؟",
+                "options": [
+                    "اندماجها مع مصر",
+                    "انهيارها بسبب الفيضانات",
+                    "هجرة سكانها إلى أوروبا",
+                    "غزو الفرس ثم الإسكندر ثم السلوقيين والروم حتى الفتح الإسلامي"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "ما نتيجة وفاة الإسكندر الأكبر عام ٣٢٣ ق.م؟",
+                "options": [
+                    "انقسام إمبراطوريته بين قواده",
+                    "توحيد الشرق الأدنى",
+                    "سقوط الفرس",
+                    "قيام الحضارة السومرية"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "قارن من حيث العاصمة: السومريون والأكاديون:",
+                "options": [
+                    "كلاهما عاصمته آشور",
+                    "كلاهما عاصمته بابل",
+                    "السومريون عاصمتهم أور، والأكاديون عاصمتهم أكاد",
+                    "السومريون أكاد والأكاديون أور"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "قارن من حيث الموقع: البابليون والآشوريون:",
+                "options": [
+                    "البابليون في وسط العراق، والآشوريون في شماله",
+                    "كلاهما في الجنوب",
+                    "كلاهما على ساحل المتوسط",
+                    "البابليون في الشمال والآشوريون في الوسط"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "قارن من حيث المعبودات: العراق القديم وفينيقيا:",
+                "options": [
+                    "أشهر معبودات العراق عشتار، وأشهر معبودات فينيقيا بعل",
+                    "كلاهما عبد آمون",
+                    "كلاهما آمن بالتوحيد",
+                    "العراق عبد بعل وفينيقيا عبدت عشتار"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "قارن من حيث نظام الحكم: العراق القديم وفينيقيا:",
+                "options": [
+                    "العراق جمهوري وفينيقيا ملكية",
+                    "فينيقيا مركزية والعراق بلا حكم",
+                    "كلاهما ديمقراطي",
+                    "كلاهما ملكي وراثي وعرف نظام المدن المستقلة"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "استبعد الغريب: (أور - أكاد - بابل - جبيل)",
+                "options": [
+                    "أور",
+                    "جبيل",
+                    "بابل",
+                    "أكاد"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "سبب استبعاد جبيل من (أور - أكاد - بابل):",
+                "options": [
+                    "لأنها مدينة مصرية",
+                    "لأنها عاصمة الأكاديين",
+                    "لأنها عاصمة الآشوريين",
+                    "لأنها مدينة فينيقية والباقي مدن عراقية قديمة"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "استبعد الغريب: (السومريون - الأكاديون - البابليون - الفينيقيون)",
+                "options": [
+                    "السومريون",
+                    "البابليون",
+                    "الفينيقيون",
+                    "الأكاديون"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "من أكون؟ «موحد المدن السومرية ومؤسس أول مملكة موحدة في العراق القديم»",
+                "options": [
+                    "حمورابي",
+                    "سرجون الأول",
+                    "سلوقس",
+                    "نخاو الثاني"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "من أكون؟ «صاحب تشريعات نظمت جوانب الحياة وكفلت حقوق المرأة»",
+                "options": [
+                    "الإسكندر",
+                    "بعل",
+                    "حمورابي",
+                    "سرجون الأول"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "من أكون؟ «قائد مقدوني هزم الفرس وضم العراق والشام لإمبراطوريته»",
+                "options": [
+                    "سلوقس",
+                    "سرجون الأول",
+                    "الإسكندر الأكبر",
+                    "قمبيز"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "صوّب الخطأ: «اتخذ السومريون من مدينة آشور عاصمة لهم».",
+                "options": [
+                    "أور",
+                    "جبيل",
+                    "بابل",
+                    "أكاد"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "صوّب الخطأ: «هاجر الأكاديون من بلاد الشام واستقروا في وسط العراق».",
+                "options": [
+                    "آسيا الصغرى",
+                    "مصر",
+                    "بلاد فارس",
+                    "شبه الجزيرة العربية"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "صوّب الخطأ: «اتبع السومريون سياسة العنف ضد الشعوب التي احتلوها».",
+                "options": [
+                    "البابليون",
+                    "الآشوريون",
+                    "الفينيقيون",
+                    "الأكاديون"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "صوّب الخطأ: «اخترع الفينيقيون الكتابة المسمارية».",
+                "options": [
+                    "البابليون",
+                    "الأكاديون",
+                    "المصريون",
+                    "السومريون"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "صوّب الخطأ: «تتكون الأبجدية الفينيقية من ٢٦ حرفًا».",
+                "options": [
+                    "٢٨",
+                    "١٨",
+                    "٢٢",
+                    "٣٠"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "صوّب الخطأ: «صنع الفينيقيون السفن من خشب الأبنوس».",
+                "options": [
+                    "الأرز",
+                    "الصنوبر",
+                    "الماهوجني",
+                    "البلوط"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "صوّب الخطأ: «من أشهر معبودات الفينيقيين عشتار».",
+                "options": [
+                    "آمون",
+                    "رع",
+                    "بعل",
+                    "آتون"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "صوّب الخطأ: «أسس سرجون الأول الدولة السلوقية».",
+                "options": [
+                    "سلوقس",
+                    "بطليموس",
+                    "حمورابي",
+                    "الإسكندر"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "صوّب الخطأ: «صدر أول قانون مدون في العصر البابلي».",
+                "options": [
+                    "الفينيقي",
+                    "الآشوري",
+                    "السومري",
+                    "الأكادي"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "ما القيمة المستفادة من دراسة حضارات الشرق الأدنى؟",
+                "options": [
+                    "التقليل من شأن الحضارات القديمة",
+                    "تقدير إسهامات الشعوب في بناء الحضارة الإنسانية",
+                    "رفض التواصل بين الشعوب",
+                    "الاعتماد على الحرب فقط"
+                ],
+                "ans": 1
+            }
+        ]
+    },
+    {
+        "id": "map_6",
+        "title": "تحدي الخرائط والصور",
+        "type": "map",
+        "desc": "اكتشف المخفي على خرائط وصور الكتاب في نماذج للحضارات القديمة بالشرق الأدنى",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><polygon points=\"1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6\"></polygon><line x1=\"8\" y1=\"2\" x2=\"8\" y2=\"18\"></line><line x1=\"16\" y1=\"6\" x2=\"16\" y2=\"22\"></line></svg>",
+        "questions": [
+            {
+                "q": "ما اسم الحضارة المخفي اسمه بعلامة (؟) على الخريطة؟",
+                "options": [
+                    "حضارة الصين",
+                    "حضارة فينيقيا",
+                    "حضارة الهند",
+                    "حضارات بلاد العراق القديم"
+                ],
+                "ans": 3,
+                "img": "images/g2u2l1_asiaciv.jpg",
+                "masks": [
+                    [
+                        11,
+                        40,
+                        12,
+                        8
+                    ]
+                ]
+            },
+            {
+                "q": "ما اسم الحضارة المخفي اسمه بعلامة (؟) على الخريطة؟",
+                "options": [
+                    "حضارات بلاد العراق القديم",
+                    "حضارة الهند",
+                    "حضارات اليمن",
+                    "حضارة فينيقيا"
+                ],
+                "ans": 3,
+                "img": "images/g2u2l1_asiaciv.jpg",
+                "masks": [
+                    [
+                        0,
+                        43,
+                        10,
+                        7
+                    ]
+                ]
+            },
+            {
+                "q": "ما اسم الحضارة المخفي اسمه بعلامة (؟) على الخريطة؟",
+                "options": [
+                    "حضارة فينيقيا",
+                    "حضارة الصين",
+                    "حضارات اليمن",
+                    "حضارة الهند"
+                ],
+                "ans": 1,
+                "img": "images/g2u2l1_asiaciv.jpg",
+                "masks": [
+                    [
+                        54,
+                        43,
+                        13,
+                        7
+                    ]
+                ]
+            },
+            {
+                "q": "ما اسم الحضارة المخفي اسمه بعلامة (؟) على الخريطة؟",
+                "options": [
+                    "حضارات بلاد العراق القديم",
+                    "حضارة الصين",
+                    "حضارة فارس",
+                    "حضارة الهند"
+                ],
+                "ans": 3,
+                "img": "images/g2u2l1_asiaciv.jpg",
+                "masks": [
+                    [
+                        34,
+                        49,
+                        9,
+                        9
+                    ]
+                ]
+            },
+            {
+                "q": "ما اسم الحضارة المخفي اسمه بعلامة (؟) على الخريطة؟",
+                "options": [
+                    "حضارات اليمن",
+                    "حضارة فينيقيا",
+                    "حضارة الهند",
+                    "حضارات بلاد العراق القديم"
+                ],
+                "ans": 0,
+                "img": "images/g2u2l1_asiaciv.jpg",
+                "masks": [
+                    [
+                        12,
+                        62,
+                        9,
+                        7
+                    ]
+                ]
+            },
+            {
+                "q": "ما العامل المشترك في قيام الحضارات الظاهرة على الخريطة؟",
+                "options": [
+                    "توافر المياه العذبة والتربة الخصبة",
+                    "البرودة الشديدة",
+                    "كثرة الصحاري",
+                    "البعد عن الأنهار"
+                ],
+                "ans": 0,
+                "img": "images/g2u2l1_asiaciv.jpg",
+                "masks": []
+            },
+            {
+                "q": "ما اسم الحضارة المخفي اسمه بعلامة (؟) على الخريطة؟",
+                "options": [
+                    "بابل",
+                    "أكاد",
+                    "آشور",
+                    "سومر"
+                ],
+                "ans": 2,
+                "img": "images/g2u2l1_iraq.jpg",
+                "masks": [
+                    [
+                        29,
+                        19,
+                        21,
+                        11
+                    ]
+                ]
+            },
+            {
+                "q": "ما اسم الحضارة المخفي اسمه بعلامة (؟) على الخريطة؟",
+                "options": [
+                    "فينيقيا",
+                    "بابل",
+                    "سومر",
+                    "آشور"
+                ],
+                "ans": 1,
+                "img": "images/g2u2l1_iraq.jpg",
+                "masks": [
+                    [
+                        38,
+                        43,
+                        19,
+                        14
+                    ]
+                ]
+            },
+            {
+                "q": "ما اسم الحضارة المخفي اسمه بعلامة (؟) على الخريطة؟",
+                "options": [
+                    "أكاد",
+                    "آشور",
+                    "سومر",
+                    "بابل"
+                ],
+                "ans": 2,
+                "img": "images/g2u2l1_iraq.jpg",
+                "masks": [
+                    [
+                        50,
+                        61,
+                        17,
+                        13
+                    ]
+                ]
+            },
+            {
+                "q": "نشأت الحضارات الظاهرة على الخريطة بين نهرين هما:",
+                "options": [
+                    "اليانجتسي والأصفر",
+                    "النيل والأردن",
+                    "السند والجانج",
+                    "دجلة والفرات"
+                ],
+                "ans": 3,
+                "img": "images/g2u2l1_iraq.jpg",
+                "masks": []
+            },
+            {
+                "q": "تُظهر الصورة الملك الذي أسس أول مملكة موحدة في بلاد العراق القديم، من هو؟",
+                "options": [
+                    "حمورابي",
+                    "آشور بانيبال",
+                    "سرجون الأول",
+                    "نبوخذ نصر"
+                ],
+                "ans": 2,
+                "img": "images/g2u2l1_sargon.jpg",
+                "masks": []
+            },
+            {
+                "q": "تُظهر الصورة هرمًا مدرجًا من الطوب الطيني يُبنى عليه معبد، ما اسمه؟",
+                "options": [
+                    "الهرم المدرج",
+                    "المصطبة",
+                    "المسلة",
+                    "الزقورة"
+                ],
+                "ans": 3,
+                "img": "images/g2u2l1_ziggurat.jpg",
+                "masks": []
+            },
+            {
+                "q": "تُظهر الصورة تمثالًا من فنون بلاد العراق القديم، ما اسمه؟",
+                "options": [
+                    "تمثال بعل",
+                    "أبو الهول",
+                    "الأسد المجنح المصري",
+                    "الثور المجنح"
+                ],
+                "ans": 3,
+                "img": "images/g2u2l1_bull.jpg",
+                "masks": []
+            },
+            {
+                "q": "تُظهر الخريطة مدن وحضارة ... ومستعمراتها:",
+                "options": [
+                    "الرومان",
+                    "بابل",
+                    "اليونان",
+                    "فينيقيا"
+                ],
+                "ans": 3,
+                "img": "images/g2u2l1_phoenicia.jpg",
+                "masks": [
+                    [
+                        1,
+                        73,
+                        32,
+                        11
+                    ]
+                ]
+            },
+            {
+                "q": "ما اسم المدينة الفينيقية المخفي اسمه بعلامة (؟) على الخريطة؟",
+                "options": [
+                    "قرطاج",
+                    "مالقة",
+                    "صور",
+                    "ليكسوس"
+                ],
+                "ans": 0,
+                "img": "images/g2u2l1_phoenicia.jpg",
+                "masks": [
+                    [
+                        34,
+                        44,
+                        10,
+                        8
+                    ]
+                ]
+            }
+        ]
+    }
+];
+
+    // --- محرك الصوت للمؤثرات التفاعلية ---
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    let audioCtx = null;
+
+    function initAudio() {
+        if (!audioCtx) {
+            audioCtx = new AudioContext();
+        }
+        if (audioCtx.state === 'suspended') {
+            audioCtx.resume();
+        }
+    }
+
+    function playTone(freq, type, duration, vol = 0.1) {
+        if (!audioCtx) return;
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        gain.gain.setValueAtTime(vol, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
+    }
+
+    function playCorrect() {
+        initAudio();
+        playTone(523.25, 'sine', 0.1, 0.1); 
+        setTimeout(() => playTone(659.25, 'sine', 0.1, 0.1), 100); 
+        setTimeout(() => playTone(783.99, 'sine', 0.2, 0.15), 200); 
+        setTimeout(() => playTone(1046.50, 'sine', 0.4, 0.2), 300); 
+        triggerConfetti();
+    }
+
+    function playWrong() {
+        initAudio();
+        playTone(300, 'sawtooth', 0.15, 0.1);
+        setTimeout(() => playTone(200, 'sawtooth', 0.25, 0.15), 150);
+        
+        const qBox = document.querySelector('.question-box');
+        if(qBox) {
+            qBox.classList.remove('shake');
+            void qBox.offsetWidth; 
+            qBox.classList.add('shake');
+        }
+    }
+
+    // --- مؤثرات بصرية ---
+    function triggerConfetti() {
+        const colors = ['#f72585', '#4cc9f0', '#fee440', '#00f5d4', '#8b5cf6'];
+        for(let i=0; i<40; i++) {
+            let conf = document.createElement('div');
+            conf.className = 'confetti';
+            conf.style.left = Math.random() * 100 + 'vw';
+            conf.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            conf.style.animationDuration = (Math.random() * 2 + 1) + 's';
+            document.body.appendChild(conf);
+            setTimeout(() => conf.remove(), 3000);
+        }
+    }
+
+    function shuffleArray(arr) {
+        return arr.map(a => ({sort: Math.random(), value: a}))
+            .sort((a, b) => a.sort - b.sort)
+            .map(a => a.value);
+    }
+
+    function showFeedback(isCorrect, callback) {
+        const modal = document.getElementById('feedback-modal');
+        const icon = document.getElementById('feedback-icon');
+        const title = document.getElementById('feedback-title');
+        
+        if (isCorrect) {
+            playCorrect();
+            icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>`;
+            title.textContent = 'إجابة صحيحة، بطل!';
+            title.style.color = 'var(--success)';
+        } else {
+            playWrong();
+            icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="var(--danger)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>`;
+            title.textContent = 'إجابة خاطئة!';
+            title.style.color = 'var(--danger)';
+        }
+
+        modal.classList.add('active');
+        setTimeout(() => {
+            modal.classList.remove('active');
+            if (callback) callback();
+        }, 1300); // وقت الانتقال للسؤال التالي
+    }
+
+    // --- متغيرات محرك اللعبة ---
+    let currentGame = null;
+    let currentQuestions = [];
+    let qIndex = 0;
+    let animInterval = null;
+    let geniusTimerInterval = null;
+    let wrongAnswers = []; // مصفوفة لتخزين الأخطاء
+
+    // --- التهيئة ---
+    function initApp() {
+        const menuGrid = document.getElementById('menu-grid');
+        menuGrid.innerHTML = '';
+        allGamesData.forEach(game => {
+            const card = document.createElement('div');
+            card.className = 'menu-card';
+            card.innerHTML = `
+                <div class="icon-container">${game.icon}</div>
+                <h3>${game.title}</h3>
+                <p>${game.desc}</p>
+            `;
+            card.onclick = () => startGame(game);
+            menuGrid.appendChild(card);
+        });
+        
+        document.body.addEventListener('touchstart', initAudio, { once: true });
+        document.body.addEventListener('click', initAudio, { once: true });
+    }
+
+    function returnToMenu() {
+        clearInterval(animInterval); clearInterval(geniusTimerInterval);
+        clearInterval(geniusTimerInterval);
+        document.getElementById('game-screen').classList.add('hidden');
+        document.getElementById('home-screen').classList.remove('hidden');
+        document.getElementById('main-header').classList.remove('hidden');
+        document.getElementById('main-footer').classList.remove('hidden');
+    }
+
+    function updateProgress() {
+        document.getElementById('game-progress').innerText = `${qIndex + 1} / ${currentQuestions.length}`;
+    }
+
+    function gameComplete() {
+        const gc = document.getElementById('game-container');
+        playCorrect();
+        setTimeout(playCorrect, 300);
+
+        let score = currentQuestions.length - wrongAnswers.length;
+        let summaryHTML = '';
+
+        if (wrongAnswers.length > 0) {
+            summaryHTML += `
+            <div style="margin-top: 25px; text-align: right; background: #f8fafc; padding: 20px; border-radius: 15px; border: 2px solid #e2e8f0; max-height: 350px; overflow-y: auto;" class="errors-list">
+                <h3 style="color: var(--danger); margin-bottom: 15px; text-align: center; font-size: 1.4rem;">الأسئلة التي أخطأت فيها 📝</h3>
+                <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 15px;">`;
+            
+            wrongAnswers.forEach((item, index) => {
+                summaryHTML += `
+                <li style="background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-right: 5px solid var(--danger);">
+                    <div style="font-weight: bold; color: var(--primary); margin-bottom: 8px; font-size: 1.1rem;">${index + 1}. ${item.question}</div>
+                    <div style="color: #64748b; font-size: 1rem; margin-bottom: 5px;">إجابتك: <span style="color: var(--danger); text-decoration: line-through;">${item.selected}</span></div>
+                    <div style="color: var(--success); font-weight: bold; font-size: 1.1rem;">الإجابة الصحيحة: ${item.correct}</div>
+                </li>`;
+            });
+            summaryHTML += `</ul></div>`;
+        } else {
+            summaryHTML += `<p style="color: var(--success); font-size: 1.5rem; font-weight: bold; margin-top: 20px;">أداء مثالي! لم تخطئ في أي سؤال 🌟</p>`;
+        }
+
+        gc.innerHTML = `
+            <div style="text-align:center; padding: 40px 20px; background: white; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+                <div style="display:flex; justify-content:center; margin-bottom: 20px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="var(--warning)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 17v4"/><path d="M12 3v14"/><path d="M5 7h14"/><path d="M12 3l-4 4 4 4 4-4-4-4z"/></svg>
+                </div>
+                <h2 style="color: var(--primary); margin-bottom: 10px; font-size:2rem; font-weight:800;">انتهت اللعبة!</h2>
+                <p style="font-size: 1.4rem; margin-bottom: 10px; color:#64748b; font-weight:bold;">نتيجتك: ${score} من ${currentQuestions.length}</p>
+                ${summaryHTML}
+                <div class="share-box">
+                    <h4>📲 أرسل نتيجتك إلى الأستاذة داليا السايح</h4>
+                    <input type="text" id="student-name-input" class="share-name-input" placeholder="اكتب اسمك هنا أولًا">
+                    <div id="share-warning" class="share-warning">من فضلك اكتب اسمك أولًا قبل الإرسال ✋</div>
+                    <div>
+                        <button class="btn btn-share" onclick="sendResultToTeacher(${score}, ${currentQuestions.length})">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.656.843 5.12 2.26 7.15L.626 24l5.01-1.61c1.983 1.25 4.27 1.91 6.395 1.91 6.646 0 12.03-5.385 12.03-12.031S18.677 0 12.031 0zm6.544 17.202c-.273.766-1.58 1.464-2.185 1.503-.56.035-1.28.23-4.085-.86-3.39-1.32-5.59-4.78-5.736-4.97-.145-.19-1.37-1.82-1.37-3.475 0-1.655.857-2.47 1.164-2.8.307-.33.67-.413.89-.413.22 0 .44 0 .633.01.205.01.482-.08.736.53.264.634.904 2.203.984 2.366.08.163.133.353.033.553-.1.2-.153.326-.307.506-.154.18-.32.38-.453.506-.153.153-.314.316-.134.626.18.31.8 1.32 1.71 2.13.176.157.363.31.558.45 1.05.76 1.83 1.05 2.13 1.18.3.13.474.11.652-.09.18-.205.766-.893.97-1.2.204-.307.41-.256.69-.153.28.103 1.77.836 2.074.99.304.153.506.23.582.356.076.126.076.73-.197 1.496z"/></svg>
+                            إرسال النتيجة عبر واتساب
+                        </button>
+                    </div>
+                </div>
+                <button class="btn back-btn" style="font-size:1.1rem; padding:15px 30px; margin-top: 18px;" onclick="returnToMenu()">العودة للقائمة الرئيسية</button>
+            </div>
+        `;
+    }
+
+    function sendResultToTeacher(score, total) {
+        const nameInput = document.getElementById('student-name-input');
+        const warning = document.getElementById('share-warning');
+        const name = nameInput.value.trim();
+        if (!name) {
+            warning.style.display = 'block';
+            nameInput.classList.add('shake');
+            nameInput.focus();
+            setTimeout(() => nameInput.classList.remove('shake'), 500);
+            return;
+        }
+        warning.style.display = 'none';
+        const gameTitle = currentGame ? currentGame.title : '';
+        const message =
+            `📚 نتيجة طالب - ${LESSON_NAME}\n` +
+            `👤 اسم الطالب: ${name}\n` +
+            `🎮 اللعبة: ${gameTitle}\n` +
+            `✅ النتيجة: ${score} من ${total}\n` +
+            `⭐ نسبة النجاح: ${Math.round((score/total)*100)}%`;
+        const url = `https://wa.me/201030866428?text=${encodeURIComponent(message)}`;
+        window.open(url, '_blank');
+    }
+
+    function startGame(gameData) {
+        initAudio();
+        currentGame = gameData;
+        currentQuestions = shuffleArray([...gameData.questions]).slice(0, 20);
+        qIndex = 0;
+        wrongAnswers = []; // تصفير قائمة الأخطاء
+        
+        document.getElementById('home-screen').classList.add('hidden');
+        document.getElementById('main-header').classList.add('hidden');
+        document.getElementById('main-footer').classList.add('hidden');
+        document.getElementById('game-screen').classList.remove('hidden');
+        document.getElementById('game-title').innerText = gameData.title;
+        
+        renderNextState();
+    }
+
+    function renderNextState() {
+        if (qIndex >= currentQuestions.length) {
+            gameComplete();
+            return;
+        }
+
+        const gc = document.getElementById('game-container');
+        gc.innerHTML = '';
+        updateProgress();
+
+        if (currentGame.type === 'mcq') {
+            renderMCQ(gc);
+        } else if (currentGame.type === 'bubbles') {
+            renderBubbles(gc);
+        } else if (currentGame.type === 'shooting') {
+            renderShooting(gc);
+        } else if (currentGame.type === 'true_false') {
+            renderTrueFalse(gc);
+        } else if (currentGame.type === 'genius') {
+            renderGenius(gc);
+        } else if (currentGame.type === 'map') {
+            renderMap(gc);
+        }
+    }
+
+    // --- أنماط الألعاب ---
+
+    // 1. اختيارات (MCQ)
+    function renderMCQ(container) {
+        clearInterval(geniusTimerInterval);
+        const qData = currentQuestions[qIndex];
+        const correctText = qData.options[qData.ans];
+        const shuffledOptions = shuffleArray([...qData.options]);
+
+        const btnContainer = document.createElement('div');
+        btnContainer.className = 'options-grid';
+        
+        let isAnswered = false;
+
+        shuffledOptions.forEach(opt => {
+            const btn = document.createElement('button');
+            btn.className = 'btn';
+            btn.innerText = opt;
+            btn.onclick = () => {
+                if(isAnswered) return;
+                isAnswered = true;
+
+                if (opt === correctText) {
+                    btn.classList.add('btn-correct');
+                    showFeedback(true, () => { qIndex++; renderNextState(); });
+                } else {
+                    btn.classList.add('btn-wrong');
+                    wrongAnswers.push({ question: qData.q, correct: correctText, selected: opt });
+                    showFeedback(false, () => { qIndex++; renderNextState(); });
+                }
+            };
+            btnContainer.appendChild(btn);
+        });
+
+        const qBox = document.createElement('div');
+        qBox.className = 'question-box';
+        qBox.innerText = qData.q;
+        
+        container.appendChild(qBox);
+        container.appendChild(btnContainer);
+    }
+
+    // 2. صح أم خطأ
+    function renderTrueFalse(container) {
+        clearInterval(geniusTimerInterval);
+        const qData = currentQuestions[qIndex];
+        const correctText = qData.options[qData.ans];
+
+        const qBox = document.createElement('div');
+        qBox.className = 'question-box';
+        qBox.innerText = qData.q;
+        
+        const tfContainer = document.createElement('div');
+        tfContainer.className = 'tf-grid';
+        
+        let isAnswered = false;
+
+        // ترتيب ثابت (صح يميناً وخطأ يساراً)
+        const fixedOptions = ["صح", "خطأ"];
+
+        fixedOptions.forEach(opt => {
+            const btn = document.createElement('button');
+            btn.className = 'btn';
+            btn.style.flex = '1';
+            btn.style.minWidth = '200px';
+            btn.style.fontSize = '2rem';
+            btn.style.padding = '30px';
+            btn.style.justifyContent = 'center';
+            
+            if(opt === "صح") {
+                btn.style.background = "linear-gradient(to bottom, #10b981, #0e7490)";
+                btn.style.borderBottomColor = "#047857";
+            } else {
+                btn.style.background = "linear-gradient(to bottom, #ef4444, #dc2626)";
+                btn.style.borderBottomColor = "#b91c1c";
+            }
+
+            btn.innerText = opt;
+            
+            btn.onclick = () => {
+                if(isAnswered) return;
+                isAnswered = true;
+
+                if (opt === correctText) {
+                    btn.classList.add('btn-correct');
+                    showFeedback(true, () => { qIndex++; renderNextState(); });
+                } else {
+                    btn.classList.add('btn-wrong');
+                    wrongAnswers.push({ question: qData.q, correct: correctText, selected: opt });
+                    showFeedback(false, () => { qIndex++; renderNextState(); });
+                }
+            };
+            tfContainer.appendChild(btn);
+        });
+
+        container.appendChild(qBox);
+        container.appendChild(tfContainer);
+    }
+
+    // 5. تحدي العباقرة (سؤال بعدّاد زمني)
+    function renderGenius(container) {
+        clearInterval(animInterval); clearInterval(geniusTimerInterval);
+        clearInterval(geniusTimerInterval);
+        const qData = currentQuestions[qIndex];
+        const correctText = qData.options[qData.ans];
+        const shuffledOptions = shuffleArray([...qData.options]);
+
+        const wrap = document.createElement('div');
+        wrap.className = 'genius-wrap';
+
+        const badge = document.createElement('div');
+        badge.className = 'genius-badge';
+        badge.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.663 17h4.673M12 3a6 6 0 0 0-6 6c0 1.887.454 2.921 1.5 4.5.5.75 1 1.5 1 2.5h7c0-1 .5-1.75 1-2.5C17.546 11.921 18 10.887 18 9a6 6 0 0 0-6-6z"></path></svg> تحدي العباقرة`;
+
+        const timerTrack = document.createElement('div');
+        timerTrack.className = 'genius-timer-track';
+        const timerBar = document.createElement('div');
+        timerBar.className = 'genius-timer-bar';
+        timerTrack.appendChild(timerBar);
+
+        const qBox = document.createElement('div');
+        qBox.className = 'question-box';
+        qBox.style.background = 'rgba(255,255,255,0.95)';
+        qBox.innerText = qData.q;
+
+        const optContainer = document.createElement('div');
+        optContainer.className = 'genius-options';
+
+        let isAnswered = false;
+        const TOTAL_TIME = 12000; // 12 ثانية لكل سؤال
+        let startTime = Date.now();
+
+        function finishQuestion(isCorrect, selectedText) {
+            if (isAnswered) return;
+            isAnswered = true;
+            clearInterval(geniusTimerInterval);
+            if (!isCorrect) {
+                wrongAnswers.push({ question: qData.q, correct: correctText, selected: selectedText || "انتهى الوقت!" });
+            }
+            showFeedback(isCorrect, () => { qIndex++; renderNextState(); });
+        }
+
+        shuffledOptions.forEach(opt => {
+            const btn = document.createElement('button');
+            btn.className = 'btn';
+            btn.innerText = opt;
+            btn.onclick = () => {
+                if (isAnswered) return;
+                if (opt === correctText) {
+                    btn.classList.add('btn-correct');
+                    finishQuestion(true, opt);
+                } else {
+                    btn.classList.add('btn-wrong');
+                    finishQuestion(false, opt);
+                }
+            };
+            optContainer.appendChild(btn);
+        });
+
+        wrap.appendChild(badge);
+        wrap.appendChild(timerTrack);
+        container.appendChild(wrap);
+        container.appendChild(qBox);
+        container.appendChild(optContainer);
+
+        geniusTimerInterval = setInterval(() => {
+            if (isAnswered) { clearInterval(geniusTimerInterval); return; }
+            const elapsed = Date.now() - startTime;
+            const pct = Math.max(0, 100 - (elapsed / TOTAL_TIME) * 100);
+            timerBar.style.width = pct + '%';
+            if (elapsed >= TOTAL_TIME) {
+                clearInterval(geniusTimerInterval);
+                finishQuestion(false, null);
+            }
+        }, 80);
+    }
+
+    // 3. الفقاعات المتساقطة
+    function renderBubbles(container) {
+        clearInterval(animInterval); clearInterval(geniusTimerInterval);
+        const qData = currentQuestions[qIndex];
+        const correctText = qData.options[qData.ans];
+        const shuffledOptions = shuffleArray([...qData.options]);
+
+        const qBox = document.createElement('div');
+        qBox.className = 'question-box';
+        qBox.innerText = qData.q;
+        
+        const area = document.createElement('div');
+        area.className = 'bubbles-area';
+
+        let bubbles = [];
+        let isAnswered = false;
+
+        shuffledOptions.forEach((opt, index) => {
+            const bubble = document.createElement('div');
+            bubble.className = 'bubble';
+            bubble.innerHTML = `<span>${opt}</span>`;
+            
+            let leftPos = 2 + (index * 24); 
+            bubble.style.left = leftPos + '%';
+            
+            let topPos = -100 - (Math.random() * 80);
+            bubble.style.top = topPos + 'px';
+            
+            let speed = 0.95 + Math.random() * 0.65; 
+
+            bubble.onclick = () => {
+                if (isAnswered) return;
+                isAnswered = true;
+                clearInterval(animInterval); clearInterval(geniusTimerInterval);
+                if (opt === correctText) {
+                    bubble.style.background = 'var(--success)';
+                    bubble.style.color = 'white';
+                    showFeedback(true, () => { qIndex++; renderNextState(); });
+                } else {
+                    bubble.style.background = 'var(--danger)';
+                    bubble.style.color = 'white';
+                    wrongAnswers.push({ question: qData.q, correct: correctText, selected: opt });
+                    showFeedback(false, () => { qIndex++; renderNextState(); });
+                }
+            };
+
+            area.appendChild(bubble);
+            bubbles.push({ el: bubble, top: topPos, speed: speed, isCorrect: opt === correctText, active: true });
+        });
+
+        container.appendChild(qBox);
+        container.appendChild(area);
+        
+        let hint = document.createElement('div');
+        hint.style.textAlign = 'center';
+        hint.style.marginTop = '15px';
+        hint.style.color = 'var(--primary)';
+        hint.style.fontWeight = 'bold';
+        hint.style.fontSize = '1.1rem';
+        hint.innerHTML = `💡 اضغط على الفقاعة التي تحمل الإجابة الصحيحة قبل أن تسقط!`;
+        container.appendChild(hint);
+
+        let areaHeight = 400;
+
+        animInterval = setInterval(() => {
+            if (isAnswered) return;
+            bubbles.forEach(b => {
+                if (!b.active) return;
+                b.top += b.speed;
+                b.el.style.top = b.top + 'px';
+                
+                b.el.style.transform = `translateX(${Math.sin(b.top / 20) * 5}px)`;
+
+                if (b.top > areaHeight) {
+                    b.active = false;
+                    b.el.style.display = 'none';
+                    if (b.isCorrect && !isAnswered) {
+                        isAnswered = true;
+                        clearInterval(animInterval); clearInterval(geniusTimerInterval);
+                        wrongAnswers.push({ question: qData.q, correct: correctText, selected: "سقطت دون اختيار" });
+                        showFeedback(false, () => { qIndex++; renderNextState(); });
+                    }
+                }
+            });
+        }, 30);
+    }
+
+    // 4. التنشين
+    function renderShooting(container) {
+        clearInterval(animInterval); clearInterval(geniusTimerInterval);
+        const qData = currentQuestions[qIndex];
+        const correctText = qData.options[qData.ans];
+        const shuffledOptions = shuffleArray([...qData.options]);
+
+        const qBox = document.createElement('div');
+        qBox.className = 'question-box';
+        qBox.innerText = qData.q;
+        
+        const area = document.createElement('div');
+        area.className = 'shooting-area';
+
+        let isAnswered = false;
+
+        shuffledOptions.forEach((opt, index) => {
+            const bird = document.createElement('div');
+            bird.className = 'target-bird';
+            
+            bird.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg> <span>${opt}</span>`;
+            
+            let topPos = 15 + (index * 20); 
+            bird.style.top = topPos + '%';
+            
+            let pos = (index % 2 === 0) ? -200 : window.innerWidth;
+            let speed = (Math.random() * 2.5 + 1.5) * ((index % 2 === 0) ? 1 : -1);
+            
+            bird.style.left = pos + 'px';
+
+            bird.onclick = () => {
+                if(isAnswered) return;
+                isAnswered = true;
+
+                if (opt === correctText) {
+                    bird.style.background = 'var(--success)';
+                    bird.style.color = 'white';
+                    bird.style.borderColor = 'white';
+                    showFeedback(true, () => { qIndex++; renderNextState(); });
+                } else {
+                    bird.style.background = 'var(--danger)';
+                    bird.style.color = 'white';
+                    bird.style.borderColor = 'white';
+                    wrongAnswers.push({ question: qData.q, correct: correctText, selected: opt });
+                    showFeedback(false, () => { qIndex++; renderNextState(); });
+                }
+            };
+
+            area.appendChild(bird);
+
+            animInterval = setInterval(() => {
+                if (isAnswered) return;
+                pos += speed;
+                if (pos > window.innerWidth + 50) pos = -250;
+                if (pos < -250) pos = window.innerWidth + 50;
+                bird.style.left = pos + 'px';
+            }, 20);
+        });
+
+        container.appendChild(qBox);
+        container.appendChild(area);
+        
+        let hint = document.createElement('div');
+        hint.style.textAlign = 'center';
+        hint.style.marginTop = '15px';
+        hint.style.color = 'var(--primary)';
+        hint.style.fontWeight = 'bold';
+        hint.style.fontSize = '1.1rem';
+        hint.style.display = 'flex';
+        hint.style.alignItems = 'center';
+        hint.style.justifyContent = 'center';
+        hint.style.gap = '8px';
+        hint.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg> اضغط على الإجابة الصحيحة وهي تتحرك لاصطيادها!`;
+        container.appendChild(hint);
+    }
+
+
+    // 6. تحدي الخرائط والصور
+    function renderMap(container) {
+        clearInterval(animInterval); clearInterval(geniusTimerInterval);
+        const qData = currentQuestions[qIndex];
+        const correctText = qData.options[qData.ans];
+        const shuffledOptions = shuffleArray([...qData.options]);
+
+        const qBox = document.createElement('div');
+        qBox.className = 'question-box';
+        qBox.innerText = qData.q;
+
+        const stage = document.createElement('div');
+        stage.className = 'map-stage';
+        const wrap = document.createElement('div');
+        wrap.className = 'map-wrap';
+        const img = document.createElement('img');
+        img.src = qData.img;
+        img.alt = 'خريطة أو صورة من الكتاب المدرسي';
+        wrap.appendChild(img);
+        const masks = [];
+        (qData.masks || []).forEach(m => {
+            const d = document.createElement('div');
+            d.className = 'map-mask';
+            d.style.left = m[0] + '%'; d.style.top = m[1] + '%';
+            d.style.width = m[2] + '%'; d.style.height = m[3] + '%';
+            d.textContent = '؟';
+            wrap.appendChild(d); masks.push(d);
+        });
+        stage.appendChild(wrap);
+        wrap.onclick = () => stage.classList.toggle('zoomed');
+        const hint = document.createElement('div');
+        hint.className = 'map-hint';
+        hint.textContent = (masks.length ? '💡 الإجابة مخفية تحت المربع البرتقالي (؟) • ' : '💡 ') + 'اضغط على الصورة لتكبيرها';
+        stage.appendChild(hint);
+
+        const optContainer = document.createElement('div');
+        optContainer.className = 'map-options';
+        let isAnswered = false;
+        const btns = [];
+        shuffledOptions.forEach(opt => {
+            const btn = document.createElement('button');
+            btn.className = 'btn';
+            btn.innerText = opt;
+            btn.onclick = () => {
+                if (isAnswered) return;
+                isAnswered = true;
+                const ok = opt === correctText;
+                masks.forEach(d => d.classList.add('revealed'));
+                btns.forEach(b => { if (b.innerText === correctText) b.classList.add('ok'); });
+                if (!ok) {
+                    btn.classList.add('bad');
+                    wrongAnswers.push({ question: qData.q, correct: correctText, selected: opt });
+                }
+                setTimeout(() => showFeedback(ok, () => { qIndex++; renderNextState(); }), 1100);
+            };
+            btns.push(btn);
+            optContainer.appendChild(btn);
+        });
+
+        container.appendChild(qBox);
+        container.appendChild(stage);
+        container.appendChild(optContainer);
+    }
+
+    window.onload = initApp;
+</script>
+</body>
+</html>

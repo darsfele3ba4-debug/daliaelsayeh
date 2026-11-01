@@ -1,0 +1,3793 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>درس نماذج لحضارات بلاد اليمن القديم - الصف الثاني الإعدادي</title>
+    <!-- استدعاء خط احترافي -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #134e4a;      
+            --primary-light: #0d9488; 
+            --secondary: #0e7490;    
+            --success: #10b981;      
+            --danger: #ef4444;       
+            --warning: #f59e0b;      
+            --dark: #1e293b;         
+            --light: #f8fafc;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Cairo', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: #ecfeff;
+            background-image: radial-gradient(#a5d4ce 1.5px, transparent 1.5px);
+            background-size: 25px 25px;
+            color: var(--dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        .hidden { display: none !important; }
+        
+        /* --- الهيدر الرئيسي --- */
+        .header-main {
+            background: linear-gradient(135deg, #042f2e, var(--primary), var(--secondary));
+            color: white;
+            padding: 30px 20px 90px 20px; 
+            text-align: center;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .title-line1 {
+            font-size: clamp(1.1rem, 4vw, 1.5rem); 
+            font-weight: 700;
+            color: #ccfbf1;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-shadow: 1px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .title-line2 {
+            font-size: clamp(1.4rem, 5.5vw, 2.6rem); 
+            font-weight: 900;
+            background: linear-gradient(to right, #2dd4bf, #0f766e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.5));
+            line-height: 1.3;
+            text-align: center;
+        }
+
+        .header-main h2 { font-size: clamp(1rem, 3vw, 1.3rem); font-weight: 600; color: #f0fdfa; margin-bottom: 8px; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);}
+        .header-main p { font-size: clamp(0.9rem, 2.5vw, 1.1rem); font-weight: 600; background: rgba(0,0,0,0.3); display: inline-block; padding: 6px 20px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 4px 6px rgba(0,0,0,0.1);}
+
+        .header-wave {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: auto;
+            z-index: 1;
+        }
+
+        /* --- الأزرار --- */
+        .btn {
+            background: linear-gradient(to bottom, var(--primary-light), var(--primary));
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-bottom: 3px solid rgba(0,0,0,0.3);
+        }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.2); }
+        .btn:active { transform: translateY(2px); border-bottom: 0px; margin-top: 3px; }
+        .btn-correct { filter: brightness(1.2); pointer-events: none; border-bottom-width: 0; transform: translateY(2px);}
+        .btn-wrong { filter: brightness(0.8); pointer-events: none; border-bottom-width: 0; transform: translateY(2px);}
+
+        /* --- الشاشة الرئيسية --- */
+        #home-screen {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .grid-menu {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            width: 100%;
+            max-width: 1000px;
+            padding-bottom: 80px;
+        }
+
+        .menu-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05), 0 4px 6px -2px rgba(0,0,0,0.025);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        .menu-card::before {
+            content: ""; position: absolute; top: 0; left: 0; right: 0; height: 6px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            opacity: 0; transition: opacity 0.3s;
+        }
+        .menu-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); border-color: rgba(34, 197, 94, 0.25); }
+        .menu-card:hover::before { opacity: 1; }
+        
+        .menu-card .icon-container {
+            width: 80px; height: 80px;
+            margin: 0 auto 15px auto;
+            background: linear-gradient(135deg, #ccfbf1, #99f6e4);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: inset 0 3px 6px rgba(255,255,255,0.8), 0 4px 8px rgba(0,0,0,0.05);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .menu-card .icon-container svg {
+            width: 40px; height: 40px; stroke: #134e4a; fill: none;
+            stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+        }
+        .menu-card:hover .icon-container { transform: scale(1.1) rotate(10deg); }
+        .menu-card h3 { font-size: 1.4rem; color: var(--dark); font-weight: 800; margin-bottom: 8px;}
+        .menu-card p { font-size: 1rem; color: #64748b; font-weight: 600;}
+
+        /* --- شاشة اللعب --- */
+        #game-screen {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-nav {
+            background: white;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            font-size: clamp(0.9rem, 3vw, 1.2rem);
+        }
+        .back-btn { background: #e2e8f0; color: var(--dark); border-bottom: 3px solid #cbd5e1; padding: 8px 15px;}
+        #game-progress { background: #0d9488; color: white; padding: 6px 15px; border-radius: 20px;}
+        
+        .game-container {
+            flex: 1;
+            padding: 0 20px 40px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .question-box {
+            background: white;
+            padding: 20px 25px;
+            border-radius: 16px;
+            text-align: center;
+            font-size: clamp(1.2rem, 4vw, 1.6rem);
+            font-weight: 800;
+            color: #134e4a;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+            border-right: 8px solid #0e7490;
+            line-height: 1.6;
+        }
+
+        .shake { animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both; }
+        @keyframes shake {
+            10%, 90% { transform: translate3d(-2px, 0, 0); }
+            20%, 80% { transform: translate3d(4px, 0, 0); }
+            30%, 50%, 70% { transform: translate3d(-6px, 0, 0); }
+            40%, 60% { transform: translate3d(6px, 0, 0); }
+        }
+
+        /* MCQ Style */
+        .options-grid { display: flex; flex-direction: column; gap: 15px; }
+        .options-grid .btn { padding: 18px; font-size: clamp(1.1rem, 3.5vw, 1.4rem); text-align: right; justify-content: flex-start; border-radius: 12px;}
+
+        /* True/False Style */
+        .tf-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+
+        /* Bubbles Style */
+        .bubbles-area {
+            position: relative; height: 400px;
+            background: linear-gradient(to bottom, #042f2e, #134e4a);
+            border-radius: 16px; overflow: hidden;
+            border: 4px solid #0d9488; margin-top: 10px;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+        }
+        .bubble {
+            position: absolute;
+            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), rgba(224,231,255,0.9));
+            color: #134e4a;
+            border: 2px solid #ffffff;
+            padding: 10px 5px;
+            border-radius: 30px;
+            font-weight: 800; font-size: clamp(0.85rem, 2vw, 1.05rem);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.2), inset -4px -4px 10px rgba(0,0,0,0.1);
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center;
+            width: 22%;
+            transition: transform 0.2s, background 0.2s;
+            z-index: 5;
+        }
+        .bubble:hover { transform: scale(1.05); }
+        .bubble::after {
+            content: ''; position: absolute; top: 10%; left: 15%;
+            width: 20%; height: 20%; background: rgba(255,255,255,0.8);
+            border-radius: 50%; filter: blur(2px);
+        }
+
+        /* Shooting Style */
+        .shooting-area {
+            position: relative; height: 400px; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><rect fill="%23e0fbfc" width="100%" height="100%"/><circle fill="%23bae6fd" cx="20%" cy="30%" r="50"/><circle fill="%23bae6fd" cx="80%" cy="60%" r="70"/><circle fill="%23bae6fd" cx="50%" cy="80%" r="40"/></svg>') no-repeat center center;
+            background-size: cover; border-radius: 16px; overflow: hidden;
+            border: 4px solid #0d9488; margin-top: 10px; box-shadow: inset 0 0 20px rgba(0,0,0,0.1);
+        }
+        .target-bird {
+            position: absolute; background: white; color: var(--dark);
+            padding: 10px 20px; border-radius: 30px; font-weight: 800; font-size: clamp(0.95rem, 3vw, 1.15rem);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15); cursor: crosshair;
+            border: 3px solid var(--warning); white-space: nowrap; transition: background 0.2s;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .target-bird:hover { transform: scale(1.05); background: #f0fdfa; }
+
+        /* Genius Challenge Style */
+        .genius-wrap {
+            background: linear-gradient(135deg, #042f2e, #134e4a, #0f766e);
+            border-radius: 16px; padding: 20px; margin-top: 10px;
+            border: 4px solid #2dd4bf; box-shadow: inset 0 0 25px rgba(0,0,0,0.4), 0 10px 20px rgba(21,128,61,0.35);
+        }
+        .genius-timer-track {
+            width: 100%; height: 14px; background: rgba(0,0,0,0.35);
+            border-radius: 10px; overflow: hidden; margin-bottom: 18px;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+        .genius-timer-bar {
+            height: 100%; width: 100%;
+            background: linear-gradient(to right, #2dd4bf, #0d9488, #ef4444);
+            border-radius: 10px;
+            transition: width 0.1s linear;
+        }
+        .genius-options { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        @media (max-width: 600px) { .genius-options { grid-template-columns: 1fr; } }
+        .genius-options .btn {
+            padding: 16px 10px; font-size: clamp(1rem, 3vw, 1.25rem);
+            background: linear-gradient(to bottom, #14b8a6, #0f766e);
+            border-bottom: 3px solid #134e4a; border-radius: 14px; min-height: 70px;
+        }
+        .genius-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(74, 222, 128, 0.15); color: #2dd4bf;
+            font-weight: 800; padding: 6px 16px; border-radius: 20px;
+            border: 1px solid rgba(253,224,71,0.4); margin-bottom: 12px; font-size: 0.95rem;
+        }
+
+        /* Result Share (WhatsApp) */
+        .share-box {
+            margin-top: 25px; background: #f0fdfa; border: 2px solid #99f6e4;
+            border-radius: 16px; padding: 20px; text-align: center;
+        }
+        .share-box h4 { color: #115e59; font-size: 1.2rem; margin-bottom: 12px; font-weight: 800;}
+        .share-name-input {
+            width: 100%; max-width: 320px; padding: 12px 16px; border-radius: 12px;
+            border: 2px solid #5eead4; font-size: 1.05rem; text-align: center;
+            font-family: 'Cairo', sans-serif; font-weight: 700; margin-bottom: 12px;
+            color: var(--dark);
+        }
+        .share-name-input:focus { outline: none; border-color: #0d9488; }
+        .btn-share {
+            background: linear-gradient(to bottom, #25d366, #1da851);
+            border-bottom-color: #128c3e; display: inline-flex; gap: 10px;
+        }
+        .share-warning { color: var(--danger); font-weight: 700; font-size: 0.9rem; margin-top: 8px; display: none; }
+
+        /* Modal Overlay */
+        .overlay {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(4px);
+            display: flex; justify-content: center; align-items: center;
+            z-index: 1000; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+        }
+        .overlay.active { opacity: 1; pointer-events: all; }
+        .modal {
+            background: white; padding: 40px; border-radius: 25px;
+            text-align: center; max-width: 90%; width: 400px;
+            transform: scale(0.7) translateY(50px); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+        }
+        .overlay.active .modal { transform: scale(1) translateY(0); }
+        .modal-icon { display: flex; justify-content: center; margin-bottom: 20px; }
+
+        /* Summary Errors Scrolling */
+        .errors-list::-webkit-scrollbar { width: 8px; }
+        .errors-list::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 8px; }
+        .errors-list::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 8px; }
+        .errors-list::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+        /* الفوتر (Footer) */
+        .footer-main {
+            background: var(--dark); color: #cbd5e1;
+            text-align: center; padding: 25px 20px; margin-top: auto;
+            border-top: 4px solid var(--primary);
+        }
+        .footer-main p { margin: 5px 0; font-size: 1.1rem; font-weight: 600;}
+        .footer-main .designer { font-size: 1rem; color: #94a3b8; font-weight: 400;}
+
+        /* WhatsApp */
+        .whatsapp-float {
+            position: fixed; bottom: 25px; left: 25px;
+            background: #25d366; color: white;
+            width: 65px; height: 65px; border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            text-decoration: none; box-shadow: 0 8px 15px rgba(37, 211, 102, 0.4);
+            z-index: 100; transition: all 0.3s;
+        }
+        .whatsapp-float:hover { transform: scale(1.15) rotate(-5deg); box-shadow: 0 12px 20px rgba(37, 211, 102, 0.6); }
+        .whatsapp-float svg { width: 35px; height: 35px; fill: currentColor; }
+
+        /* Confetti effect */
+        .confetti {
+            position: fixed; top: -10px; width: 12px; height: 12px; z-index: 9999;
+            animation: fall linear forwards; border-radius: 3px;
+        }
+        @keyframes fall { to { transform: translateY(110vh) rotate(720deg); opacity: 0; } }
+
+        /* Map Challenge Style */
+        .map-stage { text-align: center; margin-bottom: 18px; }
+        .map-wrap { position: relative; display: inline-block; max-width: 100%; border-radius: 14px; overflow: hidden;
+            border: 4px solid #0d9488; box-shadow: 0 10px 20px rgba(0,0,0,0.12); background: #fff; }
+        .map-wrap img { display: block; max-width: 100%; max-height: 58vh; width: auto; height: auto; margin: 0 auto; }
+        .map-mask { position: absolute; background: linear-gradient(135deg, #f59e0b, #ea580c); border: 2px solid #fff;
+            border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #fff;
+            font-weight: 900; font-size: clamp(0.9rem, 2.4vw, 1.4rem); box-shadow: 0 3px 8px rgba(0,0,0,0.35);
+            transition: opacity 0.5s ease; animation: maskPulse 1.6s ease-in-out infinite; }
+        .map-mask.revealed { opacity: 0; animation: none; }
+        @keyframes maskPulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+        .map-stage.zoomed { overflow: auto; -webkit-overflow-scrolling: touch; padding-bottom: 6px; }
+        .map-stage.zoomed .map-wrap { max-width: none; }
+        .map-stage.zoomed .map-wrap img { max-width: none; max-height: none; width: min(1400px, 230vw); }
+        .map-wrap { cursor: zoom-in; }
+        .map-stage.zoomed .map-wrap { cursor: zoom-out; }
+        .map-hint { color: #0f766e; font-weight: 700; font-size: 0.95rem; margin-top: 8px; }
+        .map-options { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        @media (max-width: 600px) { .map-options { grid-template-columns: 1fr; } }
+        .map-options .btn { padding: 14px 10px; font-size: clamp(1rem, 3vw, 1.2rem); min-height: 60px; }
+        .map-options .btn.ok { background: linear-gradient(to bottom, #10b981, #047857) !important; }
+        .map-options .btn.bad { background: linear-gradient(to bottom, #ef4444, #b91c1c) !important; }
+        .header-logo { width: 260px; height: 260px; border-radius: 30px; border: 4px solid var(--warning);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.4); background-color: white; object-fit: cover; flex-shrink: 0; }
+        @media (max-width: 600px) { .header-logo { width: 170px; height: 170px; } }
+    </style>
+</head>
+<body>
+
+    <!-- الهيدر مع اللوجو -->
+    <header class="header-main" id="main-header">
+        <div class="header-content">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap;">
+                <!-- اللوجو (على اليمين) -->
+                <img src="logo.jpg" alt="الأستاذة داليا السايح" class="header-logo">
+                
+                <!-- النصوص -->
+                <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <h1 class="title-line1">
+                        درس 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                        لعبة
+                    </h1>
+                    <h1 class="title-line2">مع الأستاذة دَالْيَا السَّايِح</h1>
+                    <h2>الصَّفُّ الثَّانِي الإِعْدَادِيُّ - الْوَحْدَةُ الثَّانِيَةُ - الدَّرْسُ الثَّانِي: نَمَاذِجُ لِحَضَارَاتِ بِلَادِ اليَمَنِ القَدِيمِ</h2>
+                    <p style="margin-top: 10px;">الدِّرَاسَاتُ الاجْتِمَاعِيَّةُ</p>
+                </div>
+            </div>
+        </div>
+        <!-- تموجات زخرفية -->
+        <svg class="header-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#ecfeff" fill-opacity="1" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,170.7C960,160,1056,192,1152,208C1248,224,1344,224,1392,224L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+    </header>
+
+    <!-- الشاشة الرئيسية -->
+    <div id="home-screen">
+        <div class="grid-menu" id="menu-grid">
+            <!-- سيتم حقن البطاقات هنا برمجياً -->
+        </div>
+    </div>
+
+    <!-- شاشة اللعب -->
+    <div id="game-screen" class="hidden">
+        <div class="game-nav">
+            <button class="btn back-btn" onclick="returnToMenu()">
+                <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                رجوع
+            </button>
+            <strong id="game-title">عنوان اللعبة</strong>
+            <span id="game-progress">1 / 25</span>
+        </div>
+        <div class="game-container" id="game-container">
+            <!-- سيتم حقن الأسئلة هنا برمجياً -->
+        </div>
+    </div>
+
+    <!-- نافذة الملاحظات السريعة -->
+    <div class="overlay" id="feedback-modal">
+        <div class="modal">
+            <div class="modal-icon" id="feedback-icon"></div>
+            <h2 id="feedback-title" style="font-size: 2.5rem; font-weight: 900;">إجابة صحيحة!</h2>
+        </div>
+    </div>
+
+    <!-- الفوتر -->
+    <footer class="footer-main" id="main-footer">
+        <p>جميع الحقوق محفوظة &copy; | دروس وألعاب تعليمية</p>
+        <p class="designer">الأستاذة / دَالْيَا السَّايِح - 01030866428</p>
+    </footer>
+
+    <!-- زر الواتساب -->
+    <a href="https://wa.me/201030866428" class="whatsapp-float" target="_blank" title="تواصل معنا">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.656.843 5.12 2.26 7.15L.626 24l5.01-1.61c1.983 1.25 4.27 1.91 6.395 1.91 6.646 0 12.03-5.385 12.03-12.031S18.677 0 12.031 0zm6.544 17.202c-.273.766-1.58 1.464-2.185 1.503-.56.035-1.28.23-4.085-.86-3.39-1.32-5.59-4.78-5.736-4.97-.145-.19-1.37-1.82-1.37-3.475 0-1.655.857-2.47 1.164-2.8.307-.33.67-.413.89-.413.22 0 .44 0 .633.01.205.01.482-.08.736.53.264.634.904 2.203.984 2.366.08.163.133.353.033.553-.1.2-.153.326-.307.506-.154.18-.32.38-.453.506-.153.153-.314.316-.134.626.18.31.8 1.32 1.71 2.13.176.157.363.31.558.45 1.05.76 1.83 1.05 2.13 1.18.3.13.474.11.652-.09.18-.205.766-.893.97-1.2.204-.307.41-.256.69-.153.28.103 1.77.836 2.074.99.304.153.506.23.582.356.076.126.076.73-.197 1.496z"/>
+        </svg>
+    </a>
+
+<script>
+    const LESSON_NAME = "الدراسات الاجتماعية: نماذج لحضارات بلاد اليمن القديم - الصف الثاني الإعدادي";
+    const allGamesData = [
+    {
+        "id": "mcq_1",
+        "title": "اختيار من متعدد",
+        "type": "mcq",
+        "desc": "أسئلة اختيار من متعدد حول نماذج لحضارات بلاد اليمن القديم",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><polygon points=\"11 5 6 9 2 9 2 15 6 15 11 19 11 5\"></polygon><path d=\"M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07\"></path></svg>",
+        "questions": [
+            {
+                "q": "ازدهرت حضارات اليمن القديم بفضل:",
+                "options": [
+                    "موقعها الجغرافي المميز",
+                    "اتساع الصحاري",
+                    "قربها من البحر المتوسط",
+                    "كثرة الأنهار الدائمة"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "تُشرف بلاد اليمن على البحر الأحمر و:",
+                "options": [
+                    "المحيط الهندي",
+                    "الخليج العربي",
+                    "البحر المتوسط",
+                    "البحر الأسود"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "تتحكم بلاد اليمن في مضيق:",
+                "options": [
+                    "البسفور",
+                    "هرمز",
+                    "باب المندب",
+                    "جبل طارق"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "ساعد اعتدال المناخ فوق ... على استقرار السكان في اليمن:",
+                "options": [
+                    "السهول الفيضية",
+                    "السواحل",
+                    "المرتفعات",
+                    "الصحاري"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "ارتبطت حضارات اليمن بعلاقات تجارية وثقافية مع حضارات شرق آسيا في:",
+                "options": [
+                    "الهند والصين",
+                    "اليابان وكوريا",
+                    "فارس والعراق",
+                    "فينيقيا والشام"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "من حضارات بلاد اليمن القديم:",
+                "options": [
+                    "سومر وأكاد وبابل",
+                    "أكسوم وكوش",
+                    "المايا والإنكا",
+                    "معين وسبأ وحمير"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "نشأت حضارة معين في منطقة:",
+                "options": [
+                    "ظفار",
+                    "الجوف",
+                    "مأرب",
+                    "عدن"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "اتخذت حضارة معين عاصمة لها مدينة:",
+                "options": [
+                    "قرناو",
+                    "ريدان",
+                    "شبوة",
+                    "مأرب"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "اشتهرت حضارة معين بـ:",
+                "options": [
+                    "التعدين فقط",
+                    "الحروب والغزو",
+                    "الصيد والرعي",
+                    "التجارة والزراعة"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "تمكنت حضارة ... من السيطرة على مناطق حضارة معين:",
+                "options": [
+                    "حمير",
+                    "أوسان",
+                    "قتبان",
+                    "سبأ"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "اتخذت مملكة سبأ عاصمة لها مدينة:",
+                "options": [
+                    "قرناو",
+                    "ريدان",
+                    "تمنع",
+                    "مأرب"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "من السدود التي شيدتها مملكة سبأ:",
+                "options": [
+                    "السد العالي",
+                    "سد مأرب",
+                    "سد النهضة",
+                    "سد اللاهون"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "من أشهر حكام مملكة سبأ:",
+                "options": [
+                    "الملكة سبك نفرو",
+                    "الملكة حتشبسوت",
+                    "الملكة إياح حتب",
+                    "الملكة بلقيس"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "عاصرت الملكة بلقيس النبي:",
+                "options": [
+                    "سليمان عليه السلام",
+                    "موسى عليه السلام",
+                    "إبراهيم عليه السلام",
+                    "يوسف عليه السلام"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "ضعفت مملكة سبأ بعد انهيار سد مأرب وتحول طرق التجارة من:",
+                "options": [
+                    "البر إلى البحر",
+                    "الشمال إلى الجنوب",
+                    "البحر إلى البر",
+                    "الشرق إلى الغرب"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "الحميريون هم أحد فروع:",
+                "options": [
+                    "السبئيين",
+                    "الفرس",
+                    "المعينيين",
+                    "الأحباش"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "نقل الحميريون عاصمة المملكة إلى مدينة:",
+                "options": [
+                    "عدن",
+                    "ريدان (ظفار حاليًا)",
+                    "مأرب",
+                    "قرناو"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "تميز الحميريون بـ:",
+                "options": [
+                    "التوسع العسكري الكبير",
+                    "الاعتماد على الصيد",
+                    "العزلة عن العالم",
+                    "الاهتمام بالتحنيط"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "دخل الحميريون في صراعات مع الأحباش و... أدت لسقوط مملكتهم:",
+                "options": [
+                    "المصريين",
+                    "الفرس",
+                    "الرومان",
+                    "الآشوريين"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "عاش اليمنيون منذ القدم في:",
+                "options": [
+                    "قبائل مستقلة",
+                    "إمبراطورية مركزية",
+                    "ولايات رومانية",
+                    "مدن فينيقية"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "كان لكل قبيلة يمنية ... يدير شئونها:",
+                "options": [
+                    "شيخ",
+                    "كاهن",
+                    "قائد عسكري",
+                    "ملك"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "مع نشأة الممالك اليمنية أصبح نظام الحكم:",
+                "options": [
+                    "قبليًا فقط",
+                    "ملكيًا وراثيًا",
+                    "جمهوريًا",
+                    "ديمقراطيًا"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "كان يساعد ملك اليمن في إدارة الدولة:",
+                "options": [
+                    "مجلس الكهنة",
+                    "مجلس النبلاء الفرس",
+                    "مجلس الشيوخ الروماني",
+                    "مجلس عام"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "من أبرز معبودات اليمنيين القدماء:",
+                "options": [
+                    "الأنهار",
+                    "الحيوانات",
+                    "الأشجار",
+                    "النجوم والكواكب"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "تأثرت الحضارة الحميرية بالديانات:",
+                "options": [
+                    "الوضعية",
+                    "الفرعونية",
+                    "الفارسية",
+                    "السماوية"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "اعتمد اليمنيون في صناعة ملابسهم على:",
+                "options": [
+                    "الجلد فقط",
+                    "القطن والحرير فقط",
+                    "البردي",
+                    "الصوف والكتان"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "تميزت حضارة ... بتنظيم عادل للضرائب والعقود والمعاملات التجارية والميراث:",
+                "options": [
+                    "سبأ",
+                    "معين",
+                    "حمير",
+                    "أوسان"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "امتلكت المرأة اليمنية حق اختيار الزوج وحق:",
+                "options": [
+                    "وراثة العرش",
+                    "قيادة الجيش فقط",
+                    "سك النقود",
+                    "تعيين الكهنة"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "ازدهرت الزراعة في اليمن القديم بسبب:",
+                "options": [
+                    "الأمطار الشتوية فقط",
+                    "التربة الخصبة والمناخ المناسب",
+                    "كثرة الأنهار",
+                    "الطمي النهري"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "زرع أهل اليمن الخضراوات والفواكه والحبوب في السهول وعلى:",
+                "options": [
+                    "ضفاف الأنهار",
+                    "الواحات",
+                    "المدرجات الجبلية",
+                    "السواحل فقط"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "وضع اليمنيون قانونًا لتنظيم:",
+                "options": [
+                    "الحروب",
+                    "الزواج فقط",
+                    "الضرائب الزراعية",
+                    "الملاحة"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "اشتهرت بلاد اليمن القديم بصناعة الأسلحة مثل:",
+                "options": [
+                    "المدافع",
+                    "البنادق",
+                    "السيوف والخناجر",
+                    "المنجنيق"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "كانت ... النشاط الرئيسي لليمن القديم:",
+                "options": [
+                    "الزراعة",
+                    "التجارة",
+                    "التعدين",
+                    "الصيد"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "من الموانئ التي أنشأها اليمنيون:",
+                "options": [
+                    "ميناء صور",
+                    "ميناء عدن",
+                    "ميناء قرطاج",
+                    "ميناء الإسكندرية"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "سيطر اليمنيون على طريق:",
+                "options": [
+                    "الذهب",
+                    "البخور",
+                    "التوابل البحري",
+                    "الحرير"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "من أشهر المنتجات التي صدرها اليمنيون:",
+                "options": [
+                    "البخور واللبان والعطور",
+                    "ورق البردي",
+                    "القمح والشعير",
+                    "خشب الأرز"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "استخدم اليمنيون الأبجدية الحميرية المعروفة بـ:",
+                "options": [
+                    "الخط الهيروغليفي",
+                    "الخط المسماري",
+                    "الخط المسند",
+                    "الخط الفينيقي"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "تتكون الأبجدية الحميرية من:",
+                "options": [
+                    "٢٨ حرفًا",
+                    "٢٩ حرفًا",
+                    "٢٦ حرفًا",
+                    "٢٢ حرفًا"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "وضع اليمنيون تقويمًا اعتمدوا عليه في تحديد الفصول الزراعية هو:",
+                "options": [
+                    "التقويم الشمسي المصري",
+                    "التقويم الروماني",
+                    "التقويم الهجري",
+                    "التقويم السبئي"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "استخدم اليمنيون حركة ... في تحديد الاتجاهات وتوجيه تجارتهم:",
+                "options": [
+                    "الرياح",
+                    "النجوم",
+                    "الطيور",
+                    "الأمواج"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "كانت أبواب القصور اليمنية وجدرانها تُطعّم بـ:",
+                "options": [
+                    "الزجاج الفينيقي",
+                    "الطين المحروق",
+                    "العاج والذهب والفضة والأحجار الكريمة",
+                    "خشب الأرز فقط"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "يُعد ... من أعظم الإنجازات الهندسية في العالم القديم:",
+                "options": [
+                    "ميناء عدن",
+                    "معبد بران",
+                    "قصر غمدان",
+                    "سد مأرب"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "معبد بران جزء من:",
+                "options": [
+                    "قصر سيف بن ذي يزن",
+                    "قصر ذي نواس",
+                    "معبد عشتار",
+                    "عرش الملكة بلقيس"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "كانت دولة معين تصدر لمصر:",
+                "options": [
+                    "خشب الأرز",
+                    "القمح",
+                    "الكتان والذهب",
+                    "البخور والمُرّ"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "كان المُرّ يستخدم في مصر في:",
+                "options": [
+                    "الطقوس الدينية والتحنيط",
+                    "صناعة السفن",
+                    "الزراعة",
+                    "البناء"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "كانت دولة معين تستورد من مصر:",
+                "options": [
+                    "الخناجر",
+                    "الكتان والذهب",
+                    "اللبان",
+                    "البخور"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "الحاكم الحميري الذي اضطهد المسيحيين من أهل اليمن:",
+                "options": [
+                    "بلقيس",
+                    "سرجون",
+                    "سيف بن ذي يزن",
+                    "ذو نواس"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "ملك الحبشة الذي خرج لليمن وهزم ذا نواس كان من مملكة:",
+                "options": [
+                    "أكسيوم",
+                    "معين",
+                    "كوش",
+                    "سبأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "الأمير اليمني الذي طلب مساعدة الفرس للتخلص من الأحباش:",
+                "options": [
+                    "ذو نواس",
+                    "أبرهة",
+                    "شمر يهرعش",
+                    "سيف بن ذي يزن"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "استمر حكم الفرس لليمن حتى:",
+                "options": [
+                    "قيام دولة معين",
+                    "عهد بلقيس",
+                    "ظهور الإسلام",
+                    "انهيار سد مأرب"
+                ],
+                "ans": 2
+            }
+        ]
+    },
+    {
+        "id": "bubbles_2",
+        "title": "الفقاعات المتساقطة",
+        "type": "bubbles",
+        "desc": "التقط الفقاعة ذات الإجابة الصحيحة عن نماذج لحضارات بلاد اليمن القديم",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M21.21 15.89A10 10 0 1 1 8 2.83\"></path><path d=\"M22 12A10 10 0 0 0 12 2v10z\"></path></svg>",
+        "questions": [
+            {
+                "q": "مضيق تتحكم فيه اليمن؟",
+                "options": [
+                    "جبل طارق",
+                    "ملقا",
+                    "باب المندب",
+                    "هرمز"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "محيط تشرف عليه اليمن؟",
+                "options": [
+                    "الهندي",
+                    "القطبي",
+                    "الهادي",
+                    "الأطلنطي"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "بحر تشرف عليه اليمن؟",
+                "options": [
+                    "الأسود",
+                    "المتوسط",
+                    "الأحمر",
+                    "قزوين"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "منطقة نشأة حضارة معين؟",
+                "options": [
+                    "ظفار",
+                    "مأرب",
+                    "حضرموت",
+                    "الجوف"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "عاصمة معين؟",
+                "options": [
+                    "قرناو",
+                    "شبوة",
+                    "مأرب",
+                    "ريدان"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "عاصمة سبأ؟",
+                "options": [
+                    "تمنع",
+                    "مأرب",
+                    "قرناو",
+                    "ريدان"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "عاصمة حمير؟",
+                "options": [
+                    "ريدان",
+                    "قرناو",
+                    "مأرب",
+                    "صنعاء"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "اسم ريدان حاليًا؟",
+                "options": [
+                    "صنعاء",
+                    "ظفار",
+                    "عدن",
+                    "تعز"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أشهر حكام سبأ؟",
+                "options": [
+                    "بلقيس",
+                    "كليوباترا",
+                    "نفرتيتي",
+                    "حتشبسوت"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "نبي عاصرته بلقيس؟",
+                "options": [
+                    "عيسى",
+                    "موسى",
+                    "يوسف",
+                    "سليمان"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "سد شيدته سبأ؟",
+                "options": [
+                    "مأرب",
+                    "النهضة",
+                    "اللاهون",
+                    "أسوان"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "حضارة سيطرت على معين؟",
+                "options": [
+                    "أوسان",
+                    "سبأ",
+                    "قتبان",
+                    "حمير"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "فرع من السبئيين؟",
+                "options": [
+                    "الأنباط",
+                    "الأحباش",
+                    "الحميريون",
+                    "المعينيون"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "حضارة تميزت بالتوسع العسكري؟",
+                "options": [
+                    "حمير",
+                    "سبأ",
+                    "قتبان",
+                    "معين"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "شعبان أسقطا حمير؟",
+                "options": [
+                    "المصريون والعرب",
+                    "الروم والإغريق",
+                    "الأحباش والفرس",
+                    "الآشوريون والبابليون"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "من يدير القبيلة اليمنية؟",
+                "options": [
+                    "الشيخ",
+                    "الملك",
+                    "التاجر",
+                    "الكاهن"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "مجلس يساعد الملك اليمني؟",
+                "options": [
+                    "مجلس الحرب",
+                    "مجلس عام",
+                    "مجلس الكهنة",
+                    "مجلس الشيوخ"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أبرز معبودات اليمنيين؟",
+                "options": [
+                    "الأنهار",
+                    "البحر",
+                    "الشمس فقط",
+                    "النجوم والكواكب"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "مادتا ملابس اليمنيين؟",
+                "options": [
+                    "البردي",
+                    "الصوف والكتان",
+                    "الجلد",
+                    "الحرير فقط"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "حضارة اشتهرت بالتنظيم العادل للضرائب؟",
+                "options": [
+                    "أوسان",
+                    "معين",
+                    "حمير",
+                    "سبأ"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "مكانة المرأة اليمنية؟",
+                "options": [
+                    "مرموقة",
+                    "متدنية",
+                    "معدومة",
+                    "ثانوية"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أسلوب زراعة الجبال اليمنية؟",
+                "options": [
+                    "الري بالغمر",
+                    "الواحات",
+                    "الحياض",
+                    "المدرجات"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "سلاح يمني شهير؟",
+                "options": [
+                    "المدفع",
+                    "الخنجر",
+                    "البندقية",
+                    "الرمح الطويل"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "النشاط الرئيسي لليمن القديم؟",
+                "options": [
+                    "التعدين",
+                    "الصناعة",
+                    "الصيد",
+                    "التجارة"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "ميناء يمني قديم؟",
+                "options": [
+                    "عدن",
+                    "الإسكندرية",
+                    "جبيل",
+                    "صور"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "طريق سيطر عليه اليمنيون؟",
+                "options": [
+                    "الملح",
+                    "الذهب",
+                    "الحرير",
+                    "البخور"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "منتج يمني مشهور؟",
+                "options": [
+                    "القمح",
+                    "خشب الأرز",
+                    "البردي",
+                    "اللبان"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "اسم الأبجدية الحميرية؟",
+                "options": [
+                    "المسماري",
+                    "الفينيقي",
+                    "الهيروغليفي",
+                    "المسند"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "عدد حروف الخط المسند؟",
+                "options": [
+                    "٢٩",
+                    "٢٨",
+                    "٢٦",
+                    "٢٢"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "تقويم يمني قديم؟",
+                "options": [
+                    "السبئي",
+                    "الروماني",
+                    "القبطي",
+                    "الهجري"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "ما استخدموه لتحديد الاتجاهات؟",
+                "options": [
+                    "الرياح",
+                    "النجوم",
+                    "الشمس فقط",
+                    "البوصلة"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أعظم إنجاز هندسي يمني؟",
+                "options": [
+                    "ميناء عدن",
+                    "معبد بران",
+                    "قصر غمدان",
+                    "سد مأرب"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "معبد من عرش بلقيس؟",
+                "options": [
+                    "الدير البحري",
+                    "بران",
+                    "الكرنك",
+                    "عشتر"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "ما صدرته معين لمصر؟",
+                "options": [
+                    "المُرّ",
+                    "الأرز",
+                    "الذهب",
+                    "الكتان"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "ما استوردته معين من مصر؟",
+                "options": [
+                    "الخناجر",
+                    "اللبان",
+                    "الكتان",
+                    "البخور"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "استخدام المُرّ في مصر؟",
+                "options": [
+                    "الكتابة",
+                    "البناء",
+                    "التحنيط",
+                    "السفن"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "حاكم حميري اضطهد المسيحيين؟",
+                "options": [
+                    "ذو نواس",
+                    "أبرهة",
+                    "بلقيس",
+                    "سيف بن ذي يزن"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "مملكة الحبشة التي غزت اليمن؟",
+                "options": [
+                    "كوش",
+                    "أكسيوم",
+                    "نبتة",
+                    "معين"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أمير طلب مساعدة الفرس؟",
+                "options": [
+                    "سيف بن ذي يزن",
+                    "سرجون",
+                    "ذو نواس",
+                    "أبرهة"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "من حكم اليمن حتى ظهور الإسلام؟",
+                "options": [
+                    "الأحباش",
+                    "الفرس",
+                    "المصريون",
+                    "الروم"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "ديانات اعتنقها الحميريون؟",
+                "options": [
+                    "البوذية",
+                    "الزرادشتية",
+                    "اليهودية والمسيحية",
+                    "الوثنية فقط"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "ما ضعفت بسببه سبأ؟",
+                "options": [
+                    "الزلازل",
+                    "غزو الفرس",
+                    "الفيضانات",
+                    "انهيار سد مأرب"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "اتجاه تحول طرق التجارة؟",
+                "options": [
+                    "من البحر إلى البر",
+                    "من الشرق للغرب",
+                    "لم تتحول",
+                    "من البر إلى البحر"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "حضارات أخرى في اليمن؟",
+                "options": [
+                    "كوش وأكسوم",
+                    "سومر وأكاد",
+                    "المايا والإنكا",
+                    "قتبان وأوسان"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "مؤرخ مصري تحدث عن آثار معين؟",
+                "options": [
+                    "أحمد فخري",
+                    "جمال حمدان",
+                    "المسعودي",
+                    "ابن خلدون"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "معبد في منطقة الجوف؟",
+                "options": [
+                    "بران",
+                    "عثتر",
+                    "الكرنك",
+                    "آمون"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "حجر بنيت منه معابد الجوف؟",
+                "options": [
+                    "الرخام",
+                    "الجرانيت",
+                    "الطين",
+                    "الخشب"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "ما يشبهه معبد عثتر في مصر؟",
+                "options": [
+                    "الدير البحري",
+                    "معبد الكرنك",
+                    "معبد الوادي لهرم خفرع",
+                    "معبد أبو سمبل"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "ما أقامه اليمنيون لري الأراضي؟",
+                "options": [
+                    "الآبار فقط",
+                    "الأفلاج",
+                    "السدود والحواجز المائية",
+                    "القنوات النهرية"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "ما شيده اليمنيون للدفاع؟",
+                "options": [
+                    "الأهرامات",
+                    "الحصون والقلاع",
+                    "الزقورات",
+                    "المسلات"
+                ],
+                "ans": 1
+            }
+        ]
+    },
+    {
+        "id": "shooting_3",
+        "title": "التنشين والاصطياد",
+        "type": "shooting",
+        "desc": "صوّب نحو الكلمة الصحيحة لإكمال عبارات نماذج لحضارات بلاد اليمن القديم",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><circle cx=\"12\" cy=\"12\" r=\"6\"></circle><circle cx=\"12\" cy=\"12\" r=\"2\"></circle></svg>",
+        "questions": [
+            {
+                "q": "أكمل: «نشأت على أرض اليمن عدة حضارات ازدهرت بفضل موقعها ... المميز».",
+                "options": [
+                    "البحري فقط",
+                    "الجغرافي",
+                    "الفلكي",
+                    "الصحراوي"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أكمل: «أسهم موقع اليمن في تواصلها مع حضارات شمال إفريقيا مثل الحضارة ...».",
+                "options": [
+                    "الرومانية",
+                    "الإغريقية",
+                    "المصرية القديمة",
+                    "الفينيقية"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «ارتبطت اليمن بعلاقات مع حضارات شرق إفريقيا وشرق ...».",
+                "options": [
+                    "أمريكا",
+                    "أستراليا",
+                    "آسيا",
+                    "أوروبا"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «مكن الموقع اليمن من السيطرة على طرق ... القديمة».",
+                "options": [
+                    "الحج",
+                    "الحروب",
+                    "التجارة",
+                    "الهجرة"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «وفر اعتدال المناخ بيئة مناسبة لقيام حضارة مزدهرة في جنوب الجزيرة ...».",
+                "options": [
+                    "العربية",
+                    "البلقانية",
+                    "الإيبيرية",
+                    "الهندية"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «منطقة الجوف من أخصب مناطق اليمن وأكثرها صلاحية ل...».",
+                "options": [
+                    "الرعي",
+                    "الصيد",
+                    "الزراعة",
+                    "التعدين"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «اهتمت مملكة سبأ بالزراعة وشيدت ...».",
+                "options": [
+                    "السدود",
+                    "الزقورات",
+                    "المسلات",
+                    "الأهرامات"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «ورد ذكر الملكة بلقيس في القرآن ...».",
+                "options": [
+                    "الكريم",
+                    "والتوراة فقط",
+                    "والإنجيل فقط",
+                    "والمسند"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «آمنت الملكة بلقيس بالنبي ...».",
+                "options": [
+                    "داود",
+                    "عيسى",
+                    "موسى",
+                    "سليمان"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "أكمل: «مهد ضعف سبأ الطريق أمام مملكة ... للسيطرة على مناطقها».",
+                "options": [
+                    "أكسيوم",
+                    "قتبان",
+                    "حمير",
+                    "معين"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «سيطر الحميريون على معظم مناطق اليمن ...».",
+                "options": [
+                    "الشمالي فقط",
+                    "الساحلي فقط",
+                    "القديم",
+                    "الحديث"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «احتفظت بعض القبائل اليمنية بحقها في إدارة شئونها ...».",
+                "options": [
+                    "الخارجية",
+                    "الدينية فقط",
+                    "المحلية",
+                    "العسكرية"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «شيد اليمنيون المعابد للنجوم و...».",
+                "options": [
+                    "الكواكب",
+                    "الملوك",
+                    "الأنهار",
+                    "الحيوانات"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «اعتقد اليمنيون في الحياة بعد ...».",
+                "options": [
+                    "الزواج",
+                    "الحرب",
+                    "الولادة",
+                    "الموت"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "أكمل: «اعتنق الحميريون اليهودية والمسيحية ثم دخلوا في ...».",
+                "options": [
+                    "البوذية",
+                    "الوثنية",
+                    "الإسلام",
+                    "الزرادشتية"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «احترم المجتمع اليمني القيم ...».",
+                "options": [
+                    "الفردية",
+                    "الأسرية",
+                    "العسكرية",
+                    "المادية"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أكمل: «اهتم الوالدان في اليمن بتربية ...».",
+                "options": [
+                    "الأبناء",
+                    "الحيوانات",
+                    "النبات",
+                    "الخيل"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «وصلت المرأة اليمنية إلى أرفع المناصب ... كما في حالة بلقيس».",
+                "options": [
+                    "التجارية",
+                    "العسكرية",
+                    "الدينية",
+                    "السياسية"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "أكمل: «اهتم اليمنيون بمشروعات الري وتربية ...».",
+                "options": [
+                    "النحل فقط",
+                    "الطيور",
+                    "الحيوانات",
+                    "الأسماك"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «اشتهرت اليمن بصناعة الأواني المعدنية و...».",
+                "options": [
+                    "الزجاجية",
+                    "الخشبية",
+                    "الورقية",
+                    "الفخارية"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "أكمل: «اشتهرت اليمن بصناعة الأقمشة الحريرية والصوفية و...».",
+                "options": [
+                    "البردي",
+                    "القطن الهندي",
+                    "الكتان المصري",
+                    "الجلود"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "أكمل: «كانت التجارة النشاط الرئيسي بفضل موقع اليمن على طرق ...».",
+                "options": [
+                    "التجارة",
+                    "الحج",
+                    "الهجرة",
+                    "الغزو"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «فرض اليمنيون ... على البضائع المارة بأراضيهم».",
+                "options": [
+                    "حظرًا",
+                    "ضرائب",
+                    "قيودًا",
+                    "مصادرة"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أكمل: «عُثر على نقوش الخط المسند على جدران المباني و... الأثرية».",
+                "options": [
+                    "الكهوف",
+                    "الأهرامات",
+                    "المعابد",
+                    "السفن"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «برع اليمنيون في علم الهندسة و...».",
+                "options": [
+                    "الفلسفة",
+                    "الطب",
+                    "الفلك",
+                    "الكيمياء"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «اعتمد اليمنيون على التقويم السبئي في تحديد الفصول ...».",
+                "options": [
+                    "الحربية",
+                    "التجارية",
+                    "الزراعية",
+                    "الدراسية"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «استخدم اليمنيون حركة النجوم في توجيه تجارتهم البرية و...».",
+                "options": [
+                    "البحرية",
+                    "النهرية",
+                    "الداخلية",
+                    "الجوية"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «برع اليمنيون في العمارة وهندسة ...».",
+                "options": [
+                    "الأسلحة",
+                    "الري فقط",
+                    "السفن",
+                    "البناء"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "أكمل: «شيد اليمنيون القصور المزخرفة التي تميزت بروعة التصميم و...».",
+                "options": [
+                    "الزخارف",
+                    "الارتفاع",
+                    "البساطة",
+                    "الضخامة فقط"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «تفوق اليمنيون في إنشاء السدود والحواجز ...».",
+                "options": [
+                    "الرملية",
+                    "المائية",
+                    "الحربية",
+                    "الجبلية"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أكمل: «ساهم سد مأرب في ري مساحات واسعة من الأراضي ...».",
+                "options": [
+                    "الصحراوية",
+                    "الزراعية",
+                    "الساحلية",
+                    "الجبلية"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أكمل: «كانت هناك علاقات ... بين حضارات اليمن والحضارة المصرية القديمة».",
+                "options": [
+                    "عدائية",
+                    "تجارية",
+                    "منقطعة",
+                    "حربية"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أكمل: «عُثر على نقوش في أحد المعابد توضح أن دولة معين كانت تصدر لمصر البخور و...».",
+                "options": [
+                    "المُرّ",
+                    "الأرز",
+                    "القمح",
+                    "البردي"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «ظلت حمير دولة مستقلة قوية حتى تولى ... الحكم».",
+                "options": [
+                    "سيف بن ذي يزن",
+                    "بلقيس",
+                    "ذو نواس",
+                    "أبرهة"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «وصلت أخبار اضطهاد المسيحيين لملك ...».",
+                "options": [
+                    "الحبشة",
+                    "الفرس",
+                    "مصر",
+                    "الروم"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «خرج ملك الحبشة لليمن وهزم ذا نواس وسيطر على بلاد اليمن ...».",
+                "options": [
+                    "القديم",
+                    "الشمالي",
+                    "الساحلي",
+                    "الحديث"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «طلب أهل اليمن بقيادة سيف بن ذي يزن المساعدة من ...».",
+                "options": [
+                    "الأحباش",
+                    "الفرس",
+                    "المصريين",
+                    "الروم"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أكمل: «نجح الفرس في هزيمة ... واستمر حكمهم لليمن».",
+                "options": [
+                    "الروم",
+                    "الحميريين",
+                    "السبئيين",
+                    "الأحباش"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "أكمل: «استمر حكم الفرس لليمن حتى ظهور ...».",
+                "options": [
+                    "سد مأرب",
+                    "المسيحية",
+                    "الحميريين",
+                    "الإسلام"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "أكمل: «من حضارات اليمن معين وحضرموت وسبأ وقتبان وأوسان و...».",
+                "options": [
+                    "أكسوم",
+                    "فينيقيا",
+                    "كوش",
+                    "حمير"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "أكمل: «يشير المؤرخ أحمد فخري إلى عظمة آثار حضارة ...».",
+                "options": [
+                    "سبأ",
+                    "معين",
+                    "حمير",
+                    "حضرموت"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أكمل: «بنيت معابد منطقة الجوف بقطع ضخمة من ...».",
+                "options": [
+                    "الطوب اللبن",
+                    "الجرانيت",
+                    "الطين",
+                    "الخشب"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أكمل: «تذكرنا معابد الجوف ب... للهرم الثاني بالجيزة».",
+                "options": [
+                    "معبد الكرنك",
+                    "معبد أبو سمبل",
+                    "معبد الأقصر",
+                    "معبد الوادي"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "أكمل: «تُشرف اليمن على البحر الأحمر والمحيط ...».",
+                "options": [
+                    "المتجمد",
+                    "الأطلنطي",
+                    "الهندي",
+                    "الهادي"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «تتحكم اليمن في مضيق باب ...».",
+                "options": [
+                    "طارق",
+                    "السلام",
+                    "هرمز",
+                    "المندب"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "أكمل: «تحول طرق التجارة من البر إلى ... أضعف سبأ».",
+                "options": [
+                    "البحر",
+                    "الأنهار",
+                    "الجبال",
+                    "الصحراء"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أكمل: «زرع أهل اليمن الحبوب في السهول وعلى المدرجات ...».",
+                "options": [
+                    "الصحراوية",
+                    "الجبلية",
+                    "الساحلية",
+                    "النهرية"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أكمل: «من أشهر صادرات اليمن البخور واللبان و...».",
+                "options": [
+                    "الأرز",
+                    "الذهب",
+                    "العطور",
+                    "القمح"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "أكمل: «كانت أبواب القصور وأسقفها تُطعّم بالعاج والذهب والفضة و... الكريمة».",
+                "options": [
+                    "الأقمشة",
+                    "الأحجار",
+                    "المعادن",
+                    "الأخشاب"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "أكمل: «احتفظت بعض القبائل بحقها في إدارة شئونها ضمن مناطق ...».",
+                "options": [
+                    "نفوذها",
+                    "الفرس",
+                    "مصر",
+                    "الأحباش"
+                ],
+                "ans": 0
+            }
+        ]
+    },
+    {
+        "id": "true_false_4",
+        "title": "صح أم خطأ",
+        "type": "true_false",
+        "desc": "حدد صحة العبارات المتعلقة بـ نماذج لحضارات بلاد اليمن القديم",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M22 11.08V12a10 10 0 1 1-5.93-9.14\"></path><polyline points=\"22 4 12 14.01 9 11.01\"></polyline></svg>",
+        "questions": [
+            {
+                "q": "ازدهرت حضارات اليمن القديم بفضل موقعها الجغرافي المميز.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "تُشرف بلاد اليمن على البحر المتوسط.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "تتحكم بلاد اليمن في مضيق باب المندب.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "ساعد اعتدال المناخ فوق المرتفعات على استقرار السكان في اليمن.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "ارتبطت حضارات اليمن بعلاقات مع الهند والصين.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "نشأت حضارة معين في منطقة مأرب.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "اتخذت حضارة معين من مدينة قرناو عاصمة لها.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "اشتهرت حضارة معين بالتجارة والزراعة.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "تمكنت حضارة حمير من السيطرة على مناطق حضارة معين.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "اتخذت مملكة سبأ من مأرب عاصمة لها.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "شيدت مملكة سبأ سد مأرب.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "من أشهر حكام سبأ الملكة بلقيس.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "عاصرت الملكة بلقيس النبي موسى عليه السلام.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "ضعفت سبأ بعد انهيار سد مأرب وتحول طرق التجارة من البر إلى البحر.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "الحميريون أحد فروع المعينيين.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "نقل الحميريون عاصمة المملكة إلى ريدان (ظفار حاليًا).",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "تميز الحميريون بالتوسع العسكري الكبير.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "سقطت مملكة حمير بسبب صراعها مع الروم والإغريق.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "عاش اليمنيون منذ القدم في قبائل مستقلة لكل منها شيخ.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "كان نظام الحكم في الممالك اليمنية جمهوريًا.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "كان يساعد الملك اليمني في إدارة الدولة مجلس عام.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "عبد اليمنيون القدماء النجوم والكواكب.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "لم يؤمن اليمنيون بالحياة بعد الموت.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "تأثرت الحضارة الحميرية بالديانات السماوية.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "اعتمد اليمنيون في صناعة ملابسهم على الصوف والكتان.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "تميزت حضارة حمير بتنظيم عادل للضرائب والعقود والميراث.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "امتلكت المرأة اليمنية حق اختيار الزوج وحق وراثة العرش.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "كانت مكانة المرأة في اليمن القديم متدنية.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "زرع أهل اليمن الحبوب على المدرجات الجبلية.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "وضع اليمنيون قانونًا لتنظيم الضرائب الزراعية.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "اشتهرت اليمن بصناعة السيوف والخناجر.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "كانت الزراعة النشاط الرئيسي لليمن القديم.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "أنشأ اليمنيون ميناء عدن.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "سيطر اليمنيون على طريق الحرير.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "من أشهر صادرات اليمن البخور واللبان والعطور.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "عُرفت الأبجدية الحميرية بالخط المسند.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "تتكون الأبجدية الحميرية من ٢٢ حرفًا.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "اعتمد اليمنيون على التقويم السبئي في تحديد الفصول الزراعية.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "استخدم اليمنيون حركة النجوم في تحديد الاتجاهات.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "يُعد سد مأرب من أعظم الإنجازات الهندسية في العالم القديم.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "معبد بران جزء من عرش الملكة بلقيس.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "كانت دولة معين تستورد البخور والمُرّ من مصر.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "استخدم المُرّ في الطقوس الدينية والتحنيط في مصر.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "كانت مصر تصدر الكتان والذهب إلى دولة معين.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "اضطهد ذو نواس المسيحيين من أهل اليمن.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "خرج ملك الفرس لليمن وهزم ذا نواس.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "طلب سيف بن ذي يزن المساعدة من الفرس للتخلص من الأحباش.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "استمر حكم الأحباش لليمن حتى ظهور الإسلام.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "بنيت معابد منطقة الجوف بقطع ضخمة من الجرانيت.",
+                "options": [
+                    "صح",
+                    "خطأ"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "تشبه معابد الجوف معبد الوادي لهرم خفرع بالجيزة.",
+                "options": [
+                    "خطأ",
+                    "صح"
+                ],
+                "ans": 1
+            }
+        ]
+    },
+    {
+        "id": "genius_5",
+        "title": "تحدي العباقرة",
+        "type": "genius",
+        "desc": "تحدٍّ سريع للعباقرة: فكّر وفسّر وقارن في نماذج لحضارات بلاد اليمن القديم",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9.663 17h4.673M12 3a6 6 0 0 0-6 6c0 1.887.454 2.921 1.5 4.5.5.75 1 1.5 1 2.5h7c0-1 .5-1.75 1-2.5C17.546 11.921 18 10.887 18 9a6 6 0 0 0-6-6z\"></path></svg>",
+        "questions": [
+            {
+                "q": "بم تفسر ازدهار حضارات اليمن القديم؟",
+                "options": [
+                    "عزلتها عن العالم",
+                    "اتساع الصحاري",
+                    "كثرة الأنهار الدائمة",
+                    "موقعها الجغرافي المميز على البحر الأحمر والمحيط الهندي وتحكمها في باب المندب"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "ما أثر إشراف اليمن على البحر الأحمر والمحيط الهندي؟",
+                "options": [
+                    "عزلة اليمن",
+                    "السيطرة على طرق التجارة القديمة",
+                    "منع التجارة",
+                    "زيادة الحروب البحرية فقط"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "ما دور اعتدال المناخ فوق المرتفعات في قيام حضارة اليمن؟",
+                "options": [
+                    "أدى إلى هجرة السكان",
+                    "ساعد على استقرار السكان ووفر بيئة مناسبة لقيام حضارة مزدهرة",
+                    "منع الزراعة",
+                    "زاد من الجفاف"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "بم تفسر صلاحية منطقة الجوف لقيام حضارة معين؟",
+                "options": [
+                    "لكثرة المعادن بها",
+                    "لأنها منطقة صحراوية",
+                    "لقربها من البحر المتوسط",
+                    "لأنها من أخصب مناطق اليمن وأكثرها صلاحية للزراعة"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "ما أسباب ضعف مملكة سبأ؟",
+                "options": [
+                    "انهيار سد مأرب وتحول طرق التجارة من البر إلى البحر",
+                    "كثرة الأمطار",
+                    "انتشار الزراعة",
+                    "قوة الملكة بلقيس"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "ما نتيجة ضعف مملكة سبأ؟",
+                "options": [
+                    "قيام حضارة معين",
+                    "انتهاء الحكم الملكي",
+                    "غزو الرومان لليمن",
+                    "سيطرة مملكة حمير على المناطق التابعة لسبأ"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "ما أسباب سقوط مملكة حمير؟",
+                "options": [
+                    "قلة الأمطار",
+                    "انهيار سد مأرب",
+                    "دخولها في صراعات مع الأحباش والفرس",
+                    "الزلازل"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "قارن من حيث العاصمة: معين وسبأ:",
+                "options": [
+                    "كلاهما عاصمته مأرب",
+                    "معين مأرب وسبأ قرناو",
+                    "كلاهما عاصمته ريدان",
+                    "معين عاصمتها قرناو، وسبأ عاصمتها مأرب"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "قارن من حيث أبرز السمات: حضارة سبأ وحضارة حمير:",
+                "options": [
+                    "سبأ اهتمت بالزراعة والسدود، وحمير تميزت بالتوسع العسكري",
+                    "سبأ عسكرية وحمير زراعية",
+                    "لا فرق بينهما",
+                    "كلاهما اهتم بالصيد"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "كيف تطور نظام الحكم في اليمن القديم؟",
+                "options": [
+                    "من ديمقراطي إلى قبلي",
+                    "من قبائل مستقلة لكل منها شيخ إلى نظام ملكي وراثي",
+                    "من ملكي إلى جمهوري",
+                    "ظل قبليًا دائمًا"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "دلل على اعتقاد اليمنيين في الحياة بعد الموت:",
+                "options": [
+                    "ورد ذلك في ملامح حياتهم الدينية مع عبادة النجوم والكواكب وتشييد المعابد",
+                    "تحنيط الموتى",
+                    "سك النقود",
+                    "بنائهم الأهرامات"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "دلل على تأثر الحضارة الحميرية بالديانات السماوية:",
+                "options": [
+                    "اعتناق الحميريين اليهودية والمسيحية ثم دخولهم الإسلام",
+                    "سك النقود الذهبية",
+                    "بناء المعابد للنجوم",
+                    "بناء سد مأرب"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "دلل على المكانة المرموقة للمرأة في اليمن القديم:",
+                "options": [
+                    "عدم ذكرها في النقوش",
+                    "امتلاكها حق اختيار الزوج ووراثة العرش ووصولها للحكم مثل بلقيس",
+                    "حرمانها من الميراث",
+                    "منعها من العمل"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "علام يدل التنظيم العادل للضرائب والعقود والميراث في حضارة معين؟",
+                "options": [
+                    "انتشار الفوضى",
+                    "ضعف الدولة",
+                    "تقدم الحياة الاجتماعية والاقتصادية وتحقيق العدالة",
+                    "سيطرة الأجانب"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "بم تفسر ازدهار الزراعة في اليمن القديم؟",
+                "options": [
+                    "التربة الخصبة والمناخ المناسب والاهتمام بمشروعات الري",
+                    "كثرة الأنهار الدائمة",
+                    "الأمطار الشتوية الغزيرة",
+                    "طمي الفيضان"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "كيف تغلب اليمنيون على طبيعة بلادهم الجبلية في الزراعة؟",
+                "options": [
+                    "بترك الجبال دون زراعة",
+                    "بزراعة المدرجات الجبلية",
+                    "بحفر القنوات من الأنهار",
+                    "بالرعي فقط"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "بم تفسر أن التجارة كانت النشاط الرئيسي في اليمن القديم؟",
+                "options": [
+                    "كثرة الصناعة",
+                    "بعدها عن البحار",
+                    "موقع اليمن على طرق التجارة",
+                    "قلة الزراعة"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "كيف استفاد اليمنيون من موقعهم على طرق التجارة؟",
+                "options": [
+                    "بإغلاق الطرق",
+                    "بإنشاء الموانئ والسيطرة على طريق البخور وفرض الضرائب على البضائع المارة",
+                    "بالاعتماد على الزراعة فقط",
+                    "بالانعزال عن العالم"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "ما أهمية التقويم السبئي لليمنيين؟",
+                "options": [
+                    "تسجيل أسماء الملوك",
+                    "تحديد مواعيد الحروب",
+                    "تحديد أسعار البضائع",
+                    "تحديد الفصول الزراعية"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "بم تفسر استخدام اليمنيين حركة النجوم؟",
+                "options": [
+                    "لتحديد الاتجاهات وتوجيه تجارتهم البرية والبحرية",
+                    "لبناء القصور",
+                    "لعبادتها فقط",
+                    "لتحديد مواعيد الزواج"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "لماذا يُعد سد مأرب من أعظم الإنجازات الهندسية في العالم القديم؟",
+                "options": [
+                    "لأنه أكبر قصر في اليمن",
+                    "لأنه عرش بلقيس",
+                    "لأنه ميناء تجاري",
+                    "لبراعة بنائه ولأنه ساهم في ري مساحات واسعة من الأراضي الزراعية"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "علام يدل تطعيم أبواب القصور اليمنية بالعاج والذهب والأحجار الكريمة؟",
+                "options": [
+                    "فقر اليمنيين",
+                    "تأثرهم بالفينيقيين فقط",
+                    "قلة المعادن",
+                    "ثراء اليمنيين وبراعتهم في العمارة والزخرفة"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "دلل على التواصل بين حضارات اليمن والحضارة المصرية القديمة:",
+                "options": [
+                    "حكم مصر لليمن",
+                    "انتشار الخط المسند في مصر",
+                    "بناء الأهرامات في اليمن",
+                    "تصدير معين البخور والمُرّ لمصر واستيرادها الكتان والذهب منها"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "بم تفسر حاجة مصر القديمة لاستيراد المُرّ من اليمن؟",
+                "options": [
+                    "لصناعة الورق",
+                    "لصناعة السفن",
+                    "للبناء",
+                    "لاستخدامه في الطقوس الدينية والتحنيط"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "ما سبب الغزو الحبشي لليمن؟",
+                "options": [
+                    "تحول طرق التجارة",
+                    "اضطهاد ذي نواس للمسيحيين من أهل اليمن",
+                    "طلب سيف بن ذي يزن",
+                    "انهيار سد مأرب"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "ما نتيجة طلب سيف بن ذي يزن المساعدة من الفرس؟",
+                "options": [
+                    "هزيمة الأحباش واستمرار حكم الفرس لليمن حتى ظهور الإسلام",
+                    "سيطرة الروم على اليمن",
+                    "عودة حكم حمير",
+                    "استقلال اليمن نهائيًا"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "علام يدل وصف أحمد فخري لآثار حضارة معين؟",
+                "options": [
+                    "حداثة حضارة معين",
+                    "عظمة حضارة معين وتشابهها مع حضارات عظيمة مثل مصر وبلاد ما بين النهرين",
+                    "ضعف حضارة معين",
+                    "تأثر مصر بمعين فقط"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "ما أوجه التشابه بين معبد عثتر بالجوف ومعبد الوادي لهرم خفرع؟",
+                "options": [
+                    "كلاهما من الطين",
+                    "البناء بقطع ضخمة من الجرانيت والعمارة والزخارف",
+                    "كلاهما زقورة",
+                    "كلاهما مقبرة ملكية"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "قارن من حيث الصادرات والواردات: معين ومصر:",
+                "options": [
+                    "لم تكن هناك تجارة",
+                    "معين صدرت البخور والمُرّ لمصر، واستوردت منها الكتان والذهب",
+                    "معين استوردت البخور من مصر",
+                    "مصر صدرت المُرّ لمعين"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "قارن من حيث الأبجدية: الخط المسند والأبجدية الفينيقية:",
+                "options": [
+                    "المسند ٢٢ والفينيقية ٢٩",
+                    "كلاهما كتابة مسمارية",
+                    "كلاهما ٢٢ حرفًا",
+                    "المسند ٢٩ حرفًا يمنيًا، والفينيقية ٢٢ حرفًا"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "استبعد الغريب: (معين - سبأ - حمير - سومر)",
+                "options": [
+                    "حمير",
+                    "معين",
+                    "سومر",
+                    "سبأ"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "سبب استبعاد سومر من (معين - سبأ - حمير):",
+                "options": [
+                    "لأنها حضارة إفريقية",
+                    "لأنها حضارة في العراق القديم والباقي حضارات يمنية",
+                    "لأنها أقدم حضارة يمنية",
+                    "لأنها عاصمة سبأ"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "استبعد الغريب: (قرناو - مأرب - ريدان - أكاد)",
+                "options": [
+                    "مأرب",
+                    "ريدان",
+                    "أكاد",
+                    "قرناو"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "استبعد الغريب: (البخور - اللبان - العطور - خشب الأرز)",
+                "options": [
+                    "العطور",
+                    "البخور",
+                    "اللبان",
+                    "خشب الأرز"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "من أكون؟ «ملكة سبئية ورد ذكرها في القرآن الكريم وآمنت بالنبي سليمان»",
+                "options": [
+                    "حتشبسوت",
+                    "سبك نفرو",
+                    "بلقيس",
+                    "كليوباترا"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "من أكون؟ «حاكم حميري اضطهد المسيحيين فخرج إليه ملك الحبشة»",
+                "options": [
+                    "بلقيس",
+                    "سيف بن ذي يزن",
+                    "أبرهة",
+                    "ذو نواس"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "من أكون؟ «أمير يمني طلب مساعدة الفرس للتخلص من حكم الأحباش»",
+                "options": [
+                    "سرجون",
+                    "ذو نواس",
+                    "سيف بن ذي يزن",
+                    "بلقيس"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "من أكون؟ «حضارة يمنية نشأت في الجوف واتخذت قرناو عاصمة»",
+                "options": [
+                    "قتبان",
+                    "سبأ",
+                    "معين",
+                    "حمير"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "صوّب الخطأ: «نشأت حضارة معين في منطقة مأرب».",
+                "options": [
+                    "حضرموت",
+                    "الجوف",
+                    "عدن",
+                    "ظفار"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "صوّب الخطأ: «اتخذت مملكة سبأ من قرناو عاصمة لها».",
+                "options": [
+                    "صنعاء",
+                    "مأرب",
+                    "تمنع",
+                    "ريدان"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "صوّب الخطأ: «نقل الحميريون عاصمتهم إلى مأرب».",
+                "options": [
+                    "قرناو",
+                    "عدن",
+                    "الجوف",
+                    "ريدان (ظفار حاليًا)"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "صوّب الخطأ: «تتحكم بلاد اليمن في مضيق هرمز».",
+                "options": [
+                    "جبل طارق",
+                    "باب المندب",
+                    "البسفور",
+                    "ملقا"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "صوّب الخطأ: «تتكون الأبجدية الحميرية (المسند) من ٢٢ حرفًا».",
+                "options": [
+                    "٢٩",
+                    "٣٢",
+                    "٢٦",
+                    "٢٨"
+                ],
+                "ans": 0
+            },
+            {
+                "q": "صوّب الخطأ: «كانت الزراعة النشاط الرئيسي لليمن القديم».",
+                "options": [
+                    "التعدين",
+                    "الصناعة",
+                    "التجارة",
+                    "الصيد"
+                ],
+                "ans": 2
+            },
+            {
+                "q": "صوّب الخطأ: «سيطر اليمنيون على طريق الحرير».",
+                "options": [
+                    "التوابل",
+                    "الملح",
+                    "الذهب",
+                    "البخور"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "صوّب الخطأ: «طلب أهل اليمن مساعدة الروم للتخلص من الأحباش».",
+                "options": [
+                    "الإغريق",
+                    "العرب",
+                    "المصريين",
+                    "الفرس"
+                ],
+                "ans": 3
+            },
+            {
+                "q": "صوّب الخطأ: «كانت دولة معين تصدر لمصر الكتان والذهب».",
+                "options": [
+                    "خشب الأرز",
+                    "البخور والمُرّ",
+                    "القمح والشعير",
+                    "ورق البردي"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "ماذا تتوقع لو لم ينهر سد مأرب؟",
+                "options": [
+                    "ازدهار حضارة حمير مبكرًا",
+                    "استمرار ازدهار الزراعة وقوة مملكة سبأ لفترة أطول",
+                    "انتهاء التجارة",
+                    "غزو الفرس مبكرًا"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "ما القيمة المستفادة من مكانة المرأة في اليمن القديم؟",
+                "options": [
+                    "إقصاء المرأة",
+                    "تقدير دور المرأة ومشاركتها في المجتمع والحكم",
+                    "تقليل دور الأسرة",
+                    "حرمان المرأة من حقوقها"
+                ],
+                "ans": 1
+            },
+            {
+                "q": "ما الذي يدل على تفوق اليمنيين في الكتابة والعلوم؟",
+                "options": [
+                    "اعتمادهم على الكتابة المسمارية",
+                    "استخدامهم الكيبو",
+                    "استخدامهم الخط المسند ووضعهم التقويم السبئي وبراعتهم في الهندسة والفلك",
+                    "جهلهم بالكتابة"
+                ],
+                "ans": 2
+            }
+        ]
+    },
+    {
+        "id": "map_6",
+        "title": "تحدي الخرائط والصور",
+        "type": "map",
+        "desc": "اكتشف المخفي على خرائط وصور الكتاب في نماذج لحضارات بلاد اليمن القديم",
+        "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><polygon points=\"1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6\"></polygon><line x1=\"8\" y1=\"2\" x2=\"8\" y2=\"18\"></line><line x1=\"16\" y1=\"6\" x2=\"16\" y2=\"22\"></line></svg>",
+        "questions": [
+            {
+                "q": "ما اسم الحضارة المخفي اسمه بعلامة (؟) على الخريطة؟",
+                "options": [
+                    "معين",
+                    "حضرموت",
+                    "حمير",
+                    "سبأ"
+                ],
+                "ans": 0,
+                "img": "images/g2u2l2_yemen.jpg",
+                "masks": [
+                    [
+                        37,
+                        21,
+                        12,
+                        8
+                    ]
+                ]
+            },
+            {
+                "q": "ما اسم الحضارة المخفي اسمه بعلامة (؟) على الخريطة؟",
+                "options": [
+                    "سبأ",
+                    "قتبان",
+                    "حمير",
+                    "معين"
+                ],
+                "ans": 0,
+                "img": "images/g2u2l2_yemen.jpg",
+                "masks": [
+                    [
+                        38,
+                        39,
+                        10,
+                        8
+                    ]
+                ]
+            },
+            {
+                "q": "ما اسم الحضارة المخفي اسمه بعلامة (؟) على الخريطة؟",
+                "options": [
+                    "سبأ",
+                    "معين",
+                    "أوسان",
+                    "حضرموت"
+                ],
+                "ans": 3,
+                "img": "images/g2u2l2_yemen.jpg",
+                "masks": [
+                    [
+                        58,
+                        39,
+                        19,
+                        9
+                    ]
+                ]
+            },
+            {
+                "q": "ما اسم الحضارة المخفي اسمه بعلامة (؟) على الخريطة؟",
+                "options": [
+                    "حمير",
+                    "قتبان",
+                    "أوسان",
+                    "سبأ"
+                ],
+                "ans": 0,
+                "img": "images/g2u2l2_yemen.jpg",
+                "masks": [
+                    [
+                        29,
+                        58,
+                        11,
+                        9
+                    ]
+                ]
+            },
+            {
+                "q": "ما اسم الحضارة المخفي اسمه بعلامة (؟) على الخريطة؟",
+                "options": [
+                    "حمير",
+                    "معين",
+                    "أوسان",
+                    "قتبان"
+                ],
+                "ans": 3,
+                "img": "images/g2u2l2_yemen.jpg",
+                "masks": [
+                    [
+                        38,
+                        53,
+                        10,
+                        8
+                    ]
+                ]
+            },
+            {
+                "q": "ما اسم الميناء المخفي اسمه بعلامة (؟) على الخريطة؟",
+                "options": [
+                    "ميناء عدن",
+                    "ميناء قنا",
+                    "ميناء الحديدة",
+                    "ميناء المخا"
+                ],
+                "ans": 0,
+                "img": "images/g2u2l2_yemen.jpg",
+                "masks": [
+                    [
+                        36,
+                        76,
+                        10,
+                        6
+                    ]
+                ]
+            },
+            {
+                "q": "ما اسم الخليج المخفي اسمه بعلامة (؟) على الخريطة؟",
+                "options": [
+                    "خليج عدن",
+                    "خليج العقبة",
+                    "الخليج العربي",
+                    "خليج عمان"
+                ],
+                "ans": 0,
+                "img": "images/g2u2l2_yemen.jpg",
+                "masks": [
+                    [
+                        47,
+                        78,
+                        16,
+                        9
+                    ]
+                ]
+            },
+            {
+                "q": "تُظهر الصورة طريقة زراعة اشتهرت بها بلاد اليمن القديم، ما هي؟",
+                "options": [
+                    "زراعة السهول الفيضية",
+                    "الزراعة المروية بالحياض",
+                    "زراعة المدرجات الجبلية",
+                    "الزراعة الصحراوية"
+                ],
+                "ans": 2,
+                "img": "images/g2u2l2_terraces.jpg",
+                "masks": []
+            },
+            {
+                "q": "تُظهر الصورة صناعة اشتهرت بها بلاد اليمن القديم، ما هي؟",
+                "options": [
+                    "الخناجر اليمنية",
+                    "الأواني الفخارية",
+                    "الأقمشة الحريرية",
+                    "العطور"
+                ],
+                "ans": 0,
+                "img": "images/g2u2l2_daggers.jpg",
+                "masks": []
+            },
+            {
+                "q": "تُظهر الصورة معبدًا يُعد جزءًا من عرش ملكة سبأ، ما اسمه؟",
+                "options": [
+                    "معبد بران",
+                    "قصر غمدان",
+                    "معبد آمون",
+                    "سد مأرب"
+                ],
+                "ans": 0,
+                "img": "images/g2u2l2_baran.jpg",
+                "masks": []
+            },
+            {
+                "q": "الملكة المرتبط اسمها بالأثر الظاهر في الصورة هي:",
+                "options": [
+                    "بلقيس",
+                    "حتشبسوت",
+                    "نفرتيتي",
+                    "زنوبيا"
+                ],
+                "ans": 0,
+                "img": "images/g2u2l2_baran.jpg",
+                "masks": []
+            },
+            {
+                "q": "تُظهر الصورة آثار منطقة يمنية اشتهرت بسدها العظيم، ما اسمها؟",
+                "options": [
+                    "ظفار",
+                    "صنعاء",
+                    "مأرب",
+                    "عدن"
+                ],
+                "ans": 2,
+                "img": "images/g2u2l2_marib.jpg",
+                "masks": []
+            }
+        ]
+    }
+];
+
+    // --- محرك الصوت للمؤثرات التفاعلية ---
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    let audioCtx = null;
+
+    function initAudio() {
+        if (!audioCtx) {
+            audioCtx = new AudioContext();
+        }
+        if (audioCtx.state === 'suspended') {
+            audioCtx.resume();
+        }
+    }
+
+    function playTone(freq, type, duration, vol = 0.1) {
+        if (!audioCtx) return;
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        gain.gain.setValueAtTime(vol, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
+    }
+
+    function playCorrect() {
+        initAudio();
+        playTone(523.25, 'sine', 0.1, 0.1); 
+        setTimeout(() => playTone(659.25, 'sine', 0.1, 0.1), 100); 
+        setTimeout(() => playTone(783.99, 'sine', 0.2, 0.15), 200); 
+        setTimeout(() => playTone(1046.50, 'sine', 0.4, 0.2), 300); 
+        triggerConfetti();
+    }
+
+    function playWrong() {
+        initAudio();
+        playTone(300, 'sawtooth', 0.15, 0.1);
+        setTimeout(() => playTone(200, 'sawtooth', 0.25, 0.15), 150);
+        
+        const qBox = document.querySelector('.question-box');
+        if(qBox) {
+            qBox.classList.remove('shake');
+            void qBox.offsetWidth; 
+            qBox.classList.add('shake');
+        }
+    }
+
+    // --- مؤثرات بصرية ---
+    function triggerConfetti() {
+        const colors = ['#f72585', '#4cc9f0', '#fee440', '#00f5d4', '#8b5cf6'];
+        for(let i=0; i<40; i++) {
+            let conf = document.createElement('div');
+            conf.className = 'confetti';
+            conf.style.left = Math.random() * 100 + 'vw';
+            conf.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            conf.style.animationDuration = (Math.random() * 2 + 1) + 's';
+            document.body.appendChild(conf);
+            setTimeout(() => conf.remove(), 3000);
+        }
+    }
+
+    function shuffleArray(arr) {
+        return arr.map(a => ({sort: Math.random(), value: a}))
+            .sort((a, b) => a.sort - b.sort)
+            .map(a => a.value);
+    }
+
+    function showFeedback(isCorrect, callback) {
+        const modal = document.getElementById('feedback-modal');
+        const icon = document.getElementById('feedback-icon');
+        const title = document.getElementById('feedback-title');
+        
+        if (isCorrect) {
+            playCorrect();
+            icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>`;
+            title.textContent = 'إجابة صحيحة، بطل!';
+            title.style.color = 'var(--success)';
+        } else {
+            playWrong();
+            icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="var(--danger)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>`;
+            title.textContent = 'إجابة خاطئة!';
+            title.style.color = 'var(--danger)';
+        }
+
+        modal.classList.add('active');
+        setTimeout(() => {
+            modal.classList.remove('active');
+            if (callback) callback();
+        }, 1300); // وقت الانتقال للسؤال التالي
+    }
+
+    // --- متغيرات محرك اللعبة ---
+    let currentGame = null;
+    let currentQuestions = [];
+    let qIndex = 0;
+    let animInterval = null;
+    let geniusTimerInterval = null;
+    let wrongAnswers = []; // مصفوفة لتخزين الأخطاء
+
+    // --- التهيئة ---
+    function initApp() {
+        const menuGrid = document.getElementById('menu-grid');
+        menuGrid.innerHTML = '';
+        allGamesData.forEach(game => {
+            const card = document.createElement('div');
+            card.className = 'menu-card';
+            card.innerHTML = `
+                <div class="icon-container">${game.icon}</div>
+                <h3>${game.title}</h3>
+                <p>${game.desc}</p>
+            `;
+            card.onclick = () => startGame(game);
+            menuGrid.appendChild(card);
+        });
+        
+        document.body.addEventListener('touchstart', initAudio, { once: true });
+        document.body.addEventListener('click', initAudio, { once: true });
+    }
+
+    function returnToMenu() {
+        clearInterval(animInterval); clearInterval(geniusTimerInterval);
+        clearInterval(geniusTimerInterval);
+        document.getElementById('game-screen').classList.add('hidden');
+        document.getElementById('home-screen').classList.remove('hidden');
+        document.getElementById('main-header').classList.remove('hidden');
+        document.getElementById('main-footer').classList.remove('hidden');
+    }
+
+    function updateProgress() {
+        document.getElementById('game-progress').innerText = `${qIndex + 1} / ${currentQuestions.length}`;
+    }
+
+    function gameComplete() {
+        const gc = document.getElementById('game-container');
+        playCorrect();
+        setTimeout(playCorrect, 300);
+
+        let score = currentQuestions.length - wrongAnswers.length;
+        let summaryHTML = '';
+
+        if (wrongAnswers.length > 0) {
+            summaryHTML += `
+            <div style="margin-top: 25px; text-align: right; background: #f8fafc; padding: 20px; border-radius: 15px; border: 2px solid #e2e8f0; max-height: 350px; overflow-y: auto;" class="errors-list">
+                <h3 style="color: var(--danger); margin-bottom: 15px; text-align: center; font-size: 1.4rem;">الأسئلة التي أخطأت فيها 📝</h3>
+                <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 15px;">`;
+            
+            wrongAnswers.forEach((item, index) => {
+                summaryHTML += `
+                <li style="background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-right: 5px solid var(--danger);">
+                    <div style="font-weight: bold; color: var(--primary); margin-bottom: 8px; font-size: 1.1rem;">${index + 1}. ${item.question}</div>
+                    <div style="color: #64748b; font-size: 1rem; margin-bottom: 5px;">إجابتك: <span style="color: var(--danger); text-decoration: line-through;">${item.selected}</span></div>
+                    <div style="color: var(--success); font-weight: bold; font-size: 1.1rem;">الإجابة الصحيحة: ${item.correct}</div>
+                </li>`;
+            });
+            summaryHTML += `</ul></div>`;
+        } else {
+            summaryHTML += `<p style="color: var(--success); font-size: 1.5rem; font-weight: bold; margin-top: 20px;">أداء مثالي! لم تخطئ في أي سؤال 🌟</p>`;
+        }
+
+        gc.innerHTML = `
+            <div style="text-align:center; padding: 40px 20px; background: white; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+                <div style="display:flex; justify-content:center; margin-bottom: 20px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="var(--warning)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><path d="M12 17v4"/><path d="M12 3v14"/><path d="M5 7h14"/><path d="M12 3l-4 4 4 4 4-4-4-4z"/></svg>
+                </div>
+                <h2 style="color: var(--primary); margin-bottom: 10px; font-size:2rem; font-weight:800;">انتهت اللعبة!</h2>
+                <p style="font-size: 1.4rem; margin-bottom: 10px; color:#64748b; font-weight:bold;">نتيجتك: ${score} من ${currentQuestions.length}</p>
+                ${summaryHTML}
+                <div class="share-box">
+                    <h4>📲 أرسل نتيجتك إلى الأستاذة داليا السايح</h4>
+                    <input type="text" id="student-name-input" class="share-name-input" placeholder="اكتب اسمك هنا أولًا">
+                    <div id="share-warning" class="share-warning">من فضلك اكتب اسمك أولًا قبل الإرسال ✋</div>
+                    <div>
+                        <button class="btn btn-share" onclick="sendResultToTeacher(${score}, ${currentQuestions.length})">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.656.843 5.12 2.26 7.15L.626 24l5.01-1.61c1.983 1.25 4.27 1.91 6.395 1.91 6.646 0 12.03-5.385 12.03-12.031S18.677 0 12.031 0zm6.544 17.202c-.273.766-1.58 1.464-2.185 1.503-.56.035-1.28.23-4.085-.86-3.39-1.32-5.59-4.78-5.736-4.97-.145-.19-1.37-1.82-1.37-3.475 0-1.655.857-2.47 1.164-2.8.307-.33.67-.413.89-.413.22 0 .44 0 .633.01.205.01.482-.08.736.53.264.634.904 2.203.984 2.366.08.163.133.353.033.553-.1.2-.153.326-.307.506-.154.18-.32.38-.453.506-.153.153-.314.316-.134.626.18.31.8 1.32 1.71 2.13.176.157.363.31.558.45 1.05.76 1.83 1.05 2.13 1.18.3.13.474.11.652-.09.18-.205.766-.893.97-1.2.204-.307.41-.256.69-.153.28.103 1.77.836 2.074.99.304.153.506.23.582.356.076.126.076.73-.197 1.496z"/></svg>
+                            إرسال النتيجة عبر واتساب
+                        </button>
+                    </div>
+                </div>
+                <button class="btn back-btn" style="font-size:1.1rem; padding:15px 30px; margin-top: 18px;" onclick="returnToMenu()">العودة للقائمة الرئيسية</button>
+            </div>
+        `;
+    }
+
+    function sendResultToTeacher(score, total) {
+        const nameInput = document.getElementById('student-name-input');
+        const warning = document.getElementById('share-warning');
+        const name = nameInput.value.trim();
+        if (!name) {
+            warning.style.display = 'block';
+            nameInput.classList.add('shake');
+            nameInput.focus();
+            setTimeout(() => nameInput.classList.remove('shake'), 500);
+            return;
+        }
+        warning.style.display = 'none';
+        const gameTitle = currentGame ? currentGame.title : '';
+        const message =
+            `📚 نتيجة طالب - ${LESSON_NAME}\n` +
+            `👤 اسم الطالب: ${name}\n` +
+            `🎮 اللعبة: ${gameTitle}\n` +
+            `✅ النتيجة: ${score} من ${total}\n` +
+            `⭐ نسبة النجاح: ${Math.round((score/total)*100)}%`;
+        const url = `https://wa.me/201030866428?text=${encodeURIComponent(message)}`;
+        window.open(url, '_blank');
+    }
+
+    function startGame(gameData) {
+        initAudio();
+        currentGame = gameData;
+        currentQuestions = shuffleArray([...gameData.questions]).slice(0, 20);
+        qIndex = 0;
+        wrongAnswers = []; // تصفير قائمة الأخطاء
+        
+        document.getElementById('home-screen').classList.add('hidden');
+        document.getElementById('main-header').classList.add('hidden');
+        document.getElementById('main-footer').classList.add('hidden');
+        document.getElementById('game-screen').classList.remove('hidden');
+        document.getElementById('game-title').innerText = gameData.title;
+        
+        renderNextState();
+    }
+
+    function renderNextState() {
+        if (qIndex >= currentQuestions.length) {
+            gameComplete();
+            return;
+        }
+
+        const gc = document.getElementById('game-container');
+        gc.innerHTML = '';
+        updateProgress();
+
+        if (currentGame.type === 'mcq') {
+            renderMCQ(gc);
+        } else if (currentGame.type === 'bubbles') {
+            renderBubbles(gc);
+        } else if (currentGame.type === 'shooting') {
+            renderShooting(gc);
+        } else if (currentGame.type === 'true_false') {
+            renderTrueFalse(gc);
+        } else if (currentGame.type === 'genius') {
+            renderGenius(gc);
+        } else if (currentGame.type === 'map') {
+            renderMap(gc);
+        }
+    }
+
+    // --- أنماط الألعاب ---
+
+    // 1. اختيارات (MCQ)
+    function renderMCQ(container) {
+        clearInterval(geniusTimerInterval);
+        const qData = currentQuestions[qIndex];
+        const correctText = qData.options[qData.ans];
+        const shuffledOptions = shuffleArray([...qData.options]);
+
+        const btnContainer = document.createElement('div');
+        btnContainer.className = 'options-grid';
+        
+        let isAnswered = false;
+
+        shuffledOptions.forEach(opt => {
+            const btn = document.createElement('button');
+            btn.className = 'btn';
+            btn.innerText = opt;
+            btn.onclick = () => {
+                if(isAnswered) return;
+                isAnswered = true;
+
+                if (opt === correctText) {
+                    btn.classList.add('btn-correct');
+                    showFeedback(true, () => { qIndex++; renderNextState(); });
+                } else {
+                    btn.classList.add('btn-wrong');
+                    wrongAnswers.push({ question: qData.q, correct: correctText, selected: opt });
+                    showFeedback(false, () => { qIndex++; renderNextState(); });
+                }
+            };
+            btnContainer.appendChild(btn);
+        });
+
+        const qBox = document.createElement('div');
+        qBox.className = 'question-box';
+        qBox.innerText = qData.q;
+        
+        container.appendChild(qBox);
+        container.appendChild(btnContainer);
+    }
+
+    // 2. صح أم خطأ
+    function renderTrueFalse(container) {
+        clearInterval(geniusTimerInterval);
+        const qData = currentQuestions[qIndex];
+        const correctText = qData.options[qData.ans];
+
+        const qBox = document.createElement('div');
+        qBox.className = 'question-box';
+        qBox.innerText = qData.q;
+        
+        const tfContainer = document.createElement('div');
+        tfContainer.className = 'tf-grid';
+        
+        let isAnswered = false;
+
+        // ترتيب ثابت (صح يميناً وخطأ يساراً)
+        const fixedOptions = ["صح", "خطأ"];
+
+        fixedOptions.forEach(opt => {
+            const btn = document.createElement('button');
+            btn.className = 'btn';
+            btn.style.flex = '1';
+            btn.style.minWidth = '200px';
+            btn.style.fontSize = '2rem';
+            btn.style.padding = '30px';
+            btn.style.justifyContent = 'center';
+            
+            if(opt === "صح") {
+                btn.style.background = "linear-gradient(to bottom, #10b981, #0e7490)";
+                btn.style.borderBottomColor = "#047857";
+            } else {
+                btn.style.background = "linear-gradient(to bottom, #ef4444, #dc2626)";
+                btn.style.borderBottomColor = "#b91c1c";
+            }
+
+            btn.innerText = opt;
+            
+            btn.onclick = () => {
+                if(isAnswered) return;
+                isAnswered = true;
+
+                if (opt === correctText) {
+                    btn.classList.add('btn-correct');
+                    showFeedback(true, () => { qIndex++; renderNextState(); });
+                } else {
+                    btn.classList.add('btn-wrong');
+                    wrongAnswers.push({ question: qData.q, correct: correctText, selected: opt });
+                    showFeedback(false, () => { qIndex++; renderNextState(); });
+                }
+            };
+            tfContainer.appendChild(btn);
+        });
+
+        container.appendChild(qBox);
+        container.appendChild(tfContainer);
+    }
+
+    // 5. تحدي العباقرة (سؤال بعدّاد زمني)
+    function renderGenius(container) {
+        clearInterval(animInterval); clearInterval(geniusTimerInterval);
+        clearInterval(geniusTimerInterval);
+        const qData = currentQuestions[qIndex];
+        const correctText = qData.options[qData.ans];
+        const shuffledOptions = shuffleArray([...qData.options]);
+
+        const wrap = document.createElement('div');
+        wrap.className = 'genius-wrap';
+
+        const badge = document.createElement('div');
+        badge.className = 'genius-badge';
+        badge.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.663 17h4.673M12 3a6 6 0 0 0-6 6c0 1.887.454 2.921 1.5 4.5.5.75 1 1.5 1 2.5h7c0-1 .5-1.75 1-2.5C17.546 11.921 18 10.887 18 9a6 6 0 0 0-6-6z"></path></svg> تحدي العباقرة`;
+
+        const timerTrack = document.createElement('div');
+        timerTrack.className = 'genius-timer-track';
+        const timerBar = document.createElement('div');
+        timerBar.className = 'genius-timer-bar';
+        timerTrack.appendChild(timerBar);
+
+        const qBox = document.createElement('div');
+        qBox.className = 'question-box';
+        qBox.style.background = 'rgba(255,255,255,0.95)';
+        qBox.innerText = qData.q;
+
+        const optContainer = document.createElement('div');
+        optContainer.className = 'genius-options';
+
+        let isAnswered = false;
+        const TOTAL_TIME = 12000; // 12 ثانية لكل سؤال
+        let startTime = Date.now();
+
+        function finishQuestion(isCorrect, selectedText) {
+            if (isAnswered) return;
+            isAnswered = true;
+            clearInterval(geniusTimerInterval);
+            if (!isCorrect) {
+                wrongAnswers.push({ question: qData.q, correct: correctText, selected: selectedText || "انتهى الوقت!" });
+            }
+            showFeedback(isCorrect, () => { qIndex++; renderNextState(); });
+        }
+
+        shuffledOptions.forEach(opt => {
+            const btn = document.createElement('button');
+            btn.className = 'btn';
+            btn.innerText = opt;
+            btn.onclick = () => {
+                if (isAnswered) return;
+                if (opt === correctText) {
+                    btn.classList.add('btn-correct');
+                    finishQuestion(true, opt);
+                } else {
+                    btn.classList.add('btn-wrong');
+                    finishQuestion(false, opt);
+                }
+            };
+            optContainer.appendChild(btn);
+        });
+
+        wrap.appendChild(badge);
+        wrap.appendChild(timerTrack);
+        container.appendChild(wrap);
+        container.appendChild(qBox);
+        container.appendChild(optContainer);
+
+        geniusTimerInterval = setInterval(() => {
+            if (isAnswered) { clearInterval(geniusTimerInterval); return; }
+            const elapsed = Date.now() - startTime;
+            const pct = Math.max(0, 100 - (elapsed / TOTAL_TIME) * 100);
+            timerBar.style.width = pct + '%';
+            if (elapsed >= TOTAL_TIME) {
+                clearInterval(geniusTimerInterval);
+                finishQuestion(false, null);
+            }
+        }, 80);
+    }
+
+    // 3. الفقاعات المتساقطة
+    function renderBubbles(container) {
+        clearInterval(animInterval); clearInterval(geniusTimerInterval);
+        const qData = currentQuestions[qIndex];
+        const correctText = qData.options[qData.ans];
+        const shuffledOptions = shuffleArray([...qData.options]);
+
+        const qBox = document.createElement('div');
+        qBox.className = 'question-box';
+        qBox.innerText = qData.q;
+        
+        const area = document.createElement('div');
+        area.className = 'bubbles-area';
+
+        let bubbles = [];
+        let isAnswered = false;
+
+        shuffledOptions.forEach((opt, index) => {
+            const bubble = document.createElement('div');
+            bubble.className = 'bubble';
+            bubble.innerHTML = `<span>${opt}</span>`;
+            
+            let leftPos = 2 + (index * 24); 
+            bubble.style.left = leftPos + '%';
+            
+            let topPos = -100 - (Math.random() * 80);
+            bubble.style.top = topPos + 'px';
+            
+            let speed = 0.95 + Math.random() * 0.65; 
+
+            bubble.onclick = () => {
+                if (isAnswered) return;
+                isAnswered = true;
+                clearInterval(animInterval); clearInterval(geniusTimerInterval);
+                if (opt === correctText) {
+                    bubble.style.background = 'var(--success)';
+                    bubble.style.color = 'white';
+                    showFeedback(true, () => { qIndex++; renderNextState(); });
+                } else {
+                    bubble.style.background = 'var(--danger)';
+                    bubble.style.color = 'white';
+                    wrongAnswers.push({ question: qData.q, correct: correctText, selected: opt });
+                    showFeedback(false, () => { qIndex++; renderNextState(); });
+                }
+            };
+
+            area.appendChild(bubble);
+            bubbles.push({ el: bubble, top: topPos, speed: speed, isCorrect: opt === correctText, active: true });
+        });
+
+        container.appendChild(qBox);
+        container.appendChild(area);
+        
+        let hint = document.createElement('div');
+        hint.style.textAlign = 'center';
+        hint.style.marginTop = '15px';
+        hint.style.color = 'var(--primary)';
+        hint.style.fontWeight = 'bold';
+        hint.style.fontSize = '1.1rem';
+        hint.innerHTML = `💡 اضغط على الفقاعة التي تحمل الإجابة الصحيحة قبل أن تسقط!`;
+        container.appendChild(hint);
+
+        let areaHeight = 400;
+
+        animInterval = setInterval(() => {
+            if (isAnswered) return;
+            bubbles.forEach(b => {
+                if (!b.active) return;
+                b.top += b.speed;
+                b.el.style.top = b.top + 'px';
+                
+                b.el.style.transform = `translateX(${Math.sin(b.top / 20) * 5}px)`;
+
+                if (b.top > areaHeight) {
+                    b.active = false;
+                    b.el.style.display = 'none';
+                    if (b.isCorrect && !isAnswered) {
+                        isAnswered = true;
+                        clearInterval(animInterval); clearInterval(geniusTimerInterval);
+                        wrongAnswers.push({ question: qData.q, correct: correctText, selected: "سقطت دون اختيار" });
+                        showFeedback(false, () => { qIndex++; renderNextState(); });
+                    }
+                }
+            });
+        }, 30);
+    }
+
+    // 4. التنشين
+    function renderShooting(container) {
+        clearInterval(animInterval); clearInterval(geniusTimerInterval);
+        const qData = currentQuestions[qIndex];
+        const correctText = qData.options[qData.ans];
+        const shuffledOptions = shuffleArray([...qData.options]);
+
+        const qBox = document.createElement('div');
+        qBox.className = 'question-box';
+        qBox.innerText = qData.q;
+        
+        const area = document.createElement('div');
+        area.className = 'shooting-area';
+
+        let isAnswered = false;
+
+        shuffledOptions.forEach((opt, index) => {
+            const bird = document.createElement('div');
+            bird.className = 'target-bird';
+            
+            bird.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg> <span>${opt}</span>`;
+            
+            let topPos = 15 + (index * 20); 
+            bird.style.top = topPos + '%';
+            
+            let pos = (index % 2 === 0) ? -200 : window.innerWidth;
+            let speed = (Math.random() * 2.5 + 1.5) * ((index % 2 === 0) ? 1 : -1);
+            
+            bird.style.left = pos + 'px';
+
+            bird.onclick = () => {
+                if(isAnswered) return;
+                isAnswered = true;
+
+                if (opt === correctText) {
+                    bird.style.background = 'var(--success)';
+                    bird.style.color = 'white';
+                    bird.style.borderColor = 'white';
+                    showFeedback(true, () => { qIndex++; renderNextState(); });
+                } else {
+                    bird.style.background = 'var(--danger)';
+                    bird.style.color = 'white';
+                    bird.style.borderColor = 'white';
+                    wrongAnswers.push({ question: qData.q, correct: correctText, selected: opt });
+                    showFeedback(false, () => { qIndex++; renderNextState(); });
+                }
+            };
+
+            area.appendChild(bird);
+
+            animInterval = setInterval(() => {
+                if (isAnswered) return;
+                pos += speed;
+                if (pos > window.innerWidth + 50) pos = -250;
+                if (pos < -250) pos = window.innerWidth + 50;
+                bird.style.left = pos + 'px';
+            }, 20);
+        });
+
+        container.appendChild(qBox);
+        container.appendChild(area);
+        
+        let hint = document.createElement('div');
+        hint.style.textAlign = 'center';
+        hint.style.marginTop = '15px';
+        hint.style.color = 'var(--primary)';
+        hint.style.fontWeight = 'bold';
+        hint.style.fontSize = '1.1rem';
+        hint.style.display = 'flex';
+        hint.style.alignItems = 'center';
+        hint.style.justifyContent = 'center';
+        hint.style.gap = '8px';
+        hint.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg> اضغط على الإجابة الصحيحة وهي تتحرك لاصطيادها!`;
+        container.appendChild(hint);
+    }
+
+
+    // 6. تحدي الخرائط والصور
+    function renderMap(container) {
+        clearInterval(animInterval); clearInterval(geniusTimerInterval);
+        const qData = currentQuestions[qIndex];
+        const correctText = qData.options[qData.ans];
+        const shuffledOptions = shuffleArray([...qData.options]);
+
+        const qBox = document.createElement('div');
+        qBox.className = 'question-box';
+        qBox.innerText = qData.q;
+
+        const stage = document.createElement('div');
+        stage.className = 'map-stage';
+        const wrap = document.createElement('div');
+        wrap.className = 'map-wrap';
+        const img = document.createElement('img');
+        img.src = qData.img;
+        img.alt = 'خريطة أو صورة من الكتاب المدرسي';
+        wrap.appendChild(img);
+        const masks = [];
+        (qData.masks || []).forEach(m => {
+            const d = document.createElement('div');
+            d.className = 'map-mask';
+            d.style.left = m[0] + '%'; d.style.top = m[1] + '%';
+            d.style.width = m[2] + '%'; d.style.height = m[3] + '%';
+            d.textContent = '؟';
+            wrap.appendChild(d); masks.push(d);
+        });
+        stage.appendChild(wrap);
+        wrap.onclick = () => stage.classList.toggle('zoomed');
+        const hint = document.createElement('div');
+        hint.className = 'map-hint';
+        hint.textContent = (masks.length ? '💡 الإجابة مخفية تحت المربع البرتقالي (؟) • ' : '💡 ') + 'اضغط على الصورة لتكبيرها';
+        stage.appendChild(hint);
+
+        const optContainer = document.createElement('div');
+        optContainer.className = 'map-options';
+        let isAnswered = false;
+        const btns = [];
+        shuffledOptions.forEach(opt => {
+            const btn = document.createElement('button');
+            btn.className = 'btn';
+            btn.innerText = opt;
+            btn.onclick = () => {
+                if (isAnswered) return;
+                isAnswered = true;
+                const ok = opt === correctText;
+                masks.forEach(d => d.classList.add('revealed'));
+                btns.forEach(b => { if (b.innerText === correctText) b.classList.add('ok'); });
+                if (!ok) {
+                    btn.classList.add('bad');
+                    wrongAnswers.push({ question: qData.q, correct: correctText, selected: opt });
+                }
+                setTimeout(() => showFeedback(ok, () => { qIndex++; renderNextState(); }), 1100);
+            };
+            btns.push(btn);
+            optContainer.appendChild(btn);
+        });
+
+        container.appendChild(qBox);
+        container.appendChild(stage);
+        container.appendChild(optContainer);
+    }
+
+    window.onload = initApp;
+</script>
+</body>
+</html>
